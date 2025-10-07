@@ -31,13 +31,12 @@ document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 //     body: data
 //   });
 
-//   if (response.ok) {
-//     const res = await response.json();
-//     alert("✅ Message sent successfully!");
-//     form.reset();
-//   } else {
-//     alert("❌ Something went wrong. Check console.");
-//     console.error(await response.text());
+  // if (response.ok) {
+  //   const res = await response.json();
+  //   alert("✅ Message sent successfully!");
+  //   form.reset();
+  // } else {
+  //   alert("❌ Something went wrong. Check console.");
+  //   console.error(await response.text());
 //   }
-});
-
+// );
