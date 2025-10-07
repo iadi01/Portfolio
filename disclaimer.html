@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Disclaimer | Maqsad Institute</title>
+  <style>
+    :root {
+      --royal: #4169E1;
+      --tradewind: #5FB3AC;
+      --surface: #121a34;
+      --text: rgba(255,255,255,.92);
+      --muted: rgba(255,255,255,.65);
+    }
+
+    body {
+      margin: 0;
+      font-family: "Manrope", sans-serif;
+      background: linear-gradient(135deg, #0b132b 0%, #121a34 80%);
+      color: var(--text);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .disclaimer-card {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 20px;
+      padding: 40px 50px;
+      width: min(90%, 700px);
+      box-shadow:
+        0 20px 40px rgba(0,0,0,0.4),
+        inset 0 0 25px rgba(65,105,225,0.25);
+      backdrop-filter: blur(1px);
+      transform: perspective(800px) rotateX(4deg);
+      transition: transform 0.6s ease, box-shadow 0.4s ease;
+
+
+
+    }
+
+    .disclaimer-card:hover {
+      transform: perspective(800px) rotateX(0deg) scale(1.02);
+      box-shadow:
+        0 25px 50px rgba(65,105,225,0.35),
+        inset 0 0 25px rgba(95,179,172,0.25);
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 2.2em;
+      color: var(--royal);
+      text-shadow: 0 0 20px rgba(65,105,225,0.4);
+    }
+
+    p {
+      line-height: 1.6;
+      color: var(--muted);
+      text-align: justify;
+      margin: 15px 0;
+    }
+
+    .highlight {
+      color: var(--tradewind);
+      font-weight: 600;
+    }
+
+    .footer-note {
+      text-align: center;
+      font-size: 0.9em;
+      color: rgba(255,255,255,0.55);
+      margin-top: 25px;
+    }
+
+    .btn-home {
+      display: inline-block;
+      margin-top: 25px;
+      padding: 10px 18px;
+      border-radius: 10px;
+      border: 2px solid var(--tradewind);
+      color: var(--tradewind);
+      text-decoration: none;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+
+    .btn-home:hover {
+      background: var(--tradewind);
+      color: #0b132b;
+      box-shadow: 0 0 15px rgba(95,179,172,0.5);
+    }
+  </style>
+</head>
+<body>
+  <div class="disclaimer-card">
+
+    <h1>Disclaimer</h1>
+    <p>
+      The content shared on this portfolio website is for personal and professional presentation purposes only.
+       <span class="highlight">Aditya Portfolio</span> – 
+     All projects, designs, and ideas displayed here reflect my individual creativity, learning, and development journey.
+    </p>
+
+    <p>
+  While I strive to ensure accuracy and authenticity in every project showcased, 
+      <span class="highlight">Aditya Portfolio</span>
+        no warranties regarding the completeness, reliability, or accuracy of any information presented..
+    </p>
+
+    <p>
+      Any action you take based on the information or content from this website is strictly at your own discretion and risk. 
+      I shall not be held responsible for any losses or damages in connection with the use of this site or its content.
+    </p>
+<p>
+    Some projects may include references, frameworks, or tools owned by third parties.
+     Such mentions or links do not imply endorsement or affiliation
+     <Strong> — they are purely for creative or educational demonstration.</Strong>
+</p>
+
+    <p class="footer-note">
+      © 2025 Aditya Portfolio. All Rights Reserved.
+
+    <center><a href="index.html" class="btn-home">← Back to Home</a></center>
+  </div>
+</body>
+</html>

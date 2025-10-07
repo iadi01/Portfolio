@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Aadi — Portfolio</title>
+    <meta name="description" content="Aadi — Full-Stack Developer portfolio" />
+    <!-- ek choot maaaam -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <!-- Header  -->
+    <header class="nav">
+      <a class="brand" href="#home">Aditya Sharma <span class="dot">.</span></a>
+      <button class="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="menu">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#experience">Experience</a>
+        <a class="btn" href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <!-- Avatar Section -->
+    <main id="home" class="hero">
+      <div class="hero__content">
+        <h1 class="reveal">Web Developer</h1>
+        <p class="muted reveal" style="--d: 0.05s;">
+          I’m Aadi, a BCA student learning full-stack development. Started late
+          but now giving my best — step by step building skills to create real
+          solutions.
+        </p>
+
+        <div class="cta reveal" style="--d: 0.1s;">
+          <a class="btn" href="#projects">View Projects</a>
+          <a class="btn btn--ghost" href="#contact">Contact</a>
+        </div>
+
+        <div class="chips reveal" style="--d: 0.15s;">
+          <span>HTML</span><span>CSS</span><span>JavaScript</span
+          ><span>Tailwind CSS</span>
+        </div>
+      </div>
+
+      <div class="hero__art reveal" style="--d: 0.2s;">
+        <svg viewBox="0 0 400 400" aria-hidden="true">
+          <defs>
+            <radialGradient id="orb" cx="50%" cy="40%">
+              <stop offset="0%" stop-color="var(--royal)" />
+              <stop offset="60%" stop-color="var(--tradewind)" />
+              <stop offset="100%" stop-color="transparent" />
+            </radialGradient>
+          </defs>
+          <circle cx="202" cy="225" r="155" fill="url(#orb)" />
+        </svg>
+        <img
+          src="Images/Photoroom-20240829_195238.png"
+          alt="Aadi"
+          class="avatar"
+        />
+      </div>
+    </main>
+<!-- kya be code chori karne aaaya hai -->
+    <!-- About Section -->
+    <section id="about" class="section">
+      <div class="container grid-2">
+        <div class="card reveal">
+          <h2>About</h2>
+          <p class="muted">
+I’m a front-end developer who enjoys creating websites that look good and work smoothly.
+ I love learning new things, improving my skills, 
+and building projects that help people. My goal is to make every design simple, useful,
+ and easy to use while sharing my creativity through coding.   
+        </p>
+        </div>
+
+        <div class="stats reveal" style="--d: 0.05s;">
+          <div class="stat"><span>5+</span><small>Projects</small></div>
+          <div class="stat"><span>1</span><small>Hackathon</small></div>
+          <div class="stat"><span>100%</span><small>Commitment</small></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section alt">
+      <div class="container">
+        <h2 class="reveal">Learning Skills</h2>
+        <div class="skills reveal" style="--d: 0.05s;">
+          <span>TypeScript</span><span>React</span><span>Next.js</span
+          ><span>Node.js</span><span>Express</span><span>MongoDB</span
+          ><span>PostgreSQL</span><span>Git</span><span>Figma</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section">
+      <div class="container">
+        <h2 class="reveal">Projects</h2>
+        <div class="cards">
+          <!-- Project 1 -->
+          <article class="card reveal" style="--d: 0.05s;">
+            <a href="index.html" target="_blank" class="project-link">
+              <div class="card__thumb">
+                <img src="/Images/portfolios.png" alt="Project screenshot 1" />
+              </div>
+              <div class="card__body">
+                <h3>Personal Portfolio</h3>
+                <p class="muted">
+                  This portfolio is built using HTML, CSS, and JavaScript.
+                </p>
+                <div class="pill">HTML</div>
+                <div class="pill">CSS</div>
+                <div class="pill">JS</div>
+              </div>
+            </a>
+          </article>
+
+          <!-- Project 2 -->
+          <article class="card reveal" style="--d: 0.05s;">
+            <a
+              href="https://weather-app-aadi.vercel.app/"
+              target="_blank"
+              class="project-link"
+            >
+              <div class="card__thumb">
+                <img
+                  src="Images/Weather.png"
+                  alt="Project screenshot 2"
+                />
+              </div>
+              <div class="card__body">
+                <h3>Weather App</h3>
+                <p class="muted">
+                  My first weather app using OpenWeather API. Simple and clean
+                  UI, built for learning.
+                </p>
+                <div class="pill">HTML</div>
+                <div class="pill">CSS</div>
+                <div class="pill">JS</div>
+                <div class="pill">API</div>
+              </div>
+            </a>
+          </article>
+
+          <!-- Project 3 -->
+          <article class="card reveal" style="--d: 0.1s;">
+            <a
+              href="https://the-maqsad-of-the-happiness.vercel.app/"
+              target="_blank"
+              class="project-link"
+            >
+              <div class="card__thumb">
+                <img
+                  src="images/The-Maqsad.png"
+                  alt="Project screenshot 3"
+                />
+              </div>
+              <div class="card__body">
+                <h3>Just For Fun</h3>
+                <p class="muted">
+                  A parody and entertainment project created purely for fun and
+                  creativity.
+                </p>
+                <div class="pill">HTML</div>
+                <div class="pill">CSS</div>
+                <div class="pill">Next.js</div>
+                <div class="pill">API</div>
+              </div>
+            </a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="section alt">
+      <div class="container">
+        <h2 class="reveal">Experience</h2>
+        <ul class="timeline reveal" style="--d: 0.05s;">
+          <li>
+            <div class="t-bullet"></div>
+            <div class="t-card">
+              <strong>Perplexity Campus Partner Program</strong>
+              <span class="muted">2025 — Present</span>
+              <p>Promoting AI tools, guiding students, enhancing campus tech engagement.</p>
+            </div>
+          </li>
+          <li>
+            <div class="t-bullet"></div>
+            <div class="t-card">
+              <strong>Gen AI Exchange Hackathon</strong>
+              <span class="muted">2025 — Present</span>
+              <p>
+                Building full-stack projects, code reviews, and team
+                collaboration.
+              </p>
+            </div>
+          </li>
+          <li>
+            <div class="t-bullet"></div>
+            <div class="t-card">
+              <strong>Freelance Projects</strong>
+              <span class="muted">2025 — 2025</span>
+              <p>Landing pages, dashboards, and small web apps.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+      <div class="container grid-2">
+        <div class="card reveal">
+          <h2>Contact</h2>
+          <p class="muted">Let’s build something great.</p>
+          <div class="socials">
+            <a
+              href="https://www.linkedin.com/in/aditya-sharma-ba2477206/"
+              target="_blank"
+              rel="noreferrer"
+              >LinkedIn</a
+            >
+            <a href="https://github.com/iadi01" target="_blank" rel="noreferrer"
+              >GitHub</a
+            >
+            <a
+              href="mailto:adityasharma10@amityonline.com"
+              target="_blank"
+              rel="noreferrer"
+              >Email</a
+            >
+          </div>
+        </div>
+
+        <!-- Contactsection -->
+       <form
+  action="https://api.web3forms.com/submit"
+  method="POST"
+  class="form card reveal"
+  style="--d:.05s;"
+>
+<H2>Send a Message </H2>
+  <!-- Web3Forms keys -->
+  <input type="hidden" name="access_key" value="55f5cf1e-2244-434e-8aaf-c351d4f41f42" />
+  <input type="hidden" name="from_name" value="Maqsad Institute Website" />
+  <input type="hidden" name="redirect" value="https://web3forms.com/success" />
+
+  <label>
+    <span>Name</span>
+    <input type="text" name="name" required />
+  </label>
+
+  <label>
+    <span>Email</span>
+    <input type="email" name="email" required />
+  </label>
+
+  <label>
+    <span>Message</span>
+    <textarea name="message" rows="4" required></textarea>
+  </label>
+
+  <button type="submit" class="btn">Send</button>
+</form>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <p>&copy; 2025 Aadi Portfolio. All Rights Reserved.</p>
+      <p style="margin-top: 12px; font-size: 14px; color: #ccc;">
+        <div class="footer-menu section" id="footer-menu" name="Footer Menu">
+          <div class="widget LinkList" data-version="2" id="LinkList104">
+            <ul class="link-list list-style">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="About-us.html">About Us</a></li>
+              <li><a href="disclaimer.html">Disclaimer</a></li>
+              <li><a href="privacy-policy.html">Privacy Policy</a></li>
+            </ul>
+          </div>
+        </div>
+      </p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

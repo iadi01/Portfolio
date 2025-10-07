@@ -1,0 +1,108 @@
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background: radial-gradient(circle at top left, #0a0f24, #000);
+  color: #fff;
+  overflow-x: hidden;
+}
+
+.about-section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 10%;
+}
+
+.about-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 50px;
+}
+
+.about-content {
+  max-width: 550px;
+}
+
+.about-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+.about-title span {
+  color: #0077ff;
+  text-shadow: 0 0 15px #0077ff;
+}
+
+.about-text {
+  line-height: 1.7;
+  margin-bottom: 20px;
+  color: #d0d0d0;
+}
+
+.about-btn {
+  display: inline-block;
+  background: #0077ff;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  transition: all 0.3s;
+  text-decoration: none;
+  position: relative;
+  box-shadow: 0 0 15px #0077ff80;
+}
+
+.about-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0 25px #0077ff;
+}
+
+/* 3D Cube Animation */
+.about-image {
+  width: 220px;
+  height: 220px;
+  perspective: 800px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cube {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  transform-style: preserve-3d;
+  animation: rotate 7s infinite linear;
+}
+
+.face {
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5rem;
+  color: white;
+  background: linear-gradient(135deg, #0077ff, #00c2ff);
+  border: 2px solid #00c2ff80;
+  box-shadow: 0 0 30px #0077ff90;
+}
+
+.front { transform: translateZ(75px); }
+.back { transform: rotateY(180deg) translateZ(75px); }
+.right { transform: rotateY(90deg) translateZ(75px); }
+.left { transform: rotateY(-90deg) translateZ(75px); }
+.top { transform: rotateX(90deg) translateZ(75px); }
+.bottom { transform: rotateX(-90deg) translateZ(75px); }
+
+@keyframes rotate {
+  from { transform: rotateX(0) rotateY(0); }
+  to { transform: rotateX(360deg) rotateY(360deg); }
+}
