@@ -22,21 +22,22 @@ const io = new IntersectionObserver(entries => {
 
 document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 
-document.querySelector("form").addEventListener("submit", async (e) => {
-  e.preventDefault();
-  const form = e.target;
-  const data = new FormData(form);
-  const response = await fetch(form.action, {
-    method: form.method,
-    body: data
-  });
+// document.querySelector("form").addEventListener("submit", async (e) => {
+//   e.preventDefault();
+//   const form = e.target;
+//   const data = new FormData(form);
+//   const response = await fetch(form.action, {
+//     method: form.method,
+//     body: data
+//   });
 
-  if (response.ok) {
-    const res = await response.json();
-    alert("✅ Message sent successfully!");
-    form.reset();
-  } else {
-    alert("❌ Something went wrong. Check console.");
-    console.error(await response.text());
-  }
+//   if (response.ok) {
+//     const res = await response.json();
+//     alert("✅ Message sent successfully!");
+//     form.reset();
+//   } else {
+//     alert("❌ Something went wrong. Check console.");
+//     console.error(await response.text());
+//   }
 });
+
