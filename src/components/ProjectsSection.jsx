@@ -7,7 +7,7 @@ export default function ProjectsSection() {
       {/* Header */}
       <div className="flex items-center gap-4 mb-10">
         <div className="bg-custom-green px-8 py-3 rounded-full border-4 border-black shadow-neo">
-          <h2 className="text-3xl font-shrikhand text-black">Projects by Aadi</h2>
+          <h2 className="text-3xl font-shrikhand text-black">Aditya Sharma Portfolio Projects</h2>
         </div>
       </div>
 

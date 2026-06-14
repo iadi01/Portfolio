@@ -20,11 +20,11 @@ export default function ExperienceSection() {
       </div>
 
       {/* Main Experience Section */}
-      <section id="experience" className="w-full px-4 max-w-7xl mx-auto bg-custom-purple border-2 border-b-4 border-r-4 border-black rounded-3xl shadow-neo relative z-10 py-10 selection:bg-custom-yellow selection:text-black">
+      <section id="journey" className="w-full px-4 max-w-7xl mx-auto bg-custom-purple border-2 border-b-4 border-r-4 border-black rounded-3xl shadow-neo relative z-10 py-10 selection:bg-custom-yellow selection:text-black">
         {/* Header */}
         <div className="flex justify-center mb-10 relative z-10">
           <div className="bg-white px-8 py-3 rounded-full border-4 border-black w-fit shadow-neo">
-            <h2 className="text-3xl font-shrikhand tracking-wide">Experience & Learning Journey</h2>
+            <h2 className="text-3xl font-shrikhand tracking-wide">Learning Journey of Aditya Sharma</h2>
           </div>
         </div>
 

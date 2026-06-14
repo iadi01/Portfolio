@@ -13,6 +13,8 @@ import MarqueeBanner from './components/MarqueeBanner';
 import AccordionSections from './components/AccordionSections';
 import EducationSection from './components/EducationSection';
 import BlogsSection from './components/BlogsSection';
+import BrandIdentity from './components/BrandIdentity';
+import FAQSection from './components/FAQSection';
 import Footer from './components/Footer';
 import CookieConsent from './components/CookieConsent';
 
@@ -43,27 +45,53 @@ function App() {
     // Inject Schema.org JSON-LD structured data
     const schema = {
       "@context": "https://schema.org",
-      "@type": "Person",
-      "name": "Aditya Sharma",
-      "alternateName": ["Aadi", "WTF Aadi", "iadi0", "iadi01"],
-      "url": "https://aadi-sharma.dev/",
-      "jobTitle": "Aspiring Full Stack Developer",
-      "description": "Official portfolio of Aditya Sharma, also known as Aadi and WTF Aadi. BCA student and aspiring Full Stack Developer from Jamshedpur, India.",
-      "sameAs": [
-        "https://github.com/iadi01",
-        "https://www.linkedin.com/in/iadi0/",
-        "https://www.instagram.com/iaadi0/"
-      ],
-      "knowsAbout": [
-        "HTML",
-        "CSS",
-        "JavaScript",
-        "React",
-        "Next.js",
-        "Node.js",
-        "MongoDB",
-        "UI/UX Design",
-        "Full Stack Development"
+      "@graph": [
+        {
+          "@type": "Person",
+          "@id": "https://aadi-sharma.dev/#person",
+          "name": "Aditya Sharma",
+          "alternateName": ["Aadi", "Adi Sharma", "WTF Aadi", "iadi0", "iadi01"],
+          "url": "https://aadi-sharma.dev/",
+          "jobTitle": "Aspiring Full Stack Developer",
+          "description": "Official portfolio of Aditya Sharma, also known as Aadi, Adi Sharma, WTF Aadi, iadi0 and iadi01. BCA student, aspiring Software Engineer and Full Stack Developer from Jamshedpur, India.",
+          "email": "adityasharma10@amityonline.com",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Jamshedpur",
+            "addressRegion": "Jharkhand",
+            "addressCountry": "IN"
+          },
+          "sameAs": [
+            "https://github.com/iadi01",
+            "https://www.linkedin.com/in/iadi0/",
+            "https://www.instagram.com/iaadi0/"
+          ],
+          "knowsAbout": [
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "React",
+            "Next.js",
+            "Node.js",
+            "Express.js",
+            "MongoDB",
+            "REST APIs",
+            "UI/UX Design",
+            "Full Stack Development",
+            "Software Engineering"
+          ]
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://aadi-sharma.dev/#website",
+          "url": "https://aadi-sharma.dev/",
+          "name": "Aditya Sharma Portfolio | WTF Aadi",
+          "alternateName": ["WTF Aadi", "iadi0 Portfolio", "Aditya Sharma Portfolio"],
+          "description": "Official portfolio website of Aditya Sharma, also known as Aadi, WTF Aadi, iadi0 and iadi01.",
+          "publisher": {
+            "@id": "https://aadi-sharma.dev/#person"
+          }
+        }
       ]
     };
 
@@ -111,13 +139,14 @@ function App() {
 
       <main className="w-full max-w-full overflow-x-hidden flex flex-col items-center gap-20 pt-32 pb-20">
         {/* SEO Accessibility Headings & Links (Invisible in UI) */}
-        <h1 className="sr-only">Aditya Sharma (Aadi) – Full Stack Developer Portfolio</h1>
+        <h1 className="sr-only">Aditya Sharma Portfolio | WTF Aadi | Full Stack Developer | Software Engineer | iadi0</h1>
         <nav aria-label="SEO Internal Links" className="sr-only">
-          <a href="#">Home</a>
-          <a href="#about">About</a>
-          <a href="#projects">Projects</a>
-          <a href="#skills">Skills</a>
-          <a href="#contact">Contact</a>
+          <a href="#home">Home</a>
+          <a href="#about">About Aditya Sharma</a>
+          <a href="#projects">Aditya Sharma Portfolio Projects</a>
+          <a href="#skills">Skills of Aditya Sharma</a>
+          <a href="#journey">Learning Journey of Aditya Sharma</a>
+          <a href="#contact">Contact Aditya Sharma</a>
         </nav>
 
         <HeroSection onContactClick={() => setContactOpen(true)} />
@@ -125,8 +154,10 @@ function App() {
         <SkillsSection />
         <ProjectsSection />
         <BlogsSection />
+        <BrandIdentity />
         <EducationSection />
         <AccordionSections />
+        <FAQSection />
         <MarqueeBanner />
       </main>
       

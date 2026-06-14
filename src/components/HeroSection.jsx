@@ -16,7 +16,7 @@ export default function HeroSection({ onContactClick }) {
   const [showPrivacyNotice, setShowPrivacyNotice] = useState(false);
 
   return (
-    <section className="w-full pt-4 pb-10 px-4 max-w-7xl mx-auto flex flex-col md:flex-row gap-8 items-start justify-center selection:bg-custom-yellow selection:text-black">
+    <section id="home" className="w-full pt-4 pb-10 px-4 max-w-7xl mx-auto flex flex-col md:flex-row gap-8 items-start justify-center selection:bg-custom-yellow selection:text-black">
       {/* Left Column — Profile Card */}
       <motion.div
         className="w-full md:w-1/3 bg-white border-2 border-b-4 border-r-4 border-black rounded-3xl p-6 shadow-neo flex flex-col items-center text-center relative overflow-hidden"
@@ -31,7 +31,7 @@ export default function HeroSection({ onContactClick }) {
         <div className="w-32 h-32 bg-custom-pink rounded-full border-4 border-black mb-4 flex items-center justify-center text-4xl overflow-hidden">
           <img 
             src="/profile.webp" 
-            alt="Aditya Sharma" 
+            alt="Aditya Sharma Full Stack Developer Portfolio" 
             className="w-full h-full object-cover"
             fetchPriority="high"
             decoding="async"
@@ -137,18 +137,31 @@ export default function HeroSection({ onContactClick }) {
         animate={{ x: 0, opacity: 1 }}
         transition={{ duration: 0.6, ease: 'easeOut', delay: 0.2 }}
       >
+        {/* Intro/Hero Text Card */}
+        <div className="bg-white p-6 md:p-8 rounded-3xl border-2 border-b-4 border-r-4 border-black shadow-neo">
+          <p className="text-lg font-bold leading-relaxed mb-4 text-black">
+            Official portfolio of <span className="bg-custom-yellow px-1 border border-black">Aditya Sharma (Aadi)</span>, also known as <span className="bg-custom-green px-1 border border-black">Adi Sharma</span>, <span className="bg-custom-pink px-1 border border-black">WTF Aadi</span>, <span className="bg-custom-purple px-1 border border-black text-white">iadi0</span>, and <span className="bg-custom-red px-1 border border-black text-white">iadi01</span>. I am a BCA student, aspiring Software Engineer, Full Stack Developer, and creator of modern web applications, developer tools, and digital experiences from Jamshedpur, India.
+          </p>
+          <p className="text-base font-bold text-gray-700 leading-relaxed">
+            This portfolio is built to showcase my skills, projects, learning journey, and identity as a web developer. It includes <span className="underline decoration-custom-purple decoration-2">GitAura</span>, <span className="underline decoration-custom-green decoration-2">Weather App</span>, <span className="underline decoration-custom-blue decoration-2">TeamJams</span>, Trip Budget Calculator, Furniture Website, Boutique Website, and Restaurant Website.
+          </p>
+        </div>
+
         {/* About card */}
         <div className="bg-custom-yellow p-6 md:p-10 rounded-3xl border-2 border-b-4 border-r-4 border-black shadow-neo">
           <h2 className="text-4xl font-shrikhand mb-6">About Aditya Sharma</h2>
           <p className="text-lg font-medium leading-relaxed mb-4">
-            <span className="font-bold bg-white px-1 border border-black">Aditya Sharma</span>, also known as <span className="font-bold bg-white px-1 border border-black">Aadi</span> and <span className="font-bold bg-white px-1 border border-black">WTF Aadi</span>, is a BCA student and <span className="font-bold bg-white px-1 border border-black">aspiring Full Stack Developer</span> from Jamshedpur, India. This is the official portfolio of Aditya Sharma, created to showcase web development projects, UI/UX work, JavaScript applications, API-based tools, and real-world digital products.
+            <span className="font-bold bg-white px-1 border border-black">Aditya Sharma</span>, also known as <span className="font-bold bg-white px-1 border border-black">Aadi</span> and <span className="font-bold bg-white px-1 border border-black">WTF Aadi</span>, is a BCA student and <span className="font-bold bg-white px-1 border border-black">aspiring Full Stack Developer</span> focused on building clean, useful, and responsive web applications. This portfolio represents the official online presence of Aditya Sharma and is optimized for people searching for <span className="font-bold bg-white px-1 border border-black">Aditya Sharma Portfolio</span>, <span className="font-bold bg-white px-1 border border-black">Adi Sharma Portfolio</span>, <span className="font-bold bg-white px-1 border border-black">Aadi Portfolio</span>, WTF Aadi, <span className="font-bold bg-white px-1 border border-black">iadi0 Portfolio</span>, and <span className="font-bold bg-white px-1 border border-black">iadi01 Developer</span>.
           </p>
           <p className="text-lg font-medium leading-relaxed mb-4">
-            Aadi builds responsive websites, modern web applications, student-focused platforms, business websites, and useful tools that solve practical problems. His work includes <span className="font-bold bg-white px-1 border border-black">GitAura</span> (a GitHub profile analyzer), <span className="font-bold bg-white px-1 border border-black">Weather App</span> (a real-time weather dashboard), <span className="font-bold bg-white px-1 border border-black">TeamJams</span> (a collaborative workspace), Trip Budget Calculator, Restaurant Website, Boutique Website, and Furniture Showcase Website.
+            I work with HTML, CSS, JavaScript, React, Next.js, Node.js, Express.js, MongoDB, REST APIs, UI/UX design, and Generative AI tools. My goal is to become a skilled Software Engineer and build digital products that solve real-world problems.
           </p>
           <p className="text-lg font-medium leading-relaxed mb-4">
+            I have strong technical and communication skills, and a logical approach to problem-solving. My journey in tech has made me adaptable and eager to create and collaborate.
+          </p>
+          {/* <p className="text-lg font-medium leading-relaxed mb-4">
             This portfolio highlights the skills, projects, learning journey, and career goals of Aditya Sharma as an aspiring <span className="font-bold bg-white px-1 border border-black">Full Stack Software Engineer</span>. The goal of WTF Aadi is to build useful, clean, and creative web experiences that turn ideas into working digital products.
-          </p>
+          </p> */}
           <div className="bg-white p-4 border-2 border-black rounded-xl inline-block font-bold shadow-neo-sm">
             🚀 Open to Software and Full-Stack Internships
           </div>

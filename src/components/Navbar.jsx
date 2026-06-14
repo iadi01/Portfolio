@@ -19,11 +19,11 @@ export default function Navbar({ visible, onContactClick }) {
   };
 
   const navItems = [
-    { name: 'EXPERIENCE', id: 'experience' },
+    { name: 'HOME', id: 'home' },
+    { name: 'ABOUT', id: 'about' },
     { name: 'PROJECTS', id: 'projects' },
     { name: 'SKILLS', id: 'skills' },
-    { name: 'BLOGS', id: 'blogs' },
-    { name: 'EDUCATION', id: 'education' },
+    { name: 'JOURNEY', id: 'journey' },
   ];
 
   const handleNavClick = (id) => {
@@ -55,7 +55,10 @@ export default function Navbar({ visible, onContactClick }) {
             </button>
           ))}
           <button
-            onClick={onContactClick}
+            onClick={() => {
+              handleNavClick('contact');
+              onContactClick();
+            }}
             className="px-5 py-2 bg-custom-pink text-black border-2 border-black border-b-8 border-r-8 rounded-full hover:border-b-4 hover:border-r-4 active:translate-y-1 transition-all cursor-pointer font-bold"
           >
             CONTACT
@@ -93,6 +96,7 @@ export default function Navbar({ visible, onContactClick }) {
           <button
             onClick={() => {
               setMobileOpen(false);
+              handleNavClick('contact');
               onContactClick();
             }}
             className="bg-custom-pink border-2 border-black border-b-4 border-r-4 p-3 rounded-xl font-bold active:border-b-2 active:border-r-2 active:translate-y-1 text-left transition-all cursor-pointer"
