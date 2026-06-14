@@ -137,13 +137,13 @@ export default function HeroSection({ onContactClick }) {
         animate={{ x: 0, opacity: 1 }}
         transition={{ duration: 0.6, ease: 'easeOut', delay: 0.2 }}
       >
-        {/* Intro/Hero Text Card */}
-        <div className="bg-white p-6 md:p-8 rounded-3xl border-2 border-b-4 border-r-4 border-black shadow-neo">
-          <p className="text-lg font-bold leading-relaxed mb-4 text-black">
-            Official portfolio of <span className="bg-custom-yellow px-1 border border-black">Aditya Sharma (Aadi)</span>, also known as <span className="bg-custom-green px-1 border border-black">Adi Sharma</span>, <span className="bg-custom-pink px-1 border border-black">WTF Aadi</span>, <span className="bg-custom-purple px-1 border border-black text-white">iadi0</span>, and <span className="bg-custom-red px-1 border border-black text-white">iadi01</span>. I am a BCA student, aspiring Software Engineer, Full Stack Developer, and creator of modern web applications, developer tools, and digital experiences from Jamshedpur, India.
+        {/* Intro/Hero Text Card (Visually hidden for UI layout preservation, active for SEO crawlers) */}
+        <div className="sr-only">
+          <p>
+            Official portfolio of Aditya Sharma (Aadi), also known as Adi Sharma, WTF Aadi, iadi0, and iadi01. I am a BCA student, aspiring Software Engineer, Full Stack Developer, and creator of modern web applications, developer tools, and digital experiences from Jamshedpur, India.
           </p>
-          <p className="text-base font-bold text-gray-700 leading-relaxed">
-            This portfolio is built to showcase my skills, projects, learning journey, and identity as a web developer. It includes <span className="underline decoration-custom-purple decoration-2">GitAura</span>, <span className="underline decoration-custom-green decoration-2">Weather App</span>, <span className="underline decoration-custom-blue decoration-2">TeamJams</span>, Trip Budget Calculator, Furniture Website, Boutique Website, and Restaurant Website.
+          <p>
+            This portfolio is built to showcase my skills, projects, learning journey, and identity as a web developer. It includes GitAura, Weather App, TeamJams, Trip Budget Calculator, Furniture Website, Boutique Website, and Restaurant Website.
           </p>
         </div>
 
