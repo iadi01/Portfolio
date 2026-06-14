@@ -30,7 +30,7 @@ export default function HeroSection({ onContactClick }) {
         {/* Avatar */}
         <div className="w-32 h-32 bg-custom-pink rounded-full border-4 border-black mb-4 flex items-center justify-center text-4xl overflow-hidden">
           <img 
-            src="/profile.jpg" 
+            src="/profile.webp" 
             alt="Aditya Sharma" 
             className="w-full h-full object-cover"
             fetchPriority="high"

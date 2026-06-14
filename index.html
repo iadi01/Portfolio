@@ -1,21 +1,45 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-5GHQNZJJ');</script>
-    <!-- End Google Tag Manager -->
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-8LLYBL0EYF"></script>
+    <!-- Optimized Analytics & GTM: Defer loading until first user interaction -->
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
+      (function() {
+        var initialized = false;
+        function initAnalytics() {
+          if (initialized) return;
+          initialized = true;
 
-      gtag('config', 'G-8LLYBL0EYF');
+          // Remove interaction listeners
+          window.removeEventListener('scroll', initAnalytics);
+          window.removeEventListener('mousemove', initAnalytics);
+          window.removeEventListener('touchstart', initAnalytics);
+          window.removeEventListener('keydown', initAnalytics);
+
+          // 1. Load Google Tag Manager
+          (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+          new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+          j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+          'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+          })(window,document,'script','dataLayer','GTM-5GHQNZJJ');
+
+          // 2. Load Google tag (gtag.js)
+          var gTagScript = document.createElement('script');
+          gTagScript.async = true;
+          gTagScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-8LLYBL0EYF';
+          document.head.appendChild(gTagScript);
+
+          window.dataLayer = window.dataLayer || [];
+          window.gtag = function(){dataLayer.push(arguments);}
+          window.gtag('js', new Date());
+          window.gtag('config', 'G-8LLYBL0EYF');
+        }
+
+        // Listen for interaction events
+        window.addEventListener('scroll', initAnalytics, { passive: true });
+        window.addEventListener('mousemove', initAnalytics, { passive: true });
+        window.addEventListener('touchstart', initAnalytics, { passive: true });
+        window.addEventListener('keydown', initAnalytics, { passive: true });
+      })();
     </script>
     <meta charset="UTF-8" />
     <link rel="shortcut icon" href="/favicon.png?v=3" type="image/x-icon" />
@@ -36,7 +60,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin />
     <link rel="preconnect" href="https://www.google-analytics.com" crossorigin />
-    <link rel="preload" as="image" href="/profile.jpg" fetchpriority="high" />
+    <link rel="preload" as="image" href="/profile.webp" fetchpriority="high" />
     <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Shrikhand&display=swap" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Shrikhand&display=swap" media="print" onload="this.media='all'" />
     <noscript>
