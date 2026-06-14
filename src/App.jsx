@@ -145,7 +145,7 @@ function App() {
           <a href="#about">About Aditya Sharma</a>
           <a href="#projects">Aditya Sharma Portfolio Projects</a>
           <a href="#skills">Skills of Aditya Sharma</a>
-          <a href="#journey">Learning Journey of Aditya Sharma</a>
+          <a href="#experience">Learning Journey of Aditya Sharma</a>
           <a href="#contact">Contact Aditya Sharma</a>
         </nav>
 

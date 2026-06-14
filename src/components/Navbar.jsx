@@ -19,11 +19,11 @@ export default function Navbar({ visible, onContactClick }) {
   };
 
   const navItems = [
-    { name: 'HOME', id: 'home' },
-    { name: 'ABOUT', id: 'about' },
+    { name: 'EXPERIENCE', id: 'experience' },
     { name: 'PROJECTS', id: 'projects' },
     { name: 'SKILLS', id: 'skills' },
-    { name: 'JOURNEY', id: 'journey' },
+    { name: 'BLOGS', id: 'blogs' },
+    { name: 'EDUCATION', id: 'education' },
   ];
 
   const handleNavClick = (id) => {
