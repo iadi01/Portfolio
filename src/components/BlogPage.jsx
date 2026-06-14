@@ -15,6 +15,109 @@ export default function BlogPage({ onContactClick }) {
   }, []);
 
   useEffect(() => {
+    // 1. Store original metadata to restore on unmount
+    const originalTitle = document.title;
+    const metaDesc = document.querySelector('meta[name="description"]');
+    const originalDesc = metaDesc ? metaDesc.getAttribute("content") : "";
+    const metaKeywords = document.querySelector('meta[name="keywords"]');
+    const originalKeywords = metaKeywords ? metaKeywords.getAttribute("content") : "";
+    const canonical = document.querySelector('link[rel="canonical"]');
+    const originalCanonical = canonical ? canonical.getAttribute("href") : "";
+
+    // 2. Set new SEO metadata for the blog page
+    document.title = "Aditya Sharma Portfolio Blogs | WTF Aadi | Full Stack Developer | iadi0";
+    
+    if (metaDesc) {
+      metaDesc.setAttribute("content", "Explore the official blog posts of Aditya Sharma (Aadi / WTF Aadi / iadi0 / iadi01). Comprehensive articles on Full Stack Development, Software Engineering, REST APIs, Git workflows, UI/UX, and performance optimization from Jamshedpur, India.");
+    }
+    
+    if (metaKeywords) {
+      metaKeywords.setAttribute("content", "Aditya Sharma, Aditya Sharma Portfolio, Aditya Sharma Developer, Aditya Sharma Full Stack Developer, Aditya Sharma Software Engineer, Adi Sharma, Adi Sharma Portfolio, Aadi, Aadi Portfolio, WTF Aadi, WTF Aadi Portfolio, iadi0, iadi0 Portfolio, iadi01, Full Stack Developer Portfolio, Software Engineer Portfolio, BCA Student Portfolio, Developer from India, Developer from Jamshedpur, Aditya Sharma Portfolio Website, Aditya Sharma Official Website, Aditya Sharma Personal Website, Aditya Sharma GitHub, Aditya Sharma LinkedIn, Aditya Sharma Developer Portfolio, Aditya Sharma Coding Portfolio, Aditya Sharma Resume, Aditya Sharma UI UX, Aditya Sharma JavaScript Developer, Aadi Portfolio Website, Aadi Official Website, Aadi Personal Website, Aadi Coding Portfolio, Aadi Developer Portfolio, Aadi Student Portfolio, Aadi BCA Student, Aadi Programmer, Aadi React Developer, Aadi Next.js Developer, Adi Sharma Website, Adi Sharma Portfolio Website, Adi Sharma Official Website, Adi Sharma Personal Website, Adi Sharma Developer Portfolio, Adi Sharma Student Portfolio, Adi Sharma Coding Portfolio, Adi Sharma India, Adi Sharma Jamshedpur, Adi Sharma BCA, Adi Sharma Programmer, WTF Aadi Portfolio Website, WTF Aadi Official Website, WTF Aadi Personal Website, WTF Aadi Coding Portfolio, WTF Aadi Developer Portfolio, WTF Aadi Projects Showcase, WTF Aadi Tech, WTF Aadi Developer, WTF Aadi India, WTF Aadi Jamshedpur, iadi0 Website, iadi0 GitHub, iadi0 Developer Portfolio, iadi0 Personal Website, iadi0 Full Stack Developer, iadi0 Software Engineer, iadi0 Portfolio Website, iadi0 Official Website, iadi0 Coding Portfolio, iadi0 Tech Portfolio, iadi0 Web Developer, iadi0 Student Developer, iadi0 India, iadi0 Jamshedpur, iadi0 Projects, iadi0 GitHub Portfolio, iadi01 Developer, iadi01 Portfolio, iadi01 Website, iadi01 Projects, iadi01 GitHub, iadi01 Developer Portfolio, iadi01 Personal Website, iadi01 Coding Portfolio, iadi01 Full Stack Developer, GitAura Developer, GitAura Project, Weather App Developer, Weather App Project, TeamJams Project, Trip Budget Calculator, Restaurant Website Developer, Furniture Website Developer, Boutique Website Developer, Developer Projects Showcase");
+    }
+    
+    if (canonical) {
+      canonical.setAttribute("href", "https://aadi-sharma.dev/blog");
+    }
+
+    // 3. Inject BreadcrumbList and FAQ Schema JSON-LD
+    const breadcrumbSchema = {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://aadi-sharma.dev/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Blog",
+          "item": "https://aadi-sharma.dev/blog"
+        }
+      ]
+    };
+
+    const faqSchema = {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Who is Aditya Sharma?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Aditya Sharma (also known as Aadi or WTF Aadi) is a BCA student, Full Stack Developer, and aspiring Software Engineer from Jamshedpur, India, building modern web applications."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Who is WTF Aadi?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "WTF Aadi is the personal brand and developer handle of Aditya Sharma, who creates responsive web apps and interactive projects."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the tech stack of iadi0?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Aditya Sharma (iadi0 / iadi01) works with HTML, CSS, JavaScript, React.js, Next.js, Node.js, Express.js, MongoDB, REST APIs, and Git/GitHub."
+          }
+        }
+      ]
+    };
+
+    const breadcrumbScript = document.createElement("script");
+    breadcrumbScript.type = "application/ld+json";
+    breadcrumbScript.id = "blog-breadcrumb-schema";
+    breadcrumbScript.innerHTML = JSON.stringify(breadcrumbSchema);
+    document.head.appendChild(breadcrumbScript);
+
+    const faqScript = document.createElement("script");
+    faqScript.type = "application/ld+json";
+    faqScript.id = "blog-faq-schema";
+    faqScript.innerHTML = JSON.stringify(faqSchema);
+    document.head.appendChild(faqScript);
+
+    // 4. Cleanup on unmount
+    return () => {
+      document.title = originalTitle;
+      if (metaDesc) metaDesc.setAttribute("content", originalDesc);
+      if (metaKeywords) metaKeywords.setAttribute("content", originalKeywords);
+      if (canonical) canonical.setAttribute("href", originalCanonical);
+      
+      const elB = document.getElementById("blog-breadcrumb-schema");
+      if (elB) elB.remove();
+      
+      const elF = document.getElementById("blog-faq-schema");
+      if (elF) elF.remove();
+    };
+  }, []);
+
+  useEffect(() => {
     // Scroll to hash target if present
     const hash = window.location.hash;
     if (hash) {

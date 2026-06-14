@@ -28,15 +28,10 @@ export default function Navbar({ visible, onContactClick }) {
   ];
 
   const handleNavClick = (id) => {
-    if (id === 'blogs') {
-      navigateTo('/blog');
+    const el = document.getElementById(id);
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth' });
       setMobileOpen(false);
-    } else {
-      const el = document.getElementById(id);
-      if (el) {
-        el.scrollIntoView({ behavior: 'smooth' });
-        setMobileOpen(false);
-      }
     }
   };
 

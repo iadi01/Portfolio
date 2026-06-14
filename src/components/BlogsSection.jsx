@@ -11,16 +11,19 @@ export default function BlogsSection() {
 
   return (
     <section id="blogs" className="py-10 px-4 max-w-7xl mx-auto w-full selection:bg-custom-yellow selection:text-black">
-      {/* Header */}
+      {/* Header - Clickable to redirect to Blog page */}
       <div className="flex items-center gap-4 mb-10">
-        <div className="bg-custom-purple px-8 py-3 border-4 border-black shadow-neo rounded-full">
+        <div 
+          onClick={() => navigateTo('/blog')}
+          className="bg-custom-purple px-8 py-3 border-4 border-black shadow-neo rounded-full cursor-pointer hover:scale-105 active:translate-y-0.5 active:shadow-none transition-all select-none"
+        >
           <h3 className="text-3xl font-shrikhand text-black">BLOGS</h3>
         </div>
       </div>
 
       {/* Blogs Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {blogs.map((blog, index) => (
+        {blogs.slice(0, 3).map((blog, index) => (
           <div
             key={index}
             className="border-4 border-black shadow-neo hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all flex flex-col h-full relative bg-white rounded-2xl overflow-hidden"
