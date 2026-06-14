@@ -9,7 +9,7 @@ export const personalInfo = {
   email: 'adityasharma10@amityonline.com',
   github: 'https://github.com/iadi01',
   linkedin: 'https://www.linkedin.com/in/iadi0',
-  resumeUrl: '#',
+  resumeUrl: '/resume.pdf',
   about: [
     { text: 'Welcome to the official ', highlight: null },
     { text: 'Aditya Sharma Portfolio', highlight: true },

@@ -64,12 +64,15 @@ export default function HeroSection({ onContactClick }) {
 
         {/* Action buttons */}
         <div className="w-full flex flex-col gap-3 mt-6">
-          <button
-            onClick={() => setShowPrivacyNotice(true)}
-            className="bg-custom-green w-full py-3 rounded-xl border-2 border-black font-bold shadow-neo-sm hover:translate-y-1 hover:shadow-none transition-all flex items-center justify-center gap-2 cursor-pointer font-bold"
+          <a
+            href={personalInfo.resumeUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            download="Aditya_Sharma_Resume.pdf"
+            className="bg-custom-green w-full py-3 rounded-xl border-2 border-black font-bold shadow-neo-sm hover:translate-y-1 hover:shadow-none transition-all flex items-center justify-center gap-2 cursor-pointer block text-center text-black no-underline"
           >
             <FaDownload /> DOWNLOAD_RESUME
-          </button>
+          </a>
           <button
             onClick={onContactClick}
             className="bg-custom-red text-black w-full py-3 rounded-xl border-2 border-black font-bold shadow-neo-sm hover:translate-y-1 hover:shadow-none transition-all flex items-center justify-center gap-2 cursor-pointer font-bold"
