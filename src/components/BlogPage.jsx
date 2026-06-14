@@ -242,6 +242,10 @@ export default function BlogPage({ onContactClick }) {
           >
             CONTACT
           </button>
+          <div className="flex md:hidden items-center gap-2 bg-custom-yellow text-black px-4 py-3 rounded-xl font-mono text-sm border-black border-2 border-b-4 border-r-4 justify-center">
+            <span>█</span>
+            <span>{formatDate(time)}</span>
+          </div>
         </div>
       )}
 
@@ -257,8 +261,8 @@ export default function BlogPage({ onContactClick }) {
         </button>
 
         {/* Section Title */}
-        <div className="bg-custom-pink px-8 py-4 rounded-full border-4 border-black shadow-neo">
-          <h1 className="text-3xl md:text-5xl font-shrikhand text-black">
+        <div className="bg-custom-pink px-4 md:px-8 py-3 md:py-4 rounded-2xl md:rounded-full border-4 border-black shadow-neo text-center max-w-full">
+          <h1 className="text-2xl md:text-5xl font-shrikhand text-black leading-tight">
             Aditya Sharma Portfolio Blogs
           </h1>
         </div>
@@ -269,41 +273,41 @@ export default function BlogPage({ onContactClick }) {
             <article
               key={idx}
               id={blog.slug}
-              className="border-4 border-black shadow-neo bg-white rounded-3xl overflow-hidden hover:-translate-y-1 transition-all"
+              className="border-4 border-black shadow-neo bg-white rounded-2xl md:rounded-3xl overflow-hidden hover:-translate-y-1 transition-all"
             >
               {/* Window Header */}
               <div className={`border-b-4 border-black px-4 py-3 flex justify-between items-center ${cardHeaderColors[idx % cardHeaderColors.length]}`}>
                 <div className="flex gap-2">
-                  <div className="w-3.5 h-3.5 rounded-full bg-white border-2 border-black" />
-                  <div className="w-3.5 h-3.5 rounded-full bg-white border-2 border-black" />
-                  <div className="w-3.5 h-3.5 rounded-full bg-white border-2 border-black" />
+                  <div className="w-3 h-3 rounded-full bg-white border-2 border-black" />
+                  <div className="w-3 h-3 rounded-full bg-white border-2 border-black" />
+                  <div className="w-3 h-3 rounded-full bg-white border-2 border-black" />
                 </div>
-                <span className="font-mono text-xs font-black uppercase tracking-widest">
+                <span className="font-mono text-[10px] md:text-xs font-black uppercase tracking-widest">
                   {blog.slug}.exe
                 </span>
               </div>
 
               {/* Content Panel */}
-              <div className="p-8">
-                <div className="flex justify-between items-start mb-6 gap-6">
-                  <h2 className="text-3xl font-shrikhand text-purple-700 leading-tight">
+              <div className="p-4 md:p-8">
+                <div className="flex flex-col-reverse sm:flex-row justify-between items-start mb-6 gap-4 sm:gap-6">
+                  <h2 className="text-2xl md:text-3xl font-shrikhand text-purple-700 leading-tight">
                     {blog.title}
                   </h2>
-                  <div className="bg-black p-3 rounded-full text-white border-2 border-black flex-shrink-0">
-                    <FaMediumM className="text-3xl" />
+                  <div className="bg-black p-2 md:p-3 rounded-full text-white border-2 border-black flex-shrink-0 self-end sm:self-start">
+                    <FaMediumM className="text-2xl md:text-3xl" />
                   </div>
                 </div>
 
-                <div className="flex flex-wrap gap-4 items-center mb-8 border-b-2 border-black border-dashed pb-4 font-mono font-bold text-sm text-gray-500">
+                <div className="flex flex-wrap gap-2 md:gap-4 items-center mb-8 border-b-2 border-black border-dashed pb-4 font-mono font-bold text-xs md:text-sm text-gray-500">
                   <span className="bg-gray-100 border border-black px-2 py-1 rounded-md">
                     📅 {blog.date}
                   </span>
                   <span className="bg-gray-100 border border-black px-2 py-1 rounded-md">
                     ⏱️ {blog.readTime}
                   </span>
-                  <div className="flex gap-2">
+                  <div className="flex flex-wrap gap-1.5 md:gap-2">
                     {blog.tags.map((tag) => (
-                      <span key={tag} className="bg-custom-blue text-black px-2.5 py-0.5 border border-black rounded-full text-xs">
+                      <span key={tag} className="bg-custom-blue text-black px-2 py-0.5 border border-black rounded-full text-[10px] md:text-xs">
                         #{tag}
                       </span>
                     ))}
@@ -311,7 +315,7 @@ export default function BlogPage({ onContactClick }) {
                 </div>
 
                 {/* Article Body */}
-                <div className="space-y-6 text-lg font-medium text-gray-800 leading-relaxed">
+                <div className="space-y-6 text-base md:text-lg font-medium text-gray-800 leading-relaxed">
                   {blog.content.map((p, pIdx) => (
                     <p key={pIdx}>{p}</p>
                   ))}
@@ -322,16 +326,16 @@ export default function BlogPage({ onContactClick }) {
         </div>
 
         {/* Project Catalog Section - Detailed specs for SEO indexing */}
-        <section id="project-specs" className="w-full max-w-4xl border-4 border-black rounded-3xl bg-white p-8 shadow-neo mt-8">
-          <h2 className="text-3xl font-shrikhand text-custom-purple mb-6 border-b-4 border-black pb-4 flex items-center gap-3">
-            <FaFolderOpen className="text-black" /> Project Technical Specs
+        <section id="project-specs" className="w-full max-w-4xl border-4 border-black rounded-2xl md:rounded-3xl bg-white p-4 md:p-8 shadow-neo mt-8">
+          <h2 className="text-2xl md:text-3xl font-shrikhand text-custom-purple mb-6 border-b-4 border-black pb-4 flex items-center gap-2 md:gap-3">
+            <FaFolderOpen className="text-black flex-shrink-0" /> Project Technical Specs
           </h2>
-          <p className="text-base font-bold text-gray-700 mb-8 leading-relaxed">
+          <p className="text-sm md:text-base font-bold text-gray-700 mb-8 leading-relaxed">
             Detailed performance breakdown, implementation logic, and system architecture for my public applications.
           </p>
           <div className="flex flex-col gap-12 mt-8">
             {projects.map((project, idx) => (
-              <div key={idx} className="border-4 border-black rounded-3xl overflow-hidden bg-gray-50 shadow-neo hover:-translate-y-1 transition-all">
+              <div key={idx} className="border-4 border-black rounded-2xl md:rounded-3xl overflow-hidden bg-gray-50 shadow-neo hover:-translate-y-1 transition-all">
                 {/* Header */}
                 <div className={`border-b-4 border-black px-4 py-2 flex justify-between items-center ${cardHeaderColors[idx % cardHeaderColors.length]}`}>
                   <span className="font-mono text-xs font-black uppercase tracking-wider">{project.title.toLowerCase().replace(/\s+/g, '-')}-spec.exe</span>
@@ -342,8 +346,8 @@ export default function BlogPage({ onContactClick }) {
                   </div>
                 </div>
                 {/* Content */}
-                <div className="p-6">
-                  <h3 className="text-2xl font-bold mb-3 font-mono text-black">
+                <div className="p-4 md:p-6">
+                  <h3 className="text-xl md:text-2xl font-bold mb-3 font-mono text-black">
                     {project.title} — Full Description
                   </h3>
                   <div className="flex flex-wrap gap-2 mb-4">
@@ -353,12 +357,12 @@ export default function BlogPage({ onContactClick }) {
                       </span>
                     ))}
                   </div>
-                  <p className="text-base font-bold text-gray-700 mb-6 leading-relaxed">
+                  <p className="text-sm md:text-base font-bold text-gray-700 mb-6 leading-relaxed">
                     {project.description}
                   </p>
                   <div className="border-t-2 border-black border-dashed pt-4">
                     <h4 className="font-mono font-black text-xs uppercase tracking-wider text-gray-400 mb-3">Core Features & Optimizations</h4>
-                    <ul className="list-disc list-inside space-y-2 text-sm font-bold text-gray-800">
+                    <ul className="list-disc list-outside pl-5 space-y-2 text-sm font-bold text-gray-800">
                       {project.highlights.map((bullet, bulletIdx) => (
                         <li key={bulletIdx}>{bullet}</li>
                       ))}
@@ -371,11 +375,11 @@ export default function BlogPage({ onContactClick }) {
         </section>
 
         {/* SEO Layer - Fully Visible on this Dedicated Blog Page */}
-        <section className="w-full max-w-4xl border-4 border-black rounded-3xl bg-white p-8 shadow-neo mt-8">
-          <h2 className="text-3xl font-shrikhand text-custom-red mb-6 border-b-4 border-black pb-4">
+        <section className="w-full max-w-4xl border-4 border-black rounded-2xl md:rounded-3xl bg-white p-4 md:p-8 shadow-neo mt-8">
+          <h2 className="text-2xl md:text-3xl font-shrikhand text-custom-red mb-6 border-b-4 border-black pb-4">
             About Aditya Sharma Portfolio & Identity
           </h2>
-          <div className="space-y-6 text-base font-bold text-gray-700 leading-relaxed">
+          <div className="space-y-6 text-sm md:text-base font-bold text-gray-700 leading-relaxed">
             <p>
               Welcome to my official portfolio website. I am <span className="bg-custom-yellow px-1 border border-black text-black font-extrabold">Aditya Sharma</span>, also known as <span className="font-extrabold">Aadi, WTF Aadi, iadi0, and iadi01</span>. This platform showcases my web development projects, full-stack applications, software engineering workflows, UI/UX designs, and my learning timeline as an aspiring Full Stack Software Engineer from Jamshedpur, India.
             </p>
