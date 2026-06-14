@@ -1,0 +1,69 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Shrikhand&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", sans-serif;
+  --font-shrikhand: "Shrikhand", cursive;
+  --color-custom-pink: #ff9fac;
+  --color-custom-purple: #a78bfa;
+  --color-custom-blue: #60a5fa;
+  --color-custom-red: #f87171;
+  --color-custom-yellow: #fcd34d;
+  --color-custom-green: #4ade80;
+  --shadow-neo: 6px 6px 0px 0px #000;
+  --shadow-neo-sm: 4px 4px 0px 0px #000;
+}
+
+html, body {
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow-x: hidden !important;
+  max-width: 100% !important;
+  width: 100%;
+}
+
+body {
+  background-color: var(--color-custom-blue);
+  color: #000;
+  font-family: var(--font-sans);
+  min-height: 100vh;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar { width: 12px; }
+::-webkit-scrollbar-track { background: #fff; border-left: 2px solid #000; }
+::-webkit-scrollbar-thumb { background: #000; border: 2px solid #fff; border-radius: 9999px; }
+::-webkit-scrollbar-thumb:hover { background: var(--color-custom-pink); }
+
+/* Marquee Animation */
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  to { transform: translateX(-100%); }
+}
+.animate-marquee {
+  animation: 20s linear infinite marquee;
+}
+
+/* Terminal custom scrollbar */
+.custom-scrollbar::-webkit-scrollbar { width: 8px; }
+.custom-scrollbar::-webkit-scrollbar-track { background: #000; }
+.custom-scrollbar::-webkit-scrollbar-thumb { background: #22d3ee; border-radius: 4px; }
+
+/* Selection */
+::selection { background: var(--color-custom-yellow); color: black; }
+
+/* Smooth scroll */
+html { scroll-behavior: smooth; }
+
+/* Hide default cursor only when the custom cursor is actively rendering */
+body.custom-cursor-active,
+body.custom-cursor-active * {
+  cursor: none !important;
+}
+
+/* Terminal cursor blink */
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
