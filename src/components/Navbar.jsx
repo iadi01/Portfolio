@@ -44,12 +44,12 @@ export default function Navbar({ visible, onContactClick }) {
         </div>
 
         {/* Desktop Nav Items */}
-        <div className="hidden md:flex gap-3 font-bold text-sm items-center">
+        <div className="hidden md:flex gap-1.5 lg:gap-3 font-bold text-xs lg:text-sm items-center">
           {navItems.map((item) => (
             <button
               key={item.id}
               onClick={() => handleNavClick(item.id)}
-              className="px-4 py-2 bg-white text-black rounded-full border-black border-b-4 border-r-4 border-2 hover:bg-white hover:text-black hover:border-black hover:border-b-2 hover:border-r-2 active:border-b-2 active:border-r-2 active:translate-y-1 transition-all cursor-pointer font-bold"
+              className="px-2 py-1 lg:px-4 lg:py-2 bg-white text-black rounded-full border-black border-2 border-b-2 md:border-b-4 border-r-2 md:border-r-4 hover:bg-white hover:text-black hover:border-black hover:border-b-2 hover:border-r-2 active:border-b-2 active:border-r-2 active:translate-y-1 transition-all cursor-pointer font-bold"
             >
               {item.name}
             </button>
@@ -59,14 +59,14 @@ export default function Navbar({ visible, onContactClick }) {
               handleNavClick('contact');
               onContactClick();
             }}
-            className="px-5 py-2 bg-custom-pink text-black border-2 border-black border-b-8 border-r-8 rounded-full hover:border-b-4 hover:border-r-4 active:translate-y-1 transition-all cursor-pointer font-bold"
+            className="px-3 py-1 lg:px-5 lg:py-2 bg-custom-pink text-black border-2 border-black border-b-4 lg:border-b-8 border-r-4 lg:border-r-8 rounded-full hover:border-b-4 hover:border-r-4 active:translate-y-1 transition-all cursor-pointer font-bold"
           >
             CONTACT
           </button>
         </div>
 
-        {/* Date Display badge */}
-        <div className="hidden md:flex items-center gap-2 bg-custom-yellow text-black px-4 py-1 rounded-full font-mono text-sm border-black border-2 border-b-4 border-r-4">
+        {/* Date Display badge - Hidden on tablets/mobile-desktop to preserve horizontal space */}
+        <div className="hidden lg:flex items-center gap-2 bg-custom-yellow text-black px-4 py-1 rounded-full font-mono text-sm border-black border-2 border-b-4 border-r-4">
           <span>█</span>
           <span>{formatDate(time)}</span>
         </div>
