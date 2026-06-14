@@ -28,7 +28,6 @@ function App() {
       window.history.scrollRestoration = 'manual';
     }
     window.scrollTo(0, 0);
-    setScrollProgress(0);
 
     const handleScroll = () => {
       const scrollTop = document.documentElement.scrollTop;

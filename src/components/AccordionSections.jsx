@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { FaVideo, FaCompass, FaCode } from 'react-icons/fa';
+import { FaVideo, FaCompass } from 'react-icons/fa';
 import { hackathons } from '../data/personalData';
 
 export default function AccordionSections() {
@@ -178,6 +178,8 @@ export default function AccordionSections() {
                         src="/editing.jpg" 
                         alt="Video Editing" 
                         className="w-full h-full object-cover"
+                        loading="lazy"
+                        decoding="async"
                       />
                     </div>
                     <div className="relative z-10">
@@ -202,6 +204,8 @@ export default function AccordionSections() {
                         src="/travel.png" 
                         alt="Travel and Exploration" 
                         className="w-full h-full object-cover"
+                        loading="lazy"
+                        decoding="async"
                       />
                     </div>
                     <div className="relative z-10">

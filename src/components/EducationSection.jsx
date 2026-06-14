@@ -24,7 +24,7 @@ function Chalkboard() {
         ctx.lineWidth = lineWidth;
       }
     }
-  }, []);
+  }, [chalkColor, lineWidth]);
 
   useEffect(() => {
     const handleResize = () => {

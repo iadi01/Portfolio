@@ -33,6 +33,8 @@ export default function HeroSection({ onContactClick }) {
             src="/profile.jpg" 
             alt="Aditya Sharma" 
             className="w-full h-full object-cover"
+            fetchPriority="high"
+            decoding="async"
           />
         </div>
 
