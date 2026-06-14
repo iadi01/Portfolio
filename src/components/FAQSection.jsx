@@ -19,9 +19,9 @@ export default function FAQSection() {
   return (
     <section id="faq" className="w-full py-10 px-4 max-w-7xl mx-auto bg-custom-blue border-2 border-b-4 border-r-4 border-black rounded-3xl shadow-neo selection:bg-custom-yellow selection:text-black">
       {/* Header */}
-      <div className="flex items-center gap-4 mb-10">
-        <div className="bg-custom-yellow px-8 py-3 rounded-full border-4 border-black shadow-neo">
-          <h2 className="text-3xl font-shrikhand text-black">Frequently Asked Questions</h2>
+      <div className="flex items-center gap-4 mb-10 max-w-full">
+        <div className="bg-custom-yellow px-4 md:px-8 py-2.5 md:py-3 rounded-2xl md:rounded-full border-4 border-black w-fit shadow-neo max-w-full">
+          <h2 className="text-xl sm:text-2xl md:text-3xl font-shrikhand text-black text-center leading-tight">Frequently Asked Questions</h2>
         </div>
       </div>
 

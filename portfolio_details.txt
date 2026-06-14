@@ -1,0 +1,164 @@
+ADITYA SHARMA (AADI) - PORTFOLIO WEBSITE DATA
+============================================
+
+1. PERSONAL INFORMATION
+----------------------
+Name: Aditya Sharma
+Nickname: Aadi
+Role: ASPIRING_FULL_STACK_DEV()
+Tagline: I build things for the web.
+Location: JAMSHEDPUR, INDIA
+Status: BCA STUDENT @ AMITY UNIVERSITY
+Mission: Build. Learn. Ship.
+Email: adityasharma10@amityonline.com
+GitHub: https://github.com/iadi01
+LinkedIn: https://www.linkedin.com/in/iadi0
+Resume: #
+
+About Me:
+- "Welcome to the official Aditya Sharma Portfolio. I am Aditya Sharma (Aadi), currently showcasing my work in this Aadi Portfolio. I am a BCA Student Portfolio creator studying at Amity University Online, building a Full Stack Developer Portfolio as a Web Developer Portfolio India builder."
+- "Known online as the iadi0 Developer, I have strong problem-solving skills, a passion for clean code, and an eagerness to learn new technologies. My journey in tech has taught me to be adaptable, curious, and always shipping."
+CTA: 🚀 Open to Internships & Collaboration
+
+
+2. TECH STACK & SKILLS
+----------------------
+- Languages: JavaScript, HTML5, CSS3, Python
+- Frontend: Next.js, Tailwind CSS, Responsive Design
+- Backend: Node.js, REST APIs, MongoDB
+- Databases: MongoDB
+- Core CS: DSA (Learning Phase), OS Concepts (Learning Phase), DBMS (Learning Phase)
+- Tools: Git, GitHub, VS Code, Vercel, Netlify, Figma, Gen AI Tools
+
+
+3. PROJECTS
+-----------
+- GitAura
+  Description: A high-fidelity developer analytics dashboard that generates beautiful GitHub profile visualizations, language breakdown charts, and repository metrics. It allows developers to analyze commit histories, language usage patterns, and contribution trends in real-time.
+  Tech Stack: React, GitHub API, Tailwind CSS, Chart.js
+  Highlights:
+    * Integrated GitHub REST API to aggregate user contributions, language usage, and repository statistics.
+    * Designed interactive data charts (polar area, bar, doughnut) using Chart.js with custom color palettes.
+    * Optimized client-side API caching and request throttling to prevent rate-limiting and accelerate dashboard rendering by 50%.
+    * Developed a clean, user-friendly search interface that lets users query any public GitHub username instantly.
+
+- Weather App
+  Description: A real-time weather analytics application featuring predictive forecasts, geolocation-based lookups, and micro-interaction weather animations. Users can check current weather details, wind speeds, UV index, and get a detailed 5-day forecast for any global city.
+  Tech Stack: JavaScript, Weather API, CSS3, HTML5
+  Highlights:
+    * Integrated OpenWeatherMap API for live atmospheric data processing and 5-day predictive forecasts.
+    * Engineered browser geolocation tracking to serve localized climate data on initial page load.
+    * Implemented dynamic CSS theme transitions mapping application background colors to current climate conditions.
+    * Added responsive design and intuitive icons for varying weather conditions (rainy, sunny, snowy, cloudy).
+
+- Luxury Furniture
+  Description: A premium, responsive e-commerce experience showcasing high-end furniture lines with scroll-driven animations. It features an interactive product catalog, virtual layout preview tools, and a seamless shopping cart experience.
+  Tech Stack: React, Tailwind CSS, Framer Motion
+  Highlights:
+    * Architected immersive UX featuring parallax scrolling, staggered reveals, and scale animations using Framer Motion.
+    * Designed responsive multi-device product catalogs with flat neobrutalist styling overlays.
+    * Optimized image loading pipelines using responsive sizes and progressive image placeholders to increase LCP scores.
+    * Implemented dynamic product filtering by price, category, and material with state-retaining URLs.
+
+- Anjali Boutiques
+  Description: A modern boutique platform featuring product catalogs, instant item filtering, and cart state synchronization. It showcases trending clothing collections, custom outfit requests, and integrates dynamic image grids for a smooth, high-fashion browsing experience.
+  Tech Stack: HTML5, CSS3, JavaScript, Bootstrap
+  Highlights:
+    * Implemented advanced multi-criteria filtering system allowing clients to sort catalog by size, category, and price.
+    * Developed client-side cart checkout logic keeping cart items persistent across page refreshes using browser storage.
+    * Engineered custom neobrutalist grid interfaces supporting quick views and catalog zooming overlays.
+    * Optimized mobile viewports to provide a seamless swipe-to-view clothing gallery on smaller screens.
+
+- Restaurant Website
+  Description: A visually stunning restaurant landing page featuring interactive menus, parallax reservation forms, and booking states. Customers can browse chef specials, filter menu items by dietary preferences, and book tables with instant response mockups.
+  Tech Stack: HTML5, CSS3, JavaScript
+  Highlights:
+    * Designed high-fidelity typography layouts combining display fonts with responsive CSS grid spacing.
+    * Implemented smooth scrolling navigation overlays linking food categories directly to target menu grids.
+    * Integrated interactive forms with client-side input validation and localized confirmation banners.
+    * Added accessibility enhancements including keyboard-navigable menu sections and screen-reader friendly descriptions.
+
+- Trip Budget Calculator
+  Description: A travel expense planning utility that allows users to categorize expenditures, calculate split costs, and track budget constraints. Perfect for groups wishing to allocate trip budgets, log live expenses, and calculate fair payment splits instantly.
+  Tech Stack: React, CSS3, LocalStorage
+  Highlights:
+    * Developed robust cost-splitting algorithm calculation engine with support for multi-currency conversion mockups.
+    * Integrated browser LocalStorage for client-side state persistence to preserve travel lists offline.
+    * Designed budget warning indicators notifying users when expenses cross the preset budget threshold.
+    * Built interactive category charts displaying percentage breakdowns of food, stay, transport, and leisure costs.
+
+- TeamJams
+  Description: A collaborative real-time workspace for teams to brainstorm, map projects, and jam on ideas synchronously. Uses WebSockets for low-latency synchronization of interactive sketchboards, code snippets, and group chat.
+  Tech Stack: React, Node.js, MongoDB, Socket.io
+  Highlights:
+    * Engineered real-time connection state logic using WebSockets (Socket.io) with room-based isolation.
+    * Architected modular Node.js/Express server framework handling live concurrent client updates.
+    * Integrated MongoDB database layer to store active workspace structures and chat history logs.
+    * Designed responsive canvas whiteboard supporting real-time drawing, sticky notes, and text markers.
+
+
+4. WORK EXPERIENCE
+------------------
+- Self-Taught Developer (Independent)
+  Duration: 2024 — Present | Remote
+  Description: Building full-stack web projects, contributing to open source, and continuously learning modern web technologies through hands-on practice.
+
+
+5. EDUCATION
+------------
+- BCA (Bachelor of Computer Applications)
+  Institution: Amity University Online
+  Duration: 2024 — 2027
+  Description: Focusing on Computer Science fundamentals, Data Structures & Algorithms, Database Management, and Web Development.
+
+- Higher Secondary (12th)
+  Institution: High School
+  Duration: 2022 — 2024
+  Description: Completed higher secondary education with focus on Science and Mathematics.
+
+
+6. BLOGS & WRITING
+------------------
+- "My Journey into Web Development"
+  Excerpt: How I went from zero coding knowledge to building full-stack applications in under a year.
+  Date: March 2025 | Read Time: 5 min read | Tags: Personal, Web Dev
+
+- "Why Every Student Should Learn Git"
+  Excerpt: Version control isn't just for pros. Here's why Git should be in every student's toolkit.
+  Date: February 2025 | Read Time: 4 min read | Tags: Git, Tips
+
+- "Building My First React Project"
+  Excerpt: Lessons learned from shipping my first React application — the good, the bad, and the bugs.
+  Date: January 2025 | Read Time: 6 min read | Tags: React, Tutorial
+
+
+7. HACKATHONS
+-------------
+- Code Quest 2025
+  Result: Participant
+  Description: Built a real-time collaboration tool during a 24-hour coding marathon.
+  Tech Stack: React, Socket.io, Node.js
+
+
+8. CODING PROFILES & INTERESTS
+------------------------------
+Coding Profiles:
+- GitHub: @iadi01 (https://github.com/iadi01) | Stats: 6+ Repos
+
+Interests:
+- Video Editing
+- Travel & Exploration
+- Open Source
+- UI/UX Design
+- Building Side Projects
+- Learning New Frameworks
+
+
+9. INTERACTIVE TERMINAL COMMANDS
+--------------------------------
+- help: Show available commands
+- whoami: Personal profile summary
+- skills: Overview of tech stack by categories
+- projects: Highlights of GitAura, Weather App, Luxury Furniture, and TeamJams
+- contact: Email, LinkedIn, and GitHub links
+- sudo hire: Custom friendly response message

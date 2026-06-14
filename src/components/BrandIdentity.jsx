@@ -14,7 +14,7 @@ export default function BrandIdentity() {
           className="bg-custom-yellow border-4 border-black p-6 md:p-8 rounded-3xl shadow-neo flex flex-col justify-between"
         >
           <div>
-            <h2 className="text-3xl md:text-4xl font-shrikhand text-black mb-4 uppercase tracking-wide">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-shrikhand text-black mb-4 uppercase tracking-wide">
               WTF Aadi Personal Brand
             </h2>
             <p className="text-base font-bold text-gray-800 leading-relaxed mb-4">
@@ -40,7 +40,7 @@ export default function BrandIdentity() {
           className="bg-custom-green border-4 border-black p-6 md:p-8 rounded-3xl shadow-neo flex flex-col justify-between"
         >
           <div>
-            <h2 className="text-3xl md:text-4xl font-shrikhand text-black mb-4 uppercase tracking-wide">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-shrikhand text-black mb-4 uppercase tracking-wide">
               iadi0 Developer Identity
             </h2>
             <p className="text-base font-bold text-gray-800 leading-relaxed mb-4">

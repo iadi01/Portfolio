@@ -282,7 +282,7 @@ export default function BlogPage({ onContactClick }) {
                   <div className="w-3 h-3 rounded-full bg-white border-2 border-black" />
                   <div className="w-3 h-3 rounded-full bg-white border-2 border-black" />
                 </div>
-                <span className="font-mono text-[10px] md:text-xs font-black uppercase tracking-widest">
+                <span className="font-mono text-[10px] md:text-xs font-black uppercase tracking-widest truncate max-w-[150px] sm:max-w-none">
                   {blog.slug}.exe
                 </span>
               </div>
@@ -327,7 +327,7 @@ export default function BlogPage({ onContactClick }) {
 
         {/* Project Catalog Section - Detailed specs for SEO indexing */}
         <section id="project-specs" className="w-full max-w-4xl border-4 border-black rounded-2xl md:rounded-3xl bg-white p-4 md:p-8 shadow-neo mt-8">
-          <h2 className="text-2xl md:text-3xl font-shrikhand text-custom-purple mb-6 border-b-4 border-black pb-4 flex items-center gap-2 md:gap-3">
+          <h2 className="text-xl sm:text-2xl md:text-3xl font-shrikhand text-custom-purple mb-6 border-b-4 border-black pb-4 flex items-center gap-2 md:gap-3">
             <FaFolderOpen className="text-black flex-shrink-0" /> Project Technical Specs
           </h2>
           <p className="text-sm md:text-base font-bold text-gray-700 mb-8 leading-relaxed">
@@ -338,7 +338,7 @@ export default function BlogPage({ onContactClick }) {
               <div key={idx} className="border-4 border-black rounded-2xl md:rounded-3xl overflow-hidden bg-gray-50 shadow-neo hover:-translate-y-1 transition-all">
                 {/* Header */}
                 <div className={`border-b-4 border-black px-4 py-2 flex justify-between items-center ${cardHeaderColors[idx % cardHeaderColors.length]}`}>
-                  <span className="font-mono text-xs font-black uppercase tracking-wider">{project.title.toLowerCase().replace(/\s+/g, '-')}-spec.exe</span>
+                  <span className="font-mono text-[10px] sm:text-xs font-black uppercase tracking-wider truncate max-w-[180px] sm:max-w-none">{project.title.toLowerCase().replace(/\s+/g, '-')}-spec.exe</span>
                   <div className="flex gap-2">
                     <a href={project.liveUrl} target="_blank" rel="noreferrer" className="text-black hover:scale-110 transition-transform">
                       <FaExternalLinkAlt className="text-sm" />
@@ -347,7 +347,7 @@ export default function BlogPage({ onContactClick }) {
                 </div>
                 {/* Content */}
                 <div className="p-4 md:p-6">
-                  <h3 className="text-xl md:text-2xl font-bold mb-3 font-mono text-black">
+                  <h3 className="text-lg sm:text-2xl font-bold mb-3 font-mono text-black">
                     {project.title} — Full Description
                   </h3>
                   <div className="flex flex-wrap gap-2 mb-4">
@@ -376,7 +376,7 @@ export default function BlogPage({ onContactClick }) {
 
         {/* SEO Layer - Fully Visible on this Dedicated Blog Page */}
         <section className="w-full max-w-4xl border-4 border-black rounded-2xl md:rounded-3xl bg-white p-4 md:p-8 shadow-neo mt-8">
-          <h2 className="text-2xl md:text-3xl font-shrikhand text-custom-red mb-6 border-b-4 border-black pb-4">
+          <h2 className="text-xl sm:text-2xl md:text-3xl font-shrikhand text-custom-red mb-6 border-b-4 border-black pb-4">
             About Aditya Sharma Portfolio & Identity
           </h2>
           <div className="space-y-6 text-sm md:text-base font-bold text-gray-700 leading-relaxed">
@@ -405,9 +405,11 @@ export default function BlogPage({ onContactClick }) {
         <h2 className="text-2xl font-shrikhand text-custom-pink mb-2">
           Contact Aditya Sharma
         </h2>
-        <p className="text-sm text-gray-400 mb-6 font-mono font-bold">
-          Email: adityasharma10@amityonline.com | Location: Jamshedpur, India
-        </p>
+        <div className="text-sm text-gray-400 mb-6 font-mono font-bold px-4 flex flex-col sm:flex-row gap-2 justify-center items-center">
+          <span>Email: adityasharma10@amityonline.com</span>
+          <span className="hidden sm:inline">|</span>
+          <span>Location: Jamshedpur, India</span>
+        </div>
         
         {/* Social Badges */}
         <div className="flex gap-4 mb-8 text-2xl justify-center">
