@@ -1,5 +1,6 @@
 import { FaMediumM, FaExternalLinkAlt } from 'react-icons/fa';
 import { blogs } from '../data/personalData';
+import { navigateTo } from '../utils/router';
 
 export default function BlogsSection() {
   const cardHeaderColors = [
@@ -49,15 +50,13 @@ export default function BlogsSection() {
                 <span className="bg-gray-100 border border-black px-2 py-1 text-xs font-bold font-mono">
                   {blog.date}
                 </span>
-                <a
-                  href={blog.url}
-                  target="_blank"
-                  rel="noreferrer"
+                <button
+                  onClick={() => navigateTo('/blog', `#${blog.slug}`)}
                   className="bg-black text-white px-4 py-2 font-bold flex items-center justify-center gap-2 hover:bg-gray-800 transition-colors border-2 border-black hover:text-custom-yellow cursor-pointer"
                   aria-label={`Read article: ${blog.title}`}
                 >
                   Read <FaExternalLinkAlt className="text-xs" />
-                </a>
+                </button>
               </div>
             </div>
           </div>

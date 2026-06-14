@@ -11,5 +11,15 @@
       "destination": "https://aadi-sharma.dev/:path*",
       "statusCode": 308
     }
+  ],
+  "rewrites": [
+    {
+      "source": "/blog",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/blog/:path*",
+      "destination": "/index.html"
+    }
   ]
 }

@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { FaBars, FaTimes } from 'react-icons/fa';
+import { navigateTo } from '../utils/router';
 
 export default function Navbar({ visible, onContactClick }) {
   const [time, setTime] = useState(new Date());
@@ -27,10 +28,15 @@ export default function Navbar({ visible, onContactClick }) {
   ];
 
   const handleNavClick = (id) => {
-    const el = document.getElementById(id);
-    if (el) {
-      el.scrollIntoView({ behavior: 'smooth' });
+    if (id === 'blogs') {
+      navigateTo('/blog');
       setMobileOpen(false);
+    } else {
+      const el = document.getElementById(id);
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth' });
+        setMobileOpen(false);
+      }
     }
   };
 

@@ -211,7 +211,12 @@ export const blogs = [
     readTime: '5 min read',
     tags: ['Personal', 'Web Dev'],
     color: 'bg-blue-100',
-    url: '#',
+    slug: 'journey-into-web-dev',
+    content: [
+      "Starting my journey as a BCA student at Amity University, I, Aditya Sharma (also known as Aadi or WTF Aadi), wanted to go beyond textbooks. I wanted to build real things. Coming from Jamshedpur, India, the regional tech scene inspired me to showcase my identity as an aspiring Full Stack Developer and Software Engineer.",
+      "My web development path began in late 2024 with raw HTML5 and CSS3, building layout structures and responsive styling grids. Soon, I unlocked JavaScript, learning about asynchronous APIs, callbacks, and client-side storage. This foundation paved the way for modern frameworks like React and Next.js, and backend databases like MongoDB.",
+      "Today, my portfolio showcases several full-stack applications, from GitAura (developer profile analytics) to Weather App (real-time Atmospheric forecasts), TeamJams (WebSocket collaborative whiteboard), Trip Budget Calculator, and boutique/restaurant showcase sites. My goal is to continually learn, share knowledge, and build digital products that solve real-world problems."
+    ]
   },
   {
     title: 'Why Every Student Should Learn Git',
@@ -220,7 +225,12 @@ export const blogs = [
     readTime: '4 min read',
     tags: ['Git', 'Tips'],
     color: 'bg-green-100',
-    url: '#',
+    slug: 'why-every-student-should-learn-git',
+    content: [
+      "For any developer or student pursuing software engineering, Git is the single most important tool to master. Known online as the iadi0 and iadi01 developer, I publish all my open-source work on GitHub to share code, request feedback, and track revision history. If you look at my repositories under iadi01 GitHub, you will see how version control structures my learning journey.",
+      "Git is not just about staging and committing files. It enables team collaboration, branching workflows, and integration with deployment platforms like Vercel. In my project GitAura (a GitHub profile analytics tool built by Aditya Sharma), I created interactive charts to let users analyze their repository contributions and commits, highlighting the value of Git activity.",
+      "By publishing your projects on GitHub, you build a public resume that recruiters can verify. Whether you are building a Weather App or a complex civic platform, GitHub serves as the official proof of your capabilities as a web developer and software developer in India."
+    ]
   },
   {
     title: 'Building My First React Project',
@@ -229,8 +239,13 @@ export const blogs = [
     readTime: '6 min read',
     tags: ['React', 'Tutorial'],
     color: 'bg-yellow-100',
-    url: '#',
-  },
+    slug: 'building-my-first-react-project',
+    content: [
+      "Stepping from vanilla JavaScript to React was a huge milestone in my developer journey. React introduces component-driven development, allowing developers to create isolated, reusable modules. In this Aditya Sharma Portfolio, every visual component—from the custom cursor to the interactive CLI terminal—is built with modular React code.",
+      "My first major React project was the Weather App, where I learned how to manage state, fetch weather datasets from OpenWeatherMap API, and trigger dynamic CSS theme transitions based on climate conditions. Later, I built Luxury Furniture using Tailwind CSS and Framer Motion for scroll-driven neobrutalist animations, and TeamJams utilizing WebSockets for real-time collaboration.",
+      "Building in React taught me the importance of performance, layout shifts (CLS), and SEO structure. By combining React with next-generation tools, I strive to create web apps that look stunning, load in sub-0.1s, and provide an outstanding user experience."
+    ]
+  }
 ];
 
 export const hackathons = [

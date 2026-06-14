@@ -17,12 +17,41 @@ import BrandIdentity from './components/BrandIdentity';
 import FAQSection from './components/FAQSection';
 import Footer from './components/Footer';
 import CookieConsent from './components/CookieConsent';
+import BlogPage from './components/BlogPage';
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
   const [showContent, setShowContent] = useState(false);
   const [contactOpen, setContactOpen] = useState(false);
   const [scrollProgress, setScrollProgress] = useState(0);
+  const [currentPath, setCurrentPath] = useState(window.location.pathname);
+  const isBlogPage = currentPath.replace(/\/$/, '') === '/blog';
+
+  useEffect(() => {
+    const handlePopState = () => {
+      setCurrentPath(window.location.pathname);
+    };
+    window.addEventListener('popstate', handlePopState);
+    return () => {
+      window.removeEventListener('popstate', handlePopState);
+    };
+  }, []);
+
+  useEffect(() => {
+    if (!isBlogPage) {
+      const hash = window.location.hash;
+      if (hash) {
+        const timer = setTimeout(() => {
+          const id = hash.replace('#', '');
+          const el = document.getElementById(id);
+          if (el) {
+            el.scrollIntoView({ behavior: 'smooth' });
+          }
+        }, 300);
+        return () => clearTimeout(timer);
+      }
+    }
+  }, [currentPath]);
 
   useEffect(() => {
     // Force scroll to top on refresh/load to ensure progress bar starts at 0%
@@ -127,41 +156,47 @@ function App() {
       {/* Top background accent bar */}
       <div className="fixed top-0 left-0 w-full h-2 bg-custom-yellow z-[90]" />
 
-      <Navbar
-        visible={showContent}
-        onContactClick={() => setContactOpen(true)}
-      />
+      {!isBlogPage && (
+        <Navbar
+          visible={showContent}
+          onContactClick={() => setContactOpen(true)}
+        />
+      )}
 
       <ContactModal
         isOpen={contactOpen}
         onClose={() => setContactOpen(false)}
       />
 
-      <main className="w-full max-w-full overflow-x-hidden flex flex-col items-center gap-20 pt-32 pb-20">
-        {/* SEO Accessibility Headings & Links (Invisible in UI) */}
-        <h1 className="sr-only">Aditya Sharma Portfolio | WTF Aadi | Full Stack Developer | Software Engineer | iadi0</h1>
-        <nav aria-label="SEO Internal Links" className="sr-only">
-          <a href="#home">Home</a>
-          <a href="#about">About Aditya Sharma</a>
-          <a href="#projects">Aditya Sharma Portfolio Projects</a>
-          <a href="#skills">Skills of Aditya Sharma</a>
-          <a href="#experience">Learning Journey of Aditya Sharma</a>
-          <a href="#contact">Contact Aditya Sharma</a>
-        </nav>
+      {isBlogPage ? (
+        <BlogPage onContactClick={() => setContactOpen(true)} />
+      ) : (
+        <main className="w-full max-w-full overflow-x-hidden flex flex-col items-center gap-20 pt-32 pb-20">
+          {/* SEO Accessibility Headings & Links (Invisible in UI) */}
+          <h1 className="sr-only">Aditya Sharma Portfolio | WTF Aadi | Full Stack Developer | Software Engineer | iadi0</h1>
+          <nav aria-label="SEO Internal Links" className="sr-only">
+            <a href="#home">Home</a>
+            <a href="#about">About Aditya Sharma</a>
+            <a href="#projects">Aditya Sharma Portfolio Projects</a>
+            <a href="#skills">Skills of Aditya Sharma</a>
+            <a href="#experience">Learning Journey of Aditya Sharma</a>
+            <a href="#contact">Contact Aditya Sharma</a>
+          </nav>
 
-        <HeroSection onContactClick={() => setContactOpen(true)} />
-        <ExperienceSection />
-        <SkillsSection />
-        <ProjectsSection />
-        <BlogsSection />
-        <BrandIdentity />
-        <EducationSection />
-        <AccordionSections />
-        <FAQSection />
-        <MarqueeBanner />
-      </main>
+          <HeroSection onContactClick={() => setContactOpen(true)} />
+          <ExperienceSection />
+          <SkillsSection />
+          <ProjectsSection />
+          <BlogsSection />
+          <BrandIdentity />
+          <EducationSection />
+          <AccordionSections />
+          <FAQSection />
+          <MarqueeBanner />
+        </main>
+      )}
       
-      <Footer />
+      {!isBlogPage && <Footer />}
       <CookieConsent />
     </div>
   );
