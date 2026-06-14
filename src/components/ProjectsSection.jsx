@@ -25,7 +25,7 @@ export default function ProjectsSection() {
             <div className="mt-4 flex justify-between items-start mb-4">
               <div>
                 <h3 className="text-2xl font-shrikhand">{project.title}</h3>
-                <span className="bg-red-500 text-black text-xs font-bold px-2 py-1 border border-black rounded-md ml-1 animate-pulse inline-block">
+                <span className="bg-red-700 text-white text-xs font-bold px-2 py-1 border border-black rounded-md ml-1 animate-pulse inline-block">
                   LIVE PROJECT
                 </span>
               </div>
