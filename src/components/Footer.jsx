@@ -8,8 +8,8 @@ export default function Footer() {
         Email: adityasharma10@amityonline.com | Location: Jamshedpur, India
       </p>
 
-      {/* Footer SEO block */}
-      <section className="max-w-4xl mx-auto px-6 mb-8 text-left border-t border-gray-800 pt-8 mt-8">
+      {/* Visually hidden for UI layout preservation, active for SEO crawlers */}
+      <section className="sr-only">
         <h2 className="text-xl font-shrikhand text-custom-yellow mb-4 uppercase">
           About This Portfolio
         </h2>
