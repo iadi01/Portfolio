@@ -141,10 +141,13 @@ export default function HeroSection({ onContactClick }) {
         <div className="bg-custom-yellow p-6 md:p-10 rounded-3xl border-2 border-b-4 border-r-4 border-black shadow-neo">
           <h2 className="text-4xl font-shrikhand mb-6">About Aditya Sharma</h2>
           <p className="text-lg font-medium leading-relaxed mb-4">
-            I am a <span className="font-bold bg-white px-1 border border-black">{personalInfo.status}</span>, pursuing a Bachelor of Computer Applications. I define myself as an <span className="font-bold bg-white px-1 border border-black">aspiring Full-Stack Developer</span> who loves building things for the web.
+            <span className="font-bold bg-white px-1 border border-black">Aditya Sharma</span>, also known as <span className="font-bold bg-white px-1 border border-black">Aadi</span> and <span className="font-bold bg-white px-1 border border-black">WTF Aadi</span>, is a BCA student and <span className="font-bold bg-white px-1 border border-black">aspiring Full Stack Developer</span> from Jamshedpur, India. This is the official portfolio of Aditya Sharma, created to showcase web development projects, UI/UX work, JavaScript applications, API-based tools, and real-world digital products.
           </p>
           <p className="text-lg font-medium leading-relaxed mb-4">
-            I have strong technical and communication skills, and a logical approach to problem-solving. My journey in tech has made me adaptable and eager to create and collaborate.
+            Aadi builds responsive websites, modern web applications, student-focused platforms, business websites, and useful tools that solve practical problems. His work includes <span className="font-bold bg-white px-1 border border-black">GitAura</span> (a GitHub profile analyzer), <span className="font-bold bg-white px-1 border border-black">Weather App</span> (a real-time weather dashboard), <span className="font-bold bg-white px-1 border border-black">TeamJams</span> (a collaborative workspace), Trip Budget Calculator, Restaurant Website, Boutique Website, and Furniture Showcase Website.
+          </p>
+          <p className="text-lg font-medium leading-relaxed mb-4">
+            This portfolio highlights the skills, projects, learning journey, and career goals of Aditya Sharma as an aspiring <span className="font-bold bg-white px-1 border border-black">Full Stack Software Engineer</span>. The goal of WTF Aadi is to build useful, clean, and creative web experiences that turn ideas into working digital products.
           </p>
           <div className="bg-white p-4 border-2 border-black rounded-xl inline-block font-bold shadow-neo-sm">
             🚀 Open to Software and Full-Stack Internships

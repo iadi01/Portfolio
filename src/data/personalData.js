@@ -69,7 +69,7 @@ export const skills = [
 export const projects = [
   {
     title: 'GitAura',
-    description: 'A high-fidelity developer analytics dashboard that generates beautiful GitHub profile visualizations, language breakdown charts, and repository metrics. It allows developers to analyze commit histories, language usage patterns, and contribution trends in real-time.',
+    description: 'GitAura is a high-fidelity developer analytics dashboard built by Aditya Sharma (Aadi) to generate profile visualizations. It lets developers analyze commit histories, language usage patterns, and contribution trends through interactive charts. By integrating the GitHub API, GitAura aggregates raw data into visual breakdowns of repositories. This tool helps developers showcase their open source contributions, manage repository analytics, and optimize developer profile views. Designed for maximum responsiveness, the interface provides seamless data caching to ensure fast loading times and premium user experiences for recruiters viewing candidate profiles.',
     tech: ['React', 'GitHub API', 'Tailwind CSS', 'Chart.js'],
     color: 'bg-custom-purple',
     borderColor: 'border-custom-yellow',
@@ -84,7 +84,7 @@ export const projects = [
   },
   {
     title: 'Weather App',
-    description: 'A real-time weather analytics application featuring predictive forecasts, geolocation-based lookups, and micro-interaction weather animations. Users can check current weather details, wind speeds, UV index, and get a detailed 5-day forecast for any global city.',
+    description: 'Weather App is a real-time weather analytics application developed by Aditya Sharma (Aadi) featuring predictive forecasts and location-based lookups. Users can check current weather details, wind speeds, UV index, and get a detailed 5-day forecast for any global city. The application parses atmospheric datasets from OpenWeatherMap API and updates dynamic styling based on localized weather conditions. Leveraging browser geolocation tracking, it serves local temperature details instantly on page load. Designed with a clean, fully responsive neobrutalist grid, this application ensures an outstanding mobile and desktop user experience.',
     tech: ['JavaScript', 'Weather API', 'CSS3', 'HTML5'],
     color: 'bg-custom-blue',
     borderColor: 'border-custom-yellow',
@@ -99,7 +99,7 @@ export const projects = [
   },
   {
     title: 'Luxury Furniture',
-    description: 'A premium, responsive e-commerce experience showcasing high-end furniture lines with scroll-driven animations. It features an interactive product catalog, virtual layout preview tools, and a seamless shopping cart experience.',
+    description: 'Luxury Furniture is a premium e-commerce landing page designed by Aditya Sharma (Aadi) showcasing high-end furniture lines with scroll-driven animations. It features an interactive product catalog, virtual layout preview tools, and a seamless shopping cart experience. Built with React and Framer Motion, it features smooth parallax scrolling, staggered card entries, and scale animations that create an immersive, premium user experience. The styling uses a bold neobrutalist layout with high contrast, responsive viewports, and custom filtering controls to sort products by price, material, and category.',
     tech: ['React', 'Tailwind CSS', 'Framer Motion'],
     color: 'bg-custom-yellow',
     borderColor: 'border-custom-yellow',
@@ -114,7 +114,7 @@ export const projects = [
   },
   {
     title: 'Anjali Boutiques',
-    description: 'A modern boutique platform featuring product catalogs, instant item filtering, and cart state synchronization. It showcases trending clothing collections, custom outfit requests, and integrates dynamic image grids for a smooth, high-fashion browsing experience.',
+    description: 'Anjali Boutiques is a modern boutique platform designed by Aditya Sharma (Aadi) featuring catalog filtering and cart state synchronization. It showcases trending clothing collections, custom outfit requests, and integrates dynamic image grids for a smooth shopping experience. Leveraging Bootstrap and client-side JavaScript, this boutique platform allows users to sort item catalogs by size, price, and category. It saves cart items persistently using browser LocalStorage so that selections remain intact on page reload. The design optimizes image loading and adapts flawlessly across mobile screens.',
     tech: ['HTML5', 'CSS3', 'JavaScript', 'Bootstrap'],
     color: 'bg-custom-pink',
     borderColor: 'border-custom-yellow',
@@ -129,7 +129,7 @@ export const projects = [
   },
   {
     title: 'Restaurant Website',
-    description: 'A visually stunning restaurant landing page featuring interactive menus, parallax reservation forms, and booking states. Customers can browse chef specials, filter menu items by dietary preferences, and book tables with instant response mockups.',
+    description: 'Restaurant Website is a visually stunning restaurant landing page built by Aditya Sharma (Aadi) featuring interactive menus and booking mockups. Customers can browse chef specials, filter menu items by dietary preferences, and book tables with instant validation feedback. The website uses high-fidelity typography layouts combining bold display fonts with clean spacing grids. It features smooth scrolling page anchors that link menu sections directly, making it extremely easy for users to navigate. Accessible design principles like descriptive aria-labels are integrated throughout for screen-readers.',
     tech: ['HTML5', 'CSS3', 'JavaScript'],
     color: 'bg-custom-green',
     borderColor: 'border-custom-yellow',
@@ -144,7 +144,7 @@ export const projects = [
   },
   {
     title: 'Trip Budget Calculator',
-    description: 'A travel expense planning utility that allows users to categorize expenditures, calculate split costs, and track budget constraints. Perfect for groups wishing to allocate trip budgets, log live expenses, and calculate fair payment splits instantly.',
+    description: 'Trip Budget Calculator is a travel expense planning utility created by Aditya Sharma (Aadi) that allows users to categorize expenditures and track split costs. Perfect for groups wishing to allocate trip budgets, log live expenses, and calculate payment splits instantly. The application uses a robust cost-allocation calculation algorithm and saves the expense lists persistently on the client-side using browser LocalStorage. It features warning thresholds to alert users when their total expenses cross preset limits, and displays detailed budget breakdown charts.',
     tech: ['React', 'CSS3', 'LocalStorage'],
     color: 'bg-orange-200',
     borderColor: 'border-custom-yellow',
@@ -159,7 +159,7 @@ export const projects = [
   },
   {
     title: 'TeamJams',
-    description: 'A collaborative real-time workspace for teams to brainstorm, map projects, and jam on ideas synchronously. Uses WebSockets for low-latency synchronization of interactive sketchboards, code snippets, and group chat.',
+    description: 'TeamJams is a collaborative real-time workspace designed by Aditya Sharma (Aadi) for teams to brainstorm, map projects, and jam on ideas synchronously. It uses WebSockets (Socket.io) for low-latency synchronization of interactive sketchboards, code snippets, and group chat. The backend server is built with Node.js and Express, while MongoDB is integrated to persist session history and chat logs. The drawing canvas supports multiple concurrent drawing tools, sticky notes, and text overlays, creating a smooth team workflow.',
     tech: ['React', 'Node.js', 'MongoDB', 'Socket.io'],
     color: 'bg-custom-purple',
     borderColor: 'border-custom-yellow',

@@ -43,40 +43,27 @@ function App() {
     // Inject Schema.org JSON-LD structured data
     const schema = {
       "@context": "https://schema.org",
-      "@graph": [
-        {
-          "@type": "Person",
-          "@id": "https://aadi-sharma.dev/#person",
-          "name": "Aditya Sharma",
-          "alternateName": ["Aadi", "iadi0"],
-          "url": "https://aadi-sharma.dev",
-          "image": "https://aadi-sharma.dev/profile.jpg",
-          "sameAs": [
-            "https://github.com/iadi01",
-            "https://www.linkedin.com/in/iadi0/",
-            "https://www.instagram.com/iaadi0/"
-          ],
-          "jobTitle": "Full Stack Developer",
-          "worksFor": {
-            "@type": "Organization",
-            "name": "Independent"
-          },
-          "alumniOf": {
-            "@type": "EducationalOrganization",
-            "name": "Amity University Online"
-          },
-          "description": "Official portfolio of Aditya Sharma (Aadi), a BCA student and aspiring Full Stack Developer."
-        },
-        {
-          "@type": "WebSite",
-          "@id": "https://aadi-sharma.dev/#website",
-          "url": "https://aadi-sharma.dev",
-          "name": "Aditya Sharma (Aadi) | Full Stack Developer Portfolio | iadi0",
-          "publisher": {
-            "@id": "https://aadi-sharma.dev/#person"
-          },
-          "description": "Official portfolio of Aditya Sharma (Aadi), a BCA student and aspiring Full Stack Developer. Explore projects, web applications, UI/UX work, and software engineering journey."
-        }
+      "@type": "Person",
+      "name": "Aditya Sharma",
+      "alternateName": ["Aadi", "WTF Aadi", "iadi0", "iadi01"],
+      "url": "https://aadi-sharma.dev/",
+      "jobTitle": "Aspiring Full Stack Developer",
+      "description": "Official portfolio of Aditya Sharma, also known as Aadi and WTF Aadi. BCA student and aspiring Full Stack Developer from Jamshedpur, India.",
+      "sameAs": [
+        "https://github.com/iadi01",
+        "https://www.linkedin.com/in/iadi0/",
+        "https://www.instagram.com/iaadi0/"
+      ],
+      "knowsAbout": [
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "React",
+        "Next.js",
+        "Node.js",
+        "MongoDB",
+        "UI/UX Design",
+        "Full Stack Development"
       ]
     };
 
