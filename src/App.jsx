@@ -14,6 +14,7 @@ import AccordionSections from './components/AccordionSections';
 import EducationSection from './components/EducationSection';
 import BlogsSection from './components/BlogsSection';
 import Footer from './components/Footer';
+import CookieConsent from './components/CookieConsent';
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -144,6 +145,7 @@ function App() {
       </main>
       
       <Footer />
+      <CookieConsent />
     </div>
   );
 }
