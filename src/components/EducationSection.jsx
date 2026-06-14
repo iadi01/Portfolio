@@ -183,7 +183,7 @@ export default function EducationSection() {
       {/* Header */}
       <div className="flex justify-center mb-10">
         <div className="bg-white px-8 py-3 rounded-full border-4 border-black w-fit shadow-neo">
-          <h2 className="text-3xl font-shrikhand">EDUCATION</h2>
+          <h3 className="text-3xl font-shrikhand">EDUCATION</h3>
         </div>
       </div>
 

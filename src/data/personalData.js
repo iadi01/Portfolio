@@ -11,14 +11,20 @@ export const personalInfo = {
   linkedin: 'https://www.linkedin.com/in/iadi0',
   resumeUrl: '#',
   about: [
-    { text: 'I am a ', highlight: null },
-    { text: 'BCA student at Amity University Online', highlight: true },
-    { text: ', passionate about building scalable and beautiful web applications. I define myself as an ', highlight: null },
-    { text: 'aspiring Full-Stack Developer', highlight: true },
-    { text: ' who loves turning ideas into reality through code.', highlight: null },
+    { text: 'Welcome to the official ', highlight: null },
+    { text: 'Aditya Sharma Portfolio', highlight: true },
+    { text: '. I am Aditya Sharma (Aadi), currently showcasing my work in this ', highlight: null },
+    { text: 'Aadi Portfolio', highlight: true },
+    { text: '. I am a ', highlight: null },
+    { text: 'BCA Student Portfolio', highlight: true },
+    { text: ' creator studying at Amity University Online, building a ', highlight: null },
+    { text: 'Full Stack Developer Portfolio', highlight: true },
+    { text: ' as a ', highlight: null },
+    { text: 'Web Developer Portfolio India', highlight: true },
+    { text: ' builder.', highlight: null }
   ],
-  aboutP2: 'I have strong problem-solving skills, a passion for clean code, and an eagerness to learn new technologies. My journey in tech has taught me to be adaptable, curious, and always shipping.',
-  aboutCTA: '\ud83d\ude80 Open to Internships & Collaboration',
+  aboutP2: 'Known online as the iadi0 Developer, I have strong problem-solving skills, a passion for clean code, and an eagerness to learn new technologies. My journey in tech has taught me to be adaptable, curious, and always shipping.',
+  aboutCTA: '🚀 Open to Internships & Collaboration',
 };
 
 export const skills = [

@@ -24,7 +24,7 @@ export default function ExperienceSection() {
         {/* Header */}
         <div className="flex justify-center mb-10 relative z-10">
           <div className="bg-white px-8 py-3 rounded-full border-4 border-black w-fit shadow-neo">
-            <h2 className="text-3xl font-shrikhand tracking-wide">EXPERIENCE</h2>
+            <h2 className="text-3xl font-shrikhand tracking-wide">Experience & Learning Journey</h2>
           </div>
         </div>
 

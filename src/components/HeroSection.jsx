@@ -134,7 +134,7 @@ export default function HeroSection({ onContactClick }) {
       >
         {/* About card */}
         <div className="bg-custom-yellow p-6 md:p-10 rounded-3xl border-2 border-b-4 border-r-4 border-black shadow-neo">
-          <h2 className="text-4xl font-shrikhand mb-6">Hi people!</h2>
+          <h2 className="text-4xl font-shrikhand mb-6">About Aditya Sharma</h2>
           <p className="text-lg font-medium leading-relaxed mb-4">
             I am a <span className="font-bold bg-white px-1 border border-black">{personalInfo.status}</span>, pursuing a Bachelor of Computer Applications. I define myself as an <span className="font-bold bg-white px-1 border border-black">aspiring Full-Stack Developer</span> who loves building things for the web.
           </p>
@@ -157,7 +157,7 @@ export default function HeroSection({ onContactClick }) {
             <div className="text-7xl text-custom-yellow mb-6 drop-shadow-[4px_4px_0_rgba(0,0,0,1)]">
               <FaExclamationTriangle />
             </div>
-            <h2 className="text-3xl font-shrikhand mb-4 uppercase">Privacy Notice</h2>
+            <h3 className="text-3xl font-shrikhand mb-4 uppercase">Privacy Notice</h3>
             <p className="font-bold text-lg border-2 border-black p-4 bg-gray-100 rounded-xl leading-snug">
               Removed resume due to privacy concerns!
             </p>

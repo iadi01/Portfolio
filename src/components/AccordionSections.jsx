@@ -22,7 +22,7 @@ export default function AccordionSections() {
         className="w-[95%] md:w-[85%] lg:w-[75%] mx-auto md:ml-0 relative bg-custom-red border-4 md:border-l-0 border-black shadow-neo"
       >
         <div className="flex items-center justify-between px-6 md:px-10 py-6">
-          <h2 className="text-3xl md:text-4xl font-shrikhand text-white uppercase tracking-wide">HACKATHONS</h2>
+          <h3 className="text-3xl md:text-4xl font-shrikhand text-white uppercase tracking-wide">HACKATHONS</h3>
           <button
             onClick={() => toggle('hackathons')}
             className="bg-white text-black px-6 py-2 font-bold border-4 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-none hover:translate-x-1 hover:translate-y-1 transition-all uppercase tracking-wider cursor-pointer"
@@ -87,7 +87,7 @@ export default function AccordionSections() {
         className="w-[95%] md:w-[85%] lg:w-[75%] mx-auto md:ml-auto md:mr-0 relative bg-custom-yellow border-4 md:border-r-0 border-black shadow-neo mt-4"
       >
         <div className="flex items-center justify-between px-6 md:px-10 py-6">
-          <h2 className="text-3xl md:text-4xl font-shrikhand text-black uppercase tracking-wide">CODING</h2>
+          <h3 className="text-3xl md:text-4xl font-shrikhand text-black uppercase tracking-wide">CODING</h3>
           <button
             onClick={() => toggle('coding')}
             className="bg-black text-custom-yellow px-6 py-2 font-bold border-4 border-white shadow-[4px_4px_0px_0px_rgba(255,255,255,1)] hover:shadow-none hover:translate-x-1 hover:translate-y-1 transition-all uppercase tracking-wider cursor-pointer"
@@ -150,7 +150,7 @@ export default function AccordionSections() {
         className="w-[95%] md:w-[85%] lg:w-[75%] mx-auto md:ml-0 relative bg-custom-purple border-4 md:border-l-0 border-black shadow-neo mt-4"
       >
         <div className="flex items-center justify-between px-6 md:px-10 py-6">
-          <h2 className="text-3xl md:text-4xl font-shrikhand text-black uppercase tracking-wide">BEYOND CODE</h2>
+          <h3 className="text-3xl md:text-4xl font-shrikhand text-black uppercase tracking-wide">BEYOND CODE</h3>
           <button
             onClick={() => toggle('beyond-code')}
             className="bg-white text-black px-6 py-2 font-bold border-4 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-none hover:translate-x-1 hover:translate-y-1 transition-all uppercase tracking-wider cursor-pointer"

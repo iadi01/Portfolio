@@ -51,7 +51,7 @@ export default function ContactModal({ isOpen, onClose }) {
         >
           {/* Header */}
           <div className="text-5xl mb-4">📬</div>
-          <h2 className="text-3xl font-shrikhand mb-2">Let's Talk!</h2>
+          <h3 className="text-3xl font-shrikhand mb-2">Let's Talk!</h3>
           <p className="text-gray-600 font-bold text-sm mb-6">
             I'd love to hear from you. Pick your favorite way to reach out!
           </p>

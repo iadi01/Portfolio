@@ -39,7 +39,56 @@ function App() {
       }
     };
     window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+
+    // Inject Schema.org JSON-LD structured data
+    const schema = {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Person",
+          "@id": "https://aadi-sharma.dev/#person",
+          "name": "Aditya Sharma",
+          "alternateName": ["Aadi", "iadi0"],
+          "url": "https://aadi-sharma.dev",
+          "image": "https://aadi-sharma.dev/profile.jpg",
+          "sameAs": [
+            "https://github.com/iadi01",
+            "https://www.linkedin.com/in/iadi0/",
+            "https://www.instagram.com/iaadi0/"
+          ],
+          "jobTitle": "Full Stack Developer",
+          "worksFor": {
+            "@type": "Organization",
+            "name": "Independent"
+          },
+          "alumniOf": {
+            "@type": "EducationalOrganization",
+            "name": "Amity University Online"
+          },
+          "description": "Official portfolio of Aditya Sharma (Aadi), a BCA student and aspiring Full Stack Developer."
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://aadi-sharma.dev/#website",
+          "url": "https://aadi-sharma.dev",
+          "name": "Aditya Sharma (Aadi) | Full Stack Developer Portfolio | iadi0",
+          "publisher": {
+            "@id": "https://aadi-sharma.dev/#person"
+          },
+          "description": "Official portfolio of Aditya Sharma (Aadi), a BCA student and aspiring Full Stack Developer. Explore projects, web applications, UI/UX work, and software engineering journey."
+        }
+      ]
+    };
+
+    const script = document.createElement('script');
+    script.type = 'application/ld+json';
+    script.innerHTML = JSON.stringify(schema);
+    document.head.appendChild(script);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      document.head.removeChild(script);
+    };
   }, []);
 
   const handleLoadingComplete = () => {
@@ -74,6 +123,16 @@ function App() {
       />
 
       <main className="w-full max-w-full overflow-x-hidden flex flex-col items-center gap-20 pt-32 pb-20">
+        {/* SEO Accessibility Headings & Links (Invisible in UI) */}
+        <h1 className="sr-only">Aditya Sharma (Aadi) – Full Stack Developer Portfolio</h1>
+        <nav aria-label="SEO Internal Links" className="sr-only">
+          <a href="#">Home</a>
+          <a href="#about">About</a>
+          <a href="#projects">Projects</a>
+          <a href="#skills">Skills</a>
+          <a href="#contact">Contact</a>
+        </nav>
+
         <HeroSection onContactClick={() => setContactOpen(true)} />
         <ExperienceSection />
         <SkillsSection />
