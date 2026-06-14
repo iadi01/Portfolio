@@ -18,10 +18,10 @@ export default function BrandIdentity() {
               WTF Aadi Personal Brand
             </h2>
             <p className="text-base font-bold text-gray-800 leading-relaxed mb-4">
-              In the developer community, Aditya Sharma is widely referred to as <span className="bg-white px-1 border border-black">WTF Aadi</span> or <span className="bg-white px-1 border border-black">WTFAadi</span>. This personal branding is highlighted in the WTF Aadi Portfolio and WTF Aadi Website. Known as WTF Aadi Developer, WTFAadi Developer, Aadi WTF Developer, and Aadi Sharma WTF, Aditya builds highly interactive and unconventional web experiences.
+              In the developer community, I am widely referred to as <span className="bg-white px-1 border border-black">WTF Aadi</span> or <span className="bg-white px-1 border border-black">WTFAadi</span>. This personal branding is highlighted in my WTF Aadi Portfolio and WTF Aadi Website. Known as WTF Aadi Developer, WTFAadi Developer, Aadi WTF Developer, and Aadi Sharma WTF, I build highly interactive and unconventional web experiences.
             </p>
             <p className="text-base font-bold text-gray-800 leading-relaxed">
-              Under the WTF Aadi Tech banner, various WTF Aadi Projects, WTFAadi Projects, and contributions are published on WTF Aadi GitHub. As a WTF Aadi Full Stack Developer and WTF Aadi Web Developer, he is actively building projects for the WTF Aadi India ecosystem, representing his creative software engineering endeavors.
+              Under my WTF Aadi Tech banner, I publish various WTF Aadi Projects, WTFAadi Projects, and contributions on my WTF Aadi GitHub. As a WTF Aadi Full Stack Developer and WTF Aadi Web Developer, I am actively building projects for the WTF Aadi India ecosystem, representing my creative software engineering endeavors.
             </p>
           </div>
           <div className="mt-6 flex flex-wrap gap-2">
@@ -44,10 +44,10 @@ export default function BrandIdentity() {
               iadi0 Developer Identity
             </h2>
             <p className="text-base font-bold text-gray-800 leading-relaxed mb-4">
-              <span className="bg-white px-1 border border-black">iadi0</span> is the primary online username and developer identity used by Aditya Sharma across GitHub, LinkedIn, and other professional platforms. Under the names iadi0, iadi0 Portfolio, and iadi01 Developer, Aditya publishes open-source repositories, developer tools, and full stack applications.
+              <span className="bg-white px-1 border border-black">iadi0</span> is my primary online username and developer identity across GitHub, LinkedIn, and other professional platforms. Under the names iadi0, iadi0 Portfolio, and iadi01 Developer, I publish my open-source repositories, developer tools, and full stack applications.
             </p>
             <p className="text-base font-bold text-gray-800 leading-relaxed">
-              Search queries for iadi0 Portfolio, iadi01 Developer, iadi0 GitHub, and iadi0 Projects resolve directly to this official portfolio. This unified identity establishes a strong digital footprint, making it easy for recruiters and developers to explore the projects, code quality, and engineering capabilities of Aditya Sharma.
+              Search queries for my iadi0 Portfolio, iadi01 Developer, iadi0 GitHub, and iadi0 Projects resolve directly to this official portfolio. This unified identity establishes my strong digital footprint, making it easy for recruiters and developers to explore my projects, code quality, and engineering capabilities.
             </p>
           </div>
           <div className="mt-6 flex flex-wrap gap-2">

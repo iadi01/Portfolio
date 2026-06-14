@@ -377,13 +377,13 @@ export default function BlogPage({ onContactClick }) {
           </h2>
           <div className="space-y-6 text-base font-bold text-gray-700 leading-relaxed">
             <p>
-              This is the official portfolio website of <span className="bg-custom-yellow px-1 border border-black text-black font-extrabold">Aditya Sharma</span>, also known as <span className="font-extrabold">Aadi, WTF Aadi, iadi0, and iadi01</span>. The platform showcases web development projects, full-stack applications, software engineering workflows, UI/UX designs, and the learning timeline of an aspiring Full Stack Software Engineer from Jamshedpur, India.
+              Welcome to my official portfolio website. I am <span className="bg-custom-yellow px-1 border border-black text-black font-extrabold">Aditya Sharma</span>, also known as <span className="font-extrabold">Aadi, WTF Aadi, iadi0, and iadi01</span>. This platform showcases my web development projects, full-stack applications, software engineering workflows, UI/UX designs, and my learning timeline as an aspiring Full Stack Software Engineer from Jamshedpur, India.
             </p>
             <p>
-              By combining client-side React code with backend REST APIs, responsive layouts, and performance-tuned asset delivery, my projects (including GitAura, Weather App, TeamJams, Luxury Furniture, Boutique Showcase, and Restaurant systems) are engineered to load instantly.
+              By combining client-side React code with backend REST APIs, responsive layouts, and performance-tuned asset delivery, I engineer my projects (including GitAura, Weather App, TeamJams, Luxury Furniture, Boutique Showcase, and Restaurant systems) to load instantly.
             </p>
             <p>
-              This dedicated content page acts as an indexing hub to verify online entity matches for search terms like: Aditya Sharma Portfolio, Adi Sharma Portfolio, Aadi Portfolio, WTF Aadi Portfolio, iadi0 Portfolio, and iadi01 Developer.
+              I created this dedicated content page as an indexing hub to verify my online entity matches for search queries like: Aditya Sharma Portfolio, Adi Sharma Portfolio, Aadi Portfolio, WTF Aadi Portfolio, iadi0 Portfolio, and iadi01 Developer.
             </p>
           </div>
         </section>
