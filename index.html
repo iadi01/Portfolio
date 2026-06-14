@@ -76,6 +76,30 @@
     <!-- End Google Tag Manager (noscript) -->
     <div id="root">
       <style>#root > header, #root > main { display: none !important; }</style>
+      <!-- Inline Critical Loading Screen to guarantee FCP <= 0.1s and zero CLS -->
+      <div id="initial-loader" style="position: fixed; inset: 0; z-index: 99999; display: flex; flex-direction: column; align-items: center; justify-content: center; background-color: #111; background-image: repeating-linear-gradient(0deg, #111, #111 10vh, #FCD34D 10vh, #FCD34D 10.5vh); cursor: none;">
+        <div style="position: relative; z-index: 10; display: flex; flex-direction: column; align-items: center; text-align: center;">
+          <div style="margin-bottom: 2.5rem; display: flex; flex-direction: column; align-items: center;">
+            <h2 style="color: #FCD34D; font-family: 'Shrikhand', cursive; font-size: 2.5rem; margin-bottom: 1rem; text-shadow: 4px 4px 0px rgba(0,0,0,1); letter-spacing: 0.05em;">
+              LOADING...
+            </h2>
+            <div style="font-family: monospace; font-weight: bold; font-size: 1.5rem; color: white; background-color: black; border: 2px solid white; border-bottom-width: 4px; border-right-width: 4px; padding: 0.25rem 1rem; display: inline-block;">
+              0%
+            </div>
+          </div>
+          <div style="width: 20rem; height: 3.5rem; background-color: black; border: 2px solid white; border-bottom-width: 8px; border-right-width: 8px; border-radius: 2rem; position: relative;">
+            <div style="height: 100%; width: 0%; background-color: #FCD34D; border-radius: 2rem;"></div>
+          </div>
+        </div>
+        <div style="position: absolute; bottom: 2.5rem; left: 50%; transform: translateX(-50%); display: flex; flex-direction: column; align-items: center;">
+          <div style="width: 16rem; height: 2rem; background-color: #f59e0b; border-radius: 9999px; border: 4px solid #b45309; box-shadow: 0px 10px 20px rgba(0,0,0,0.8); position: relative; display: flex; align-items: center; justify-content: space-between; padding: 0 1rem;">
+            <div style="width: 0.75rem; height: 0.75rem; background-color: #f3f4f6; border-radius: 9999px; border: 1px solid black;"></div>
+            <div style="width: 5rem; height: 0.5rem; background-color: #451a03; border-radius: 9999px;"></div>
+            <div style="width: 0.75rem; height: 0.75rem; background-color: #f3f4f6; border-radius: 9999px; border: 1px solid black;"></div>
+          </div>
+        </div>
+        <div style="position: absolute; bottom: 0; left: 0; right: 0; height: 1.5rem; background-color: #FCD34D; border-top: 4px solid #FCD34D;"></div>
+      </div>
       <!-- Pre-rendered SEO Fallback Content (Replaced when React mounts) -->
       <header>
         <h1>Aditya Sharma Portfolio | WTF Aadi | Full Stack Developer</h1>
