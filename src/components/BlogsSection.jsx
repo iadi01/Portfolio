@@ -13,7 +13,7 @@ export default function BlogsSection() {
       {/* Header */}
       <div className="flex items-center gap-4 mb-10">
         <div className="bg-custom-purple px-8 py-3 border-4 border-black shadow-neo rounded-full">
-          <h3 className="text-3xl font-shrikhand text-white">BLOGS</h3>
+          <h3 className="text-3xl font-shrikhand text-black">BLOGS</h3>
         </div>
       </div>
 
@@ -54,6 +54,7 @@ export default function BlogsSection() {
                   target="_blank"
                   rel="noreferrer"
                   className="bg-black text-white px-4 py-2 font-bold flex items-center justify-center gap-2 hover:bg-gray-800 transition-colors border-2 border-black hover:text-custom-yellow cursor-pointer"
+                  aria-label={`Read article: ${blog.title}`}
                 >
                   Read <FaExternalLinkAlt className="text-xs" />
                 </a>

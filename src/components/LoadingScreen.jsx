@@ -80,9 +80,9 @@ export default function LoadingScreen({ onComplete }) {
       {/* Loading header content */}
       <div className="relative z-10 flex flex-col items-center">
         <div className="text-center mb-10">
-          <h1 className="text-custom-yellow font-shrikhand text-4xl md:text-7xl mb-4 drop-shadow-[4px_4px_0_rgba(0,0,0,1)] tracking-wider">
+          <h2 className="text-custom-yellow font-shrikhand text-4xl md:text-7xl mb-4 drop-shadow-[4px_4px_0_rgba(0,0,0,1)] tracking-wider">
             LOADING...
-          </h1>
+          </h2>
           <div className="font-mono font-bold text-2xl text-white bg-black px-4 py-1 inline-block border-2 border-b-4 border-r-4 border-white">
             {Math.floor(progress)}%
           </div>

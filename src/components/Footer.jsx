@@ -10,7 +10,7 @@ export default function Footer() {
       <p className="text-lg font-shrikhand text-white mb-2">
         Made with ☕, 💻, and a curious soul
       </p>
-      <div className="text-xs text-gray-500">
+      <div className="text-xs text-gray-400">
         © {new Date().getFullYear()} All Rights Reserved.
       </div>
     </footer>

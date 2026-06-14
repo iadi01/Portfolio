@@ -39,7 +39,7 @@ export default function HeroSection({ onContactClick }) {
         </div>
 
         {/* Name */}
-        <h1 className="text-4xl font-shrikhand mb-1">AADI</h1>
+        <h2 className="text-4xl font-shrikhand mb-1">AADI</h2>
 
         {/* Role badge */}
         <div className="bg-black text-white px-3 py-1 font-mono text-sm rounded-md mb-4 rotate-1">
@@ -72,7 +72,7 @@ export default function HeroSection({ onContactClick }) {
           </button>
           <button
             onClick={onContactClick}
-            className="bg-custom-red text-white w-full py-3 rounded-xl border-2 border-black font-bold shadow-neo-sm hover:translate-y-1 hover:shadow-none transition-all flex items-center justify-center gap-2 cursor-pointer font-bold"
+            className="bg-custom-red text-black w-full py-3 rounded-xl border-2 border-black font-bold shadow-neo-sm hover:translate-y-1 hover:shadow-none transition-all flex items-center justify-center gap-2 cursor-pointer font-bold"
           >
             <FaEnvelope /> CONTACT ME
           </button>

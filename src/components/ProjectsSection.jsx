@@ -7,7 +7,7 @@ export default function ProjectsSection() {
       {/* Header */}
       <div className="flex items-center gap-4 mb-10">
         <div className="bg-custom-green px-8 py-3 rounded-full border-4 border-black shadow-neo">
-          <h2 className="text-3xl font-shrikhand text-white">Projects by Aadi</h2>
+          <h2 className="text-3xl font-shrikhand text-black">Projects by Aadi</h2>
         </div>
       </div>
 
@@ -25,7 +25,7 @@ export default function ProjectsSection() {
             <div className="mt-4 flex justify-between items-start mb-4">
               <div>
                 <h3 className="text-2xl font-shrikhand">{project.title}</h3>
-                <span className="bg-red-500 text-white text-xs font-bold px-2 py-1 border border-black rounded-md ml-1 animate-pulse inline-block">
+                <span className="bg-red-500 text-black text-xs font-bold px-2 py-1 border border-black rounded-md ml-1 animate-pulse inline-block">
                   LIVE PROJECT
                 </span>
               </div>
@@ -34,6 +34,7 @@ export default function ProjectsSection() {
                 target="_blank"
                 rel="noreferrer"
                 className="bg-black text-white p-2 rounded-lg hover:bg-gray-800 transition-colors cursor-pointer"
+                aria-label={`View live demo for ${project.title}`}
               >
                 <FaExternalLinkAlt />
               </a>

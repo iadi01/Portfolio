@@ -124,6 +124,7 @@ export default function Terminal() {
             className="flex-1 bg-transparent border-none outline-none text-custom-blue caret-custom-blue font-mono"
             spellCheck={false}
             autoComplete="off"
+            aria-label="Terminal command line input"
           />
           <span className="inline-block w-2 h-4 bg-custom-blue ml-0.5 animate-pulse" />
         </div>

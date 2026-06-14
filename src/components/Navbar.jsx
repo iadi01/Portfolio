@@ -39,7 +39,7 @@ export default function Navbar({ visible, onContactClick }) {
   return (
     <>
       <nav className="fixed top-4 left-1/2 -translate-x-1/2 w-[calc(100%-2rem)] max-w-7xl z-50 bg-custom-purple border-4 border-black rounded-full px-4 py-3 shadow-neo flex justify-between items-center">
-        <div className="text-xl md:text-2xl font-shrikhand text-white drop-shadow-[2px_2px_0_rgba(0,0,0,1)] ml-2">
+        <div className="text-xl md:text-2xl font-shrikhand text-black ml-2">
           PORTFOLIO
         </div>
 
@@ -72,6 +72,7 @@ export default function Navbar({ visible, onContactClick }) {
         <button
           className="lg:hidden text-white text-2xl bg-black p-2 rounded-full border-2 border-white cursor-pointer"
           onClick={() => setMobileOpen(!mobileOpen)}
+          aria-label="Toggle navigation menu"
         >
           {mobileOpen ? <FaTimes /> : <FaBars />}
         </button>

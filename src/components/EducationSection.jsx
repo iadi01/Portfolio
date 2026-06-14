@@ -111,7 +111,7 @@ function Chalkboard() {
   return (
     <div className="h-[400px] md:h-[600px] w-full bg-[#2a2a2a] border-8 border-custom-yellow rounded-3xl shadow-neo relative overflow-hidden group">
       {/* Chalkboard texture pattern */}
-      <div className="absolute inset-0 pointer-events-none opacity-20 bg-[url('https://www.transparenttextures.com/patterns/black-chalk.png')]" />
+      <div className="absolute inset-0 pointer-events-none opacity-20 bg-[url('/chalkboard-texture.svg')]" />
       
       {/* Chalk Controls toolbar */}
       <div className="absolute top-4 left-4 z-10 flex gap-2 bg-white/10 backdrop-blur-sm p-2 rounded-xl border-2 border-white/20">

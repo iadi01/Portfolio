@@ -29,7 +29,7 @@ export default function CookieConsent() {
           className="fixed bottom-6 left-1/2 -translate-x-1/2 w-[calc(100%-2rem)] max-w-lg bg-custom-yellow border-4 border-black rounded-3xl p-6 shadow-neo z-[9999] flex flex-col sm:flex-row items-center justify-between gap-4 font-sans select-none"
         >
           <div className="text-left">
-            <h4 className="font-shrikhand text-xl mb-1 text-black">Cookies &amp; Privacy 🍪</h4>
+            <h3 className="font-shrikhand text-xl mb-1 text-black">Cookies &amp; Privacy 🍪</h3>
             <p className="text-xs font-bold text-gray-800 leading-snug">
               This site uses cookies to ensure you get the best experience on Aadi Portfolio. Accept to proceed!
             </p>
