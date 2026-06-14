@@ -53,16 +53,13 @@ export default function ProjectsSection() {
             </div>
 
             {/* Description */}
-            <p className="text-sm font-medium text-gray-700 mb-4 leading-relaxed">
-              {project.description}
+            <p className="text-sm font-medium text-gray-700 leading-relaxed">
+              {(() => {
+                const sentences = project.description.split('. ');
+                const short = sentences.slice(0, 2).join('. ');
+                return short.endsWith('.') ? short : short + '.';
+              })()}
             </p>
-
-            {/* Highlights bullets list */}
-            <ul className="list-disc list-inside space-y-2 text-sm font-medium border-t-2 border-black pt-4">
-              {project.highlights.map((bullet, bulletIdx) => (
-                <li key={bulletIdx}>{bullet}</li>
-              ))}
-            </ul>
           </div>
         ))}
       </div>

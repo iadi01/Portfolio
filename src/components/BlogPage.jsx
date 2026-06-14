@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
-import { FaArrowLeft, FaMediumM, FaEnvelope, FaGithub, FaLinkedin, FaCode, FaInstagram, FaBars, FaTimes } from 'react-icons/fa';
-import { blogs, personalInfo } from '../data/personalData';
+import { FaArrowLeft, FaMediumM, FaEnvelope, FaGithub, FaLinkedin, FaCode, FaInstagram, FaBars, FaTimes, FaFolderOpen, FaExternalLinkAlt } from 'react-icons/fa';
+import { blogs, personalInfo, projects } from '../data/personalData';
 import { navigateTo } from '../utils/router';
 import FAQSection from './FAQSection';
 import BrandIdentity from './BrandIdentity';
@@ -217,6 +217,55 @@ export default function BlogPage({ onContactClick }) {
             </article>
           ))}
         </div>
+
+        {/* Project Catalog Section - Detailed specs for SEO indexing */}
+        <section id="project-specs" className="w-full max-w-4xl border-4 border-black rounded-3xl bg-white p-8 shadow-neo mt-8">
+          <h2 className="text-3xl font-shrikhand text-custom-purple mb-6 border-b-4 border-black pb-4 flex items-center gap-3">
+            <FaFolderOpen className="text-black" /> Project Technical Specs
+          </h2>
+          <p className="text-base font-bold text-gray-700 mb-8 leading-relaxed">
+            Detailed performance breakdown, implementation logic, and system architecture for my public applications.
+          </p>
+          <div className="flex flex-col gap-12 mt-8">
+            {projects.map((project, idx) => (
+              <div key={idx} className="border-4 border-black rounded-3xl overflow-hidden bg-gray-50 shadow-neo hover:-translate-y-1 transition-all">
+                {/* Header */}
+                <div className={`border-b-4 border-black px-4 py-2 flex justify-between items-center ${cardHeaderColors[idx % cardHeaderColors.length]}`}>
+                  <span className="font-mono text-xs font-black uppercase tracking-wider">{project.title.toLowerCase().replace(/\s+/g, '-')}-spec.exe</span>
+                  <div className="flex gap-2">
+                    <a href={project.liveUrl} target="_blank" rel="noreferrer" className="text-black hover:scale-110 transition-transform">
+                      <FaExternalLinkAlt className="text-sm" />
+                    </a>
+                  </div>
+                </div>
+                {/* Content */}
+                <div className="p-6">
+                  <h3 className="text-2xl font-bold mb-3 font-mono text-black">
+                    {project.title} — Full Description
+                  </h3>
+                  <div className="flex flex-wrap gap-2 mb-4">
+                    {project.tech.map((tag) => (
+                      <span key={tag} className="bg-white border border-black px-2.5 py-0.5 text-xs font-mono font-bold rounded-md">
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                  <p className="text-base font-bold text-gray-700 mb-6 leading-relaxed">
+                    {project.description}
+                  </p>
+                  <div className="border-t-2 border-black border-dashed pt-4">
+                    <h4 className="font-mono font-black text-xs uppercase tracking-wider text-gray-400 mb-3">Core Features & Optimizations</h4>
+                    <ul className="list-disc list-inside space-y-2 text-sm font-bold text-gray-800">
+                      {project.highlights.map((bullet, bulletIdx) => (
+                        <li key={bulletIdx}>{bullet}</li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
 
         {/* SEO Layer - Fully Visible on this Dedicated Blog Page */}
         <section className="w-full max-w-4xl border-4 border-black rounded-3xl bg-white p-8 shadow-neo mt-8">
