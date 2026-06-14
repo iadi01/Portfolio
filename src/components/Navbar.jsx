@@ -44,7 +44,7 @@ export default function Navbar({ visible, onContactClick }) {
         </div>
 
         {/* Desktop Nav Items */}
-        <div className="hidden lg:flex gap-3 font-bold text-sm items-center">
+        <div className="hidden md:flex gap-3 font-bold text-sm items-center">
           {navItems.map((item) => (
             <button
               key={item.id}
@@ -73,7 +73,7 @@ export default function Navbar({ visible, onContactClick }) {
 
         {/* Mobile menu toggle */}
         <button
-          className="lg:hidden text-white text-2xl bg-black p-2 rounded-full border-2 border-white cursor-pointer"
+          className="md:hidden text-white text-2xl bg-black p-2 rounded-full border-2 border-white cursor-pointer"
           onClick={() => setMobileOpen(!mobileOpen)}
           aria-label="Toggle navigation menu"
         >
@@ -83,7 +83,7 @@ export default function Navbar({ visible, onContactClick }) {
 
       {/* Mobile overlay menu */}
       {mobileOpen && (
-        <div className="fixed top-24 left-1/2 -translate-x-1/2 w-[calc(100%-2rem)] max-w-7xl z-40 bg-custom-purple border-4 border-black rounded-3xl p-4 flex flex-col gap-3 shadow-neo animate-bounce-in lg:hidden">
+        <div className="fixed top-24 left-1/2 -translate-x-1/2 w-[calc(100%-2rem)] max-w-7xl z-40 bg-custom-purple border-4 border-black rounded-3xl p-4 flex flex-col gap-3 shadow-neo animate-bounce-in md:hidden">
           {navItems.map((item) => (
             <button
               key={item.id}
