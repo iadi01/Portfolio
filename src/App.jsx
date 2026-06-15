@@ -71,67 +71,8 @@ function App() {
     };
     window.addEventListener('scroll', handleScroll);
 
-    // Inject Schema.org JSON-LD structured data
-    const schema = {
-      "@context": "https://schema.org",
-      "@graph": [
-        {
-          "@type": "Person",
-          "@id": "https://aadi-sharma.dev/#person",
-          "name": "Aditya Sharma",
-          "alternateName": ["Aadi", "Adi Sharma", "WTF Aadi", "iadi0", "iadi01"],
-          "url": "https://aadi-sharma.dev/",
-          "jobTitle": "Aspiring Full Stack Developer",
-          "description": "Official portfolio of Aditya Sharma, also known as Aadi, Adi Sharma, WTF Aadi, iadi0 and iadi01. BCA student, aspiring Software Engineer and Full Stack Developer from Jamshedpur, India.",
-          "email": "adityasharma10@amityonline.com",
-          "address": {
-            "@type": "PostalAddress",
-            "addressLocality": "Jamshedpur",
-            "addressRegion": "Jharkhand",
-            "addressCountry": "IN"
-          },
-          "sameAs": [
-            "https://github.com/iadi01",
-            "https://www.linkedin.com/in/iadi0/",
-            "https://www.instagram.com/iaadi0/"
-          ],
-          "knowsAbout": [
-            "HTML",
-            "CSS",
-            "JavaScript",
-            "React",
-            "Next.js",
-            "Node.js",
-            "Express.js",
-            "MongoDB",
-            "REST APIs",
-            "UI/UX Design",
-            "Full Stack Development",
-            "Software Engineering"
-          ]
-        },
-        {
-          "@type": "WebSite",
-          "@id": "https://aadi-sharma.dev/#website",
-          "url": "https://aadi-sharma.dev/",
-          "name": "Aditya Sharma Portfolio | WTF Aadi",
-          "alternateName": ["WTF Aadi", "iadi0 Portfolio", "Aditya Sharma Portfolio"],
-          "description": "Official portfolio website of Aditya Sharma, also known as Aadi, WTF Aadi, iadi0 and iadi01.",
-          "publisher": {
-            "@id": "https://aadi-sharma.dev/#person"
-          }
-        }
-      ]
-    };
-
-    const script = document.createElement('script');
-    script.type = 'application/ld+json';
-    script.innerHTML = JSON.stringify(schema);
-    document.head.appendChild(script);
-
     return () => {
       window.removeEventListener('scroll', handleScroll);
-      document.head.removeChild(script);
     };
   }, []);
 
