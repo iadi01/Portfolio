@@ -1,4 +1,6 @@
+# Allow all web crawlers and search engine bots to index our portfolio and blogs
 User-agent: *
 Allow: /
 
+# Link to the official XML sitemap
 Sitemap: https://aadi-sharma.dev/sitemap.xml
