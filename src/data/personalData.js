@@ -73,7 +73,7 @@ export const projects = [
     tech: ['React', 'GitHub API', 'Tailwind CSS', 'Chart.js'],
     color: 'bg-custom-purple',
     borderColor: 'border-custom-yellow',
-    liveUrl: '#',
+    liveUrl: 'https://a-git-aura.vercel.app/',
     githubUrl: 'https://github.com/iadi01',
     highlights: [
       'Integrated GitHub REST API to aggregate user contributions, language usage, and repository statistics.',
@@ -88,7 +88,7 @@ export const projects = [
     tech: ['JavaScript', 'Weather API', 'CSS3', 'HTML5'],
     color: 'bg-custom-blue',
     borderColor: 'border-custom-yellow',
-    liveUrl: '#',
+    liveUrl: 'https://weather-app-aadi.vercel.app/',
     githubUrl: 'https://github.com/iadi01',
     highlights: [
       'Integrated OpenWeatherMap API for live atmospheric data processing and 5-day predictive forecasts.',
@@ -103,7 +103,7 @@ export const projects = [
     tech: ['React', 'Tailwind CSS', 'Framer Motion'],
     color: 'bg-custom-yellow',
     borderColor: 'border-custom-yellow',
-    liveUrl: '#',
+    liveUrl: 'https://the-new-furniture.vercel.app/',
     githubUrl: 'https://github.com/iadi01',
     highlights: [
       'Architected immersive UX featuring parallax scrolling, staggered reveals, and scale animations using Framer Motion.',
@@ -118,7 +118,7 @@ export const projects = [
     tech: ['HTML5', 'CSS3', 'JavaScript', 'Bootstrap'],
     color: 'bg-custom-pink',
     borderColor: 'border-custom-yellow',
-    liveUrl: '#',
+    liveUrl: 'https://anjali-boutiques.vercel.app/',
     githubUrl: 'https://github.com/iadi01',
     highlights: [
       'Implemented advanced multi-criteria filtering system allowing clients to sort catalog by size, category, and price.',
@@ -133,7 +133,7 @@ export const projects = [
     tech: ['HTML5', 'CSS3', 'JavaScript'],
     color: 'bg-custom-green',
     borderColor: 'border-custom-yellow',
-    liveUrl: '#',
+    liveUrl: 'https://the-restaurant-project.vercel.app/',
     githubUrl: 'https://github.com/iadi01',
     highlights: [
       'Designed high-fidelity typography layouts combining display fonts with responsive CSS grid spacing.',
@@ -148,7 +148,7 @@ export const projects = [
     tech: ['React', 'CSS3', 'LocalStorage'],
     color: 'bg-orange-200',
     borderColor: 'border-custom-yellow',
-    liveUrl: '#',
+    liveUrl: 'https://asambhav-trip.vercel.app/',
     githubUrl: 'https://github.com/iadi01',
     highlights: [
       'Developed robust cost-splitting algorithm calculation engine with support for multi-currency conversion mockups.',
@@ -163,7 +163,7 @@ export const projects = [
     tech: ['React', 'Node.js', 'MongoDB', 'Socket.io'],
     color: 'bg-custom-purple',
     borderColor: 'border-custom-yellow',
-    liveUrl: '#',
+    liveUrl: 'https://teamjams.vercel.app/',
     githubUrl: 'https://github.com/iadi01',
     highlights: [
       'Engineered real-time connection state logic using WebSockets (Socket.io) with room-based isolation.',
