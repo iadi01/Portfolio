@@ -1,5 +1,6 @@
 import { FaExternalLinkAlt } from 'react-icons/fa';
 import { projects } from '../data/personalData';
+import { navigateTo } from '../utils/router';
 
 export default function ProjectsSection() {
   return (
@@ -25,17 +26,27 @@ export default function ProjectsSection() {
             {/* Title & Live Link Button */}
             <div className="mt-4 flex justify-between items-start mb-4">
               <div>
-                <h3 className="text-2xl font-shrikhand">{project.title}</h3>
-                <span className="bg-red-700 text-white text-xs font-bold px-2 py-1 border border-black rounded-md ml-1 animate-pulse inline-block">
+                <h3 
+                  onClick={() => navigateTo('/blog', `#${project.title.toLowerCase().replace(/\s+/g, '-')}-spec`)}
+                  className="text-2xl font-shrikhand cursor-pointer hover:text-custom-purple transition-colors"
+                >
+                  {project.title}
+                </h3>
+                <span 
+                  onClick={() => navigateTo('/blog', `#${project.title.toLowerCase().replace(/\s+/g, '-')}-spec`)}
+                  className="bg-red-700 text-white text-xs font-bold px-2 py-1 border border-black rounded-md ml-1 animate-pulse inline-block cursor-pointer"
+                >
                   LIVE PROJECT
                 </span>
               </div>
               <a
-                href={project.liveUrl}
-                target="_blank"
-                rel="noreferrer"
+                href={`/blog#${project.title.toLowerCase().replace(/\s+/g, '-')}-spec`}
+                onClick={(e) => {
+                  e.preventDefault();
+                  navigateTo('/blog', `#${project.title.toLowerCase().replace(/\s+/g, '-')}-spec`);
+                }}
                 className="bg-black text-white p-2 rounded-lg hover:bg-gray-800 transition-colors cursor-pointer"
-                aria-label={`View live demo for ${project.title}`}
+                aria-label={`View detailed specs for ${project.title}`}
               >
                 <FaExternalLinkAlt />
               </a>

@@ -335,7 +335,11 @@ export default function BlogPage({ onContactClick }) {
           </p>
           <div className="flex flex-col gap-12 mt-8">
             {projects.map((project, idx) => (
-              <div key={idx} className="border-4 border-black rounded-2xl md:rounded-3xl overflow-hidden bg-gray-50 shadow-neo hover:-translate-y-1 transition-all">
+              <div 
+                key={idx} 
+                id={`${project.title.toLowerCase().replace(/\s+/g, '-')}-spec`}
+                className="border-4 border-black rounded-2xl md:rounded-3xl overflow-hidden bg-gray-50 shadow-neo hover:-translate-y-1 transition-all"
+              >
                 {/* Header */}
                 <div className={`border-b-4 border-black px-4 py-2 flex justify-between items-center ${cardHeaderColors[idx % cardHeaderColors.length]}`}>
                   <span className="font-mono text-[10px] sm:text-xs font-black uppercase tracking-wider truncate max-w-[180px] sm:max-w-none">{project.title.toLowerCase().replace(/\s+/g, '-')}-spec.exe</span>
