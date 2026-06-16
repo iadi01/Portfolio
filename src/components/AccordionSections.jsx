@@ -2,11 +2,13 @@ import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FaVideo, FaCompass } from 'react-icons/fa';
 import { hackathons } from '../data/personalData';
+import { audioSynth } from '../utils/audioSynth';
 
 export default function AccordionSections() {
   const [openSection, setOpenSection] = useState(null);
 
   const toggle = (id) => {
+    audioSynth.playClick();
     setOpenSection(openSection === id ? null : id);
   };
 
@@ -25,6 +27,7 @@ export default function AccordionSections() {
           <h3 className="text-3xl md:text-4xl font-shrikhand text-white uppercase tracking-wide">HACKATHONS</h3>
           <button
             onClick={() => toggle('hackathons')}
+            onMouseEnter={() => audioSynth.playHover()}
             className="bg-white text-black px-6 py-2 font-bold border-4 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-none hover:translate-x-1 hover:translate-y-1 transition-all uppercase tracking-wider cursor-pointer"
           >
             {openSection === 'hackathons' ? 'Close' : 'Open'}
@@ -45,7 +48,9 @@ export default function AccordionSections() {
                   {hackathons.map((h, idx) => (
                     <div
                       key={idx}
-                      className="border-4 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-y-[-4px] transition-all flex flex-col h-full relative bg-white rounded-2xl overflow-hidden"
+                      onClick={() => audioSynth.playClick()}
+                      onMouseEnter={() => audioSynth.playHover()}
+                      className="border-4 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-y-[-4px] transition-all flex flex-col h-full relative bg-white rounded-2xl overflow-hidden cursor-pointer"
                     >
                       {/* Window Header */}
                       <div className={`border-b-4 border-black px-3 py-2 flex justify-between items-center ${idx === 0 ? 'bg-custom-yellow' : 'bg-custom-blue'}`}>
@@ -90,6 +95,7 @@ export default function AccordionSections() {
           <h3 className="text-3xl md:text-4xl font-shrikhand text-black uppercase tracking-wide">CODING</h3>
           <button
             onClick={() => toggle('coding')}
+            onMouseEnter={() => audioSynth.playHover()}
             className="bg-black text-custom-yellow px-6 py-2 font-bold border-4 border-white shadow-[4px_4px_0px_0px_rgba(255,255,255,1)] hover:shadow-none hover:translate-x-1 hover:translate-y-1 transition-all uppercase tracking-wider cursor-pointer"
           >
             {openSection === 'coding' ? 'Close' : 'Open'}
@@ -107,7 +113,11 @@ export default function AccordionSections() {
             >
               <div className="px-6 md:px-10 pb-10">
                 <div className="max-w-2xl mx-auto">
-                  <div className="bg-white border-4 border-black p-8 border-b-8 border-r-8 hover:-translate-y-1 transition-all flex flex-col sm:flex-row items-center gap-6 shadow-neo rounded-3xl w-full">
+                  <div 
+                    onClick={() => audioSynth.playClick()}
+                    onMouseEnter={() => audioSynth.playHover()}
+                    className="bg-white border-4 border-black p-8 border-b-8 border-r-8 hover:-translate-y-1 transition-all flex flex-col sm:flex-row items-center gap-6 shadow-neo rounded-3xl w-full cursor-pointer"
+                  >
                     <div className="bg-black p-6 rounded-full border-4 border-custom-blue flex-shrink-0">
                       <span className="text-6xl">🐙</span>
                     </div>
@@ -128,6 +138,11 @@ export default function AccordionSections() {
                         href="https://github.com/iadi01"
                         target="_blank"
                         rel="noreferrer"
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          audioSynth.playClick();
+                        }}
+                        onMouseEnter={() => audioSynth.playHover()}
                         className="font-mono text-sm font-bold bg-custom-blue text-black p-2 border-2 border-black w-fit shadow-[4px_4px_0_rgba(0,0,0,1)] hover:-translate-y-1 transition-transform cursor-pointer"
                       >
                         🏆 View GitHub Profile (@iadi01)
@@ -153,6 +168,7 @@ export default function AccordionSections() {
           <h3 className="text-3xl md:text-4xl font-shrikhand text-black uppercase tracking-wide">BEYOND CODE</h3>
           <button
             onClick={() => toggle('beyond-code')}
+            onMouseEnter={() => audioSynth.playHover()}
             className="bg-white text-black px-6 py-2 font-bold border-4 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-none hover:translate-x-1 hover:translate-y-1 transition-all uppercase tracking-wider cursor-pointer"
           >
             {openSection === 'beyond-code' ? 'Close' : 'Open'}
@@ -172,7 +188,11 @@ export default function AccordionSections() {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-4xl mx-auto relative z-10">
                   
                   {/* Card 1: Video Editing */}
-                  <div className="bg-white border-4 border-black p-8 border-b-8 border-r-8 hover:-translate-y-1 transition-all relative shadow-neo mt-4 rounded-3xl">
+                  <div 
+                    onClick={() => audioSynth.playClick()}
+                    onMouseEnter={() => audioSynth.playHover()}
+                    className="bg-white border-4 border-black p-8 border-b-8 border-r-8 hover:-translate-y-1 transition-all relative shadow-neo mt-4 rounded-3xl cursor-pointer"
+                  >
                     <div className="absolute -top-10 -right-6 w-32 h-32 bg-custom-yellow rounded-full border-4 border-black overflow-hidden shadow-neo z-20">
                       <img 
                         src="/editing.jpg" 
@@ -198,7 +218,11 @@ export default function AccordionSections() {
                   </div>
 
                   {/* Card 2: Travel & Exploration */}
-                  <div className="bg-white border-4 border-black p-8 border-b-8 border-r-8 hover:-translate-y-1 transition-all relative shadow-neo mt-4 rounded-3xl">
+                  <div 
+                    onClick={() => audioSynth.playClick()}
+                    onMouseEnter={() => audioSynth.playHover()}
+                    className="bg-white border-4 border-black p-8 border-b-8 border-r-8 hover:-translate-y-1 transition-all relative shadow-neo mt-4 rounded-3xl cursor-pointer"
+                  >
                     <div className="absolute -top-10 -right-6 w-32 h-32 bg-custom-pink rounded-full border-4 border-black overflow-hidden shadow-neo z-20">
                       <img 
                         src="/travel.png" 

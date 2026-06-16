@@ -1,6 +1,7 @@
 import { FaMediumM, FaExternalLinkAlt } from 'react-icons/fa';
 import { blogs } from '../data/personalData';
 import { navigateTo } from '../utils/router';
+import { audioSynth } from '../utils/audioSynth';
 
 export default function BlogsSection() {
   const cardHeaderColors = [
@@ -14,8 +15,12 @@ export default function BlogsSection() {
       {/* Header - Clickable to redirect to Blog page */}
       <div className="flex items-center gap-4 mb-10">
         <div 
-          onClick={() => navigateTo('/blog')}
-          className="bg-custom-purple px-8 py-3 border-4 border-black shadow-neo rounded-full cursor-pointer hover:scale-105 active:translate-y-0.5 active:shadow-none transition-all select-none"
+          onClick={() => {
+            audioSynth.playClick();
+            navigateTo('/blog');
+          }}
+          onMouseEnter={() => audioSynth.playHover()}
+          className="bg-custom-purple px-8 py-3 border-4 border-black shadow-neo rounded-full cursor-pointer hover:scale-105 active:translate-y-0.5 active:shadow-none transition-all select-none neo-sticker"
         >
           <h3 className="text-3xl font-shrikhand text-black">BLOGS</h3>
         </div>
@@ -26,7 +31,7 @@ export default function BlogsSection() {
         {blogs.slice(0, 3).map((blog, index) => (
           <div
             key={index}
-            className="border-4 border-black shadow-neo hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all flex flex-col h-full relative bg-white rounded-2xl overflow-hidden"
+            className="border-4 border-black shadow-neo neo-bounce-hover transition-all flex flex-col h-full relative bg-white rounded-2xl overflow-hidden"
           >
             {/* Window Header */}
             <div className={`border-b-4 border-black px-3 py-2 flex justify-between items-center ${cardHeaderColors[index % cardHeaderColors.length]}`}>
@@ -54,7 +59,11 @@ export default function BlogsSection() {
                   {blog.date}
                 </span>
                 <button
-                  onClick={() => navigateTo('/blog', `#${blog.slug}`)}
+                  onClick={() => {
+                    audioSynth.playClick();
+                    navigateTo('/blog', `#${blog.slug}`);
+                  }}
+                  onMouseEnter={() => audioSynth.playHover()}
                   className="bg-black text-white px-4 py-2 font-bold flex items-center justify-center gap-2 hover:bg-gray-800 transition-colors border-2 border-black hover:text-custom-yellow cursor-pointer"
                   aria-label={`Read article: ${blog.title}`}
                 >

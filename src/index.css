@@ -66,3 +66,25 @@ body.custom-cursor-active * {
   50% { opacity: 0; }
 }
 
+/* Neobrutalist Bouncy Hover Transitions */
+.neo-bounce-hover {
+  transition: transform 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
+}
+.neo-bounce-hover:hover {
+  transform: translate(-4px, -4px) !important;
+  box-shadow: 10px 10px 0px 0px #000 !important;
+}
+.neo-bounce-hover:active {
+  transform: translate(2px, 2px) !important;
+  box-shadow: 4px 4px 0px 0px #000 !important;
+}
+
+/* Slanted header sticker effects */
+.neo-sticker {
+  transform: rotate(-1.5deg);
+  transition: transform 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.neo-sticker:hover {
+  transform: rotate(1deg) scale(1.05);
+}
+

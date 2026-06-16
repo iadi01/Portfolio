@@ -1,13 +1,14 @@
 import { FaExternalLinkAlt } from 'react-icons/fa';
 import { projects } from '../data/personalData';
 import { navigateTo } from '../utils/router';
+import { audioSynth } from '../utils/audioSynth';
 
 export default function ProjectsSection() {
   return (
     <section id="projects" className="w-full py-10 px-4 mx-auto max-w-7xl bg-custom-yellow border-2 border-b-4 border-r-4 border-black rounded-3xl shadow-neo selection:bg-custom-yellow selection:text-black">
       {/* Header */}
       <div className="flex items-center gap-4 mb-10">
-        <div className="bg-custom-green px-8 py-3 rounded-full border-4 border-black shadow-neo">
+        <div className="bg-custom-green px-8 py-3 rounded-full border-4 border-black shadow-neo neo-sticker">
           {/* SEO Keyword: Aditya Sharma Portfolio Projects */}
           <h2 className="text-3xl font-shrikhand text-black">PROJECTS</h2>
         </div>
@@ -18,7 +19,7 @@ export default function ProjectsSection() {
         {projects.map((project, index) => (
           <div
             key={index}
-            className="bg-white border-4 border-black rounded-3xl p-6 shadow-neo hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all relative overflow-hidden"
+            className="bg-white border-4 border-black rounded-3xl p-6 shadow-neo neo-bounce-hover relative overflow-hidden"
           >
             {/* Top color bar */}
             <div className={`absolute top-0 left-0 right-0 h-4 ${project.color || 'bg-custom-purple'} border-b-4 border-black`} />
@@ -27,13 +28,21 @@ export default function ProjectsSection() {
             <div className="mt-4 flex justify-between items-start mb-4">
               <div>
                 <h3 
-                  onClick={() => navigateTo('/blog', `#${project.title.toLowerCase().replace(/\s+/g, '-')}-spec`)}
+                  onClick={() => {
+                    audioSynth.playClick();
+                    navigateTo('/blog', `#${project.title.toLowerCase().replace(/\s+/g, '-')}-spec`);
+                  }}
+                  onMouseEnter={() => audioSynth.playHover()}
                   className="text-2xl font-shrikhand cursor-pointer hover:text-custom-purple transition-colors"
                 >
                   {project.title}
                 </h3>
                 <span 
-                  onClick={() => navigateTo('/blog', `#${project.title.toLowerCase().replace(/\s+/g, '-')}-spec`)}
+                  onClick={() => {
+                    audioSynth.playClick();
+                    navigateTo('/blog', `#${project.title.toLowerCase().replace(/\s+/g, '-')}-spec`);
+                  }}
+                  onMouseEnter={() => audioSynth.playHover()}
                   className="bg-red-700 text-white text-xs font-bold px-2 py-1 border border-black rounded-md ml-1 animate-pulse inline-block cursor-pointer"
                 >
                   LIVE PROJECT
@@ -43,8 +52,10 @@ export default function ProjectsSection() {
                 href={`/blog#${project.title.toLowerCase().replace(/\s+/g, '-')}-spec`}
                 onClick={(e) => {
                   e.preventDefault();
+                  audioSynth.playClick();
                   navigateTo('/blog', `#${project.title.toLowerCase().replace(/\s+/g, '-')}-spec`);
                 }}
+                onMouseEnter={() => audioSynth.playHover()}
                 className="bg-black text-white p-2 rounded-lg hover:bg-gray-800 transition-colors cursor-pointer"
                 aria-label={`View detailed specs for ${project.title}`}
               >
