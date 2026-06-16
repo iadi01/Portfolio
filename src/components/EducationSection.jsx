@@ -44,7 +44,19 @@ function BugDodgerGame() {
     const playerSize = 24;
     const pipeWidth = 50;
     const pipeGap = 120;
-    const pipeSpeed = 2.5;
+
+    const getGameConfig = (score) => {
+      let speed = 2.0; // Starts slow (easy mode)
+      if (score >= 40) speed = 4.5;
+      else if (score >= 30) speed = 3.8;
+      else if (score >= 25) speed = 3.4;
+      else if (score >= 20) speed = 3.0;
+      else if (score >= 15) speed = 2.6;
+      else if (score >= 10) speed = 2.2;
+      
+      const spawnInterval = Math.round(200 / speed);
+      return { speed, spawnInterval };
+    };
 
     const resetGame = () => {
       const state = stateRef.current;
@@ -164,20 +176,24 @@ function BugDodgerGame() {
             state.velocity = 0.5; // push down
           }
 
+          // Get dynamic game difficulty settings
+          const { speed, spawnInterval } = getGameConfig(state.score);
+
           // Spawn pipes
           state.frameCount++;
-          if (state.frameCount % 90 === 0) {
+          if (state.frameCount >= spawnInterval) {
             state.pipes.push({
               x: canvas.width,
               topHeight: Math.random() * (canvas.height - pipeGap - 80) + 40,
               passed: false,
             });
+            state.frameCount = 0;
           }
 
           // Update pipes
           for (let i = state.pipes.length - 1; i >= 0; i--) {
             const pipe = state.pipes[i];
-            pipe.x -= pipeSpeed;
+            pipe.x -= speed;
 
             // Delete offscreen pipes
             if (pipe.x < -pipeWidth) {
@@ -272,12 +288,29 @@ function BugDodgerGame() {
         ctx.stroke();
         ctx.restore();
 
+        // Get speed for drawing
+        const { speed } = getGameConfig(state.score);
+
         // Draw Score Counter (Retro green digital display style)
         ctx.fillStyle = '#4ade80';
-        ctx.font = 'bold 20px monospace';
+        ctx.font = 'bold 18px monospace';
         ctx.textAlign = 'left';
         ctx.fillText(`SCORE: ${state.score}`, 15, 30);
-        ctx.fillText(`HI: ${state.highScore}`, 15, 55);
+        ctx.fillText(`HI: ${state.highScore}`, 15, 52);
+
+        // Draw Level & Speed on top right
+        const levelName = 
+          state.score >= 40 ? 'LVL: 7 (GODLIKE ⚡)' :
+          state.score >= 30 ? 'LVL: 6 (NIGHTMARE)' :
+          state.score >= 25 ? 'LVL: 5 (INSANE)' :
+          state.score >= 20 ? 'LVL: 4 (EXPERT)' :
+          state.score >= 15 ? 'LVL: 3 (HARD)' :
+          state.score >= 10 ? 'LVL: 2 (MEDIUM)' :
+          'LVL: 1 (EASY)';
+        
+        ctx.textAlign = 'right';
+        ctx.fillText(levelName, canvas.width - 15, 30);
+        ctx.fillText(`SPEED: ${speed.toFixed(1)}x`, canvas.width - 15, 52);
 
         if (state.gameState === 'gameover') {
           // Game Over Screen Overlay
