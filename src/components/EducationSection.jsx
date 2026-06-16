@@ -219,7 +219,7 @@ export default function EducationSection() {
         <div className="w-full lg:w-2/3 sticky top-24">
           <Chalkboard />
           <p className="text-center font-mono font-bold mt-4 bg-white inline-block px-4 py-1 border-2 border-black rounded-full shadow-sm mx-auto block w-fit">
-            ✨ Bored? Doodle something cool!
+            🤫 Class in progress! Got chalk? Scribble here.
           </p>
         </div>
       </div>
