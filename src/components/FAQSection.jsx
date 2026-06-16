@@ -11,36 +11,8 @@ export default function FAQSection() {
       a: "I build web projects that solve practical problems, such as developer tools, API-based apps, portfolio websites, business websites, and student-focused web applications."
     },
     {
-      q: "What is your main tech stack?",
-      a: "My current tech stack includes HTML, CSS, JavaScript, React, Tailwind CSS, GitHub API, Chart.js, Node.js, Express.js, MongoDB, Git, GitHub, and Vercel."
-    },
-    {
-      q: "What is GitAura?",
-      a: "GitAura is a GitHub profile analyzer and developer analytics dashboard. It uses the GitHub API to show profile insights, repository data, developer activity, and visual statistics in a clean interface."
-    },
-    {
-      q: "Are you a full-stack developer?",
-      a: "I am currently learning full-stack development. My strongest area is frontend development, and I am improving my backend skills with Node.js, Express.js, MongoDB, and REST APIs."
-    },
-    {
       q: "Are you available for internships or freelance projects?",
       a: "Yes, I am open to internships, beginner-friendly freelance projects, collaboration opportunities, and real-world web development work where I can learn and contribute."
-    },
-    {
-      q: "What are you currently learning?",
-      a: "I am currently learning Java DSA, backend development, API integration, MongoDB, SEO, web performance, and better UI/UX design."
-    },
-    {
-      q: "Why did you create this portfolio?",
-      a: "I created this portfolio to showcase my projects, skills, learning journey, and development progress in one place. It helps recruiters, collaborators, and visitors understand what I build and what I am currently learning."
-    },
-    {
-      q: "How can someone contact you?",
-      a: "You can contact me through the contact section of this website, GitHub, LinkedIn, or email. I am open to project discussions, collaborations, internships, and learning opportunities."
-    },
-    {
-      q: "What is your goal as a developer?",
-      a: "My goal is to become a skilled software developer by building real projects, improving problem-solving skills, learning full-stack development, and gaining practical experience through internships and collaborations."
     }
   ];
 
