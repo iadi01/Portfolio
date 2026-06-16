@@ -27,6 +27,9 @@ export default function Footer() {
       <div className="text-xs text-gray-400">
         © {new Date().getFullYear()} All Rights Reserved.
       </div>
+      <div className="text-xs text-gray-400 mt-2 font-mono">
+        Inspired by <a href="https://aditi-portfolio-six.vercel.app/" target="_blank" rel="noopener noreferrer" className="text-custom-pink underline hover:text-custom-yellow transition-colors">Aditi's Portfolio</a>
+      </div>
     </footer>
   );
 }
