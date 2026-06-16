@@ -5,6 +5,7 @@ import LoadingScreen from './components/LoadingScreen';
 import CustomCursor from './components/CustomCursor';
 import Navbar from './components/Navbar';
 import ContactModal from './components/ContactModal';
+import ContactFormModal from './components/ContactFormModal';
 import HeroSection from './components/HeroSection';
 import ExperienceSection from './components/ExperienceSection';
 import SkillsSection from './components/SkillsSection';
@@ -24,6 +25,7 @@ function App() {
   const [isLoading, setIsLoading] = useState(true);
   const [showContent, setShowContent] = useState(false);
   const [contactOpen, setContactOpen] = useState(false);
+  const [contactFormOpen, setContactFormOpen] = useState(false);
   const [scrollProgress, setScrollProgress] = useState(0);
   const [currentPath, setCurrentPath] = useState(window.location.pathname);
   const isBlogPage = currentPath.replace(/\/$/, '') === '/blog';
@@ -126,13 +128,18 @@ function App() {
       {!isBlogPage && (
         <Navbar
           visible={showContent}
-          onContactClick={() => setContactOpen(true)}
+          onContactClick={() => setContactFormOpen(true)}
         />
       )}
 
       <ContactModal
         isOpen={contactOpen}
         onClose={() => setContactOpen(false)}
+      />
+
+      <ContactFormModal
+        isOpen={contactFormOpen}
+        onClose={() => setContactFormOpen(false)}
       />
 
       {isBlogPage ? (
