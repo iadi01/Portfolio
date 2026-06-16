@@ -306,6 +306,9 @@ export default function BlogPage({ onContactClick, currentPath }) {
         <p className="text-sm font-mono text-gray-500">
           © {new Date().getFullYear()} Aditya Sharma. Built for recruiters.
         </p>
+        <div className="mt-6 inline-flex items-center gap-2 bg-white text-black px-4 py-2 border-2 border-black rounded-xl font-mono text-xs font-bold shadow-[4px_4px_0_rgba(236,72,153,1)] hover:-translate-y-0.5 hover:shadow-[6px_6px_0_rgba(236,72,153,1)] transition-all">
+          🎨 Design inspired by the beautiful portfolio of <a href="https://aditi-portfolio-six.vercel.app/" target="_blank" rel="noopener noreferrer" className="text-custom-pink hover:text-custom-purple transition-colors underline font-black">Aditi</a> ✨
+        </div>
       </footer>
 
     </div>
