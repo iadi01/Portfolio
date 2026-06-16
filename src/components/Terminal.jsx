@@ -51,62 +51,6 @@ export default function Terminal() {
       return;
     }
 
-    // Handle Rock Paper Scissors game
-    if (gameState === 'rps') {
-      const choices = ['rock', 'paper', 'scissors'];
-      if (!choices.includes(trimmed)) {
-        newHistory.push({ type: 'output', lines: ['❌ Invalid choice! Please enter "rock", "paper", or "scissors".'] });
-      } else {
-        const cpuChoice = choices[Math.floor(Math.random() * 3)];
-        let result = '';
-        if (trimmed === cpuChoice) {
-          result = '🤝 It\'s a tie!';
-        } else if (
-          (trimmed === 'rock' && cpuChoice === 'scissors') ||
-          (trimmed === 'paper' && cpuChoice === 'rock') ||
-          (trimmed === 'scissors' && cpuChoice === 'paper')
-        ) {
-          result = '🎉 You win!';
-        } else {
-          result = '😢 Computer wins!';
-        }
-        newHistory.push({
-          type: 'output',
-          lines: [
-            `You chose: ${trimmed.toUpperCase()}`,
-            `Computer chose: ${cpuChoice.toUpperCase()}`,
-            result,
-            'Type "rps" to play again or "help" for other commands.'
-          ]
-        });
-        setGameState(null);
-      }
-      setHistory(newHistory);
-      setInput('');
-      return;
-    }
-
-    // Handle Trivia Quiz game
-    if (gameState === 'quiz') {
-      if (trimmed === 'b') {
-        newHistory.push({
-          type: 'output',
-          lines: ['🎉 Correct! You\'re a certified Full Stack Developer.', 'Type "quiz" to try again or "help" for other commands.']
-        });
-      } else if (['a', 'c', 'd'].includes(trimmed)) {
-        newHistory.push({
-          type: 'output',
-          lines: ['❌ Wrong answer! The correct answer was B) <video>.', 'Type "quiz" to try again or "help" for other commands.']
-        });
-      } else {
-        newHistory.push({ type: 'output', lines: ['❌ Invalid option! Please enter A, B, C, or D.'] });
-      }
-      setGameState(null);
-      setHistory(newHistory);
-      setInput('');
-      return;
-    }
-
     if (trimmed === 'game') {
       const target = Math.floor(Math.random() * 100) + 1;
       setGameTarget(target);
@@ -114,35 +58,6 @@ export default function Terminal() {
       newHistory.push({
         type: 'output',
         lines: ['🎮 Number Guessing Game!', 'I\'m thinking of a number between 1 and 100.', 'Enter your guess:'],
-      });
-    } else if (trimmed === 'rps') {
-      setGameState('rps');
-      newHistory.push({
-        type: 'output',
-        lines: ['🎮 Rock Paper Scissors Game!', 'Choose your weapon: "rock", "paper", or "scissors":']
-      });
-    } else if (trimmed === 'quiz') {
-      setGameState('quiz');
-      newHistory.push({
-        type: 'output',
-        lines: [
-          '❓ Web Developer Trivia Quiz!',
-          'Question: Which HTML5 tag is used to embed a native video player?',
-          'A) <embed>   B) <video>   C) <movie>   D) <media>',
-          'Enter your option (A, B, C, or D):'
-        ]
-      });
-    } else if (trimmed === 'matrix') {
-      newHistory.push({
-        type: 'output',
-        lines: [
-          '01000001 01000001 01000100 01001001 01010011 01011001 01010011',
-          '⚡ MATRIX RUNTIME CORE DETECTED...',
-          '101001010101010010101010100101010101001010101010010101',
-          '011001100110011001100110011001100110011001100110011001',
-          'SYSTEM STATUS: NOMINAL. WTF AADI MODE ENABLED.',
-          'Decrypted message: "Dream big. Build bigger."',
-        ]
       });
     } else if (terminalCommands[trimmed]) {
       newHistory.push({ type: 'output', lines: terminalCommands[trimmed] });

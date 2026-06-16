@@ -10,6 +10,7 @@ import {
   FaExclamationTriangle 
 } from 'react-icons/fa';
 import { personalInfo } from '../data/personalData';
+import { audioSynth } from '../utils/audioSynth';
 import Terminal from './Terminal';
 
 export default function HeroSection({ onContactClick }) {
@@ -69,12 +70,18 @@ export default function HeroSection({ onContactClick }) {
             target="_blank"
             rel="noopener noreferrer"
             download="Aditya_Sharma_Resume.pdf"
+            onClick={() => audioSynth.playClick()}
+            onMouseEnter={() => audioSynth.playHover()}
             className="bg-custom-green w-full py-3 rounded-xl border-2 border-black font-bold shadow-neo-sm hover:translate-y-1 hover:shadow-none transition-all flex items-center justify-center gap-2 cursor-pointer block text-center text-black no-underline"
           >
             <FaDownload /> DOWNLOAD_RESUME
           </a>
           <button
-            onClick={onContactClick}
+            onClick={() => {
+              audioSynth.playClick();
+              onContactClick();
+            }}
+            onMouseEnter={() => audioSynth.playHover()}
             className="bg-custom-red text-black w-full py-3 rounded-xl border-2 border-black font-bold shadow-neo-sm hover:translate-y-1 hover:shadow-none transition-all flex items-center justify-center gap-2 cursor-pointer font-bold"
           >
             <FaEnvelope /> CONTACT ME
@@ -85,6 +92,8 @@ export default function HeroSection({ onContactClick }) {
         <div className="flex gap-4 mt-6 text-2xl flex-wrap justify-center">
           <a
             href={`mailto:${personalInfo.email}`}
+            onClick={() => audioSynth.playClick()}
+            onMouseEnter={() => audioSynth.playHover()}
             className="hover:scale-110 transition-transform text-red-500 cursor-pointer"
             aria-label="Email"
           >
@@ -94,6 +103,8 @@ export default function HeroSection({ onContactClick }) {
             href={personalInfo.github}
             target="_blank"
             rel="noopener noreferrer"
+            onClick={() => audioSynth.playClick()}
+            onMouseEnter={() => audioSynth.playHover()}
             className="hover:scale-110 transition-transform text-black cursor-pointer"
             aria-label="GitHub"
           >
@@ -103,6 +114,8 @@ export default function HeroSection({ onContactClick }) {
             href={personalInfo.linkedin}
             target="_blank"
             rel="noopener noreferrer"
+            onClick={() => audioSynth.playClick()}
+            onMouseEnter={() => audioSynth.playHover()}
             className="hover:scale-110 transition-transform text-blue-700 cursor-pointer"
             aria-label="LinkedIn"
           >
@@ -112,6 +125,8 @@ export default function HeroSection({ onContactClick }) {
             href="https://leetcode.com/"
             target="_blank"
             rel="noopener noreferrer"
+            onClick={() => audioSynth.playClick()}
+            onMouseEnter={() => audioSynth.playHover()}
             className="hover:scale-110 transition-transform text-orange-600 cursor-pointer"
             aria-label="LeetCode"
           >
@@ -121,6 +136,8 @@ export default function HeroSection({ onContactClick }) {
             href="https://www.instagram.com/iaadi0/"
             target="_blank"
             rel="noopener noreferrer"
+            onClick={() => audioSynth.playClick()}
+            onMouseEnter={() => audioSynth.playHover()}
             className="hover:scale-110 transition-transform text-pink-600 cursor-pointer"
             aria-label="Instagram"
           >
