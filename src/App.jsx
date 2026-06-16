@@ -18,6 +18,7 @@ import FAQSection from './components/FAQSection';
 import Footer from './components/Footer';
 import CookieConsent from './components/CookieConsent';
 import BlogPage from './components/BlogPage';
+import SettingsPanel from './components/SettingsPanel';
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -26,6 +27,66 @@ function App() {
   const [scrollProgress, setScrollProgress] = useState(0);
   const [currentPath, setCurrentPath] = useState(window.location.pathname);
   const isBlogPage = currentPath.replace(/\/$/, '') === '/blog';
+
+  const [activeTheme, setActiveTheme] = useState(() => {
+    return localStorage.getItem('aadi-theme') || 'classic';
+  });
+  const [cursorEnabled, setCursorEnabled] = useState(() => {
+    return localStorage.getItem('aadi-cursor') !== 'false';
+  });
+  const [settingsOpen, setSettingsOpen] = useState(false);
+
+  useEffect(() => {
+    const root = document.documentElement;
+    const themes = {
+      classic: {
+        '--color-custom-blue': '#60a5fa',
+        '--color-custom-purple': '#a78bfa',
+        '--color-custom-pink': '#ff9fac',
+        '--color-custom-yellow': '#fcd34d',
+        '--color-custom-green': '#4ade80',
+        '--color-custom-red': '#f87171'
+      },
+      cyber: {
+        '--color-custom-blue': '#1e1b4b',
+        '--color-custom-purple': '#39ff14',
+        '--color-custom-pink': '#ff007f',
+        '--color-custom-yellow': '#00ffff',
+        '--color-custom-green': '#10b981',
+        '--color-custom-red': '#ef4444'
+      },
+      sunset: {
+        '--color-custom-blue': '#fed7aa',
+        '--color-custom-purple': '#ea580c',
+        '--color-custom-pink': '#f43f5e',
+        '--color-custom-yellow': '#fef08a',
+        '--color-custom-green': '#84cc16',
+        '--color-custom-red': '#dc2626'
+      },
+      lavender: {
+        '--color-custom-blue': '#ddd6fe',
+        '--color-custom-purple': '#8b5cf6',
+        '--color-custom-pink': '#fbcfe8',
+        '--color-custom-yellow': '#fef08a',
+        '--color-custom-green': '#a7f3d0',
+        '--color-custom-red': '#fca5a5'
+      },
+      mint: {
+        '--color-custom-blue': '#ccfbf1',
+        '--color-custom-purple': '#0d9488',
+        '--color-custom-pink': '#99f6e4',
+        '--color-custom-yellow': '#fef08a',
+        '--color-custom-green': '#6ee7b7',
+        '--color-custom-red': '#fda4af'
+      }
+    };
+
+    const currentColors = themes[activeTheme] || themes.classic;
+    Object.keys(currentColors).forEach((key) => {
+      root.style.setProperty(key, currentColors[key]);
+    });
+    localStorage.setItem('aadi-theme', activeTheme);
+  }, [activeTheme]);
 
   useEffect(() => {
     const handlePopState = () => {
@@ -83,7 +144,7 @@ function App() {
 
   return (
     <div className="min-h-screen bg-custom-blue overflow-x-hidden selection:bg-custom-yellow selection:text-black font-sans relative">
-      <CustomCursor />
+      {cursorEnabled && <CustomCursor />}
 
       <AnimatePresence>
         {isLoading && <LoadingScreen onComplete={handleLoadingComplete} />}
@@ -139,9 +200,30 @@ function App() {
       
       {!isBlogPage && <Footer />}
       <CookieConsent />
+
+      {/* Floating Settings Panel Trigger Button */}
+      {showContent && (
+        <div className="fixed bottom-6 left-6 z-[60]">
+          <button
+            onClick={() => setSettingsOpen(true)}
+            className="bg-custom-yellow text-black p-3 md:p-3.5 rounded-full border-4 border-black shadow-[4px_4px_0_rgba(0,0,0,1)] hover:translate-x-0.5 hover:translate-y-0.5 hover:shadow-[2px_2px_0_rgba(0,0,0,1)] active:translate-y-1 active:shadow-none transition-all cursor-pointer text-xl md:text-2xl flex items-center justify-center"
+            aria-label="Open settings panel"
+          >
+            🎨
+          </button>
+        </div>
+      )}
+
+      <SettingsPanel
+        isOpen={settingsOpen}
+        onClose={() => setSettingsOpen(false)}
+        activeTheme={activeTheme}
+        setActiveTheme={setActiveTheme}
+        cursorEnabled={cursorEnabled}
+        setCursorEnabled={setCursorEnabled}
+      />
     </div>
   );
 }
 
 export default App;
-
