@@ -113,7 +113,10 @@ export default function ContactModal({ isOpen, onClose }) {
                   id="sender-email"
                   type="email"
                   value={email}
-                  onChange={(e) => setEmail(e.target.value)}
+                  onChange={(e) => {
+                    setEmail(e.target.value);
+                    audioSynth.playClick();
+                  }}
                   onFocus={handleFocus}
                   placeholder="name@example.com"
                   required
@@ -129,7 +132,10 @@ export default function ContactModal({ isOpen, onClose }) {
                 <textarea
                   id="message-body"
                   value={message}
-                  onChange={(e) => setMessage(e.target.value)}
+                  onChange={(e) => {
+                    setMessage(e.target.value);
+                    audioSynth.playClick();
+                  }}
                   onFocus={handleFocus}
                   placeholder="Hey Aadi, let's collaborate on..."
                   required
