@@ -37,6 +37,7 @@ function BugDodgerGame() {
     if (!canvas) return;
     const ctx = canvas.getContext('2d');
     let animationFrameId;
+    let lastTime = null;
 
     const gravity = 0.15; // Extremely floaty gravity
     const jumpForce = -3.8; // Calibrated jump force to match floaty gravity
@@ -46,8 +47,8 @@ function BugDodgerGame() {
     const pipeGap = 155; // Extremely forgiving gap for player clearance
 
     const getGameConfig = (score) => {
-      // Smooth continuous linear speed increase (1.5 base + 0.04 per point, capped at 4.2)
-      const speed = Math.min(4.2, 1.5 + score * 0.04);
+      // Smooth continuous linear speed increase (2.0 base + 0.04 per point, capped at 4.2)
+      const speed = Math.min(4.2, 2.0 + score * 0.04);
       return { speed };
     };
 
@@ -65,6 +66,7 @@ function BugDodgerGame() {
         }
       ];
       setScore(0);
+      lastTime = null; // Reset lastTime so it recalculates dt on restart
     };
 
     const jump = () => {
@@ -102,7 +104,23 @@ function BugDodgerGame() {
     canvas.addEventListener('touchstart', handleInput, { passive: false });
 
     // Loop
-    const update = () => {
+    const update = (timestamp) => {
+      if (!timestamp) {
+        animationFrameId = requestAnimationFrame(update);
+        return;
+      }
+      if (!lastTime) {
+        lastTime = timestamp;
+        animationFrameId = requestAnimationFrame(update);
+        return;
+      }
+
+      let dt = (timestamp - lastTime) / 1000;
+      // Cap dt to avoid huge physics jumps if tab goes out of focus
+      if (dt > 0.1) dt = 0.1;
+      lastTime = timestamp;
+
+      const timeScale = dt * 60; // base scale relative to 60fps
       const state = stateRef.current;
 
       // Clear Canvas
@@ -157,8 +175,8 @@ function BugDodgerGame() {
       } else if (state.gameState === 'playing' || state.gameState === 'gameover') {
         if (state.gameState === 'playing') {
           // Update physics
-          state.velocity += gravity;
-          state.playerY += state.velocity;
+          state.velocity += gravity * timeScale;
+          state.playerY += state.velocity * timeScale;
 
           // Constraints
           if (state.playerY + playerSize / 2 > canvas.height) {
@@ -187,7 +205,7 @@ function BugDodgerGame() {
           // Update pipes
           for (let i = state.pipes.length - 1; i >= 0; i--) {
             const pipe = state.pipes[i];
-            pipe.x -= speed;
+            pipe.x -= speed * timeScale;
 
             // Delete offscreen pipes
             if (pipe.x < -pipeWidth) {
