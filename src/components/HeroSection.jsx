@@ -168,11 +168,6 @@ export default function HeroSection({ onContactClick }) {
         <div className="bg-custom-yellow p-6 md:p-10 rounded-3xl border-2 border-b-4 border-r-4 border-black shadow-neo">
           <h2 className="text-4xl font-shrikhand mb-4">About Aditya Sharma</h2>
           
-          {/* Tagline / Subtitle */}
-          <p className="text-xl font-bold text-black mb-6 leading-relaxed border-b-2 border-black border-dashed pb-4">
-            {personalInfo.tagline}
-          </p>
-
           {/* New Wording */}
           <p className="text-lg font-semibold leading-relaxed mb-6 text-gray-800">
             {personalInfo.about}

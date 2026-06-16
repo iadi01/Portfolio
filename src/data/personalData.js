@@ -2,7 +2,6 @@ export const personalInfo = {
   name: 'Aditya Sharma',
   nickname: 'Aadi',
   role: 'ASPIRING_FULL_STACK_DEV()',
-  tagline: 'I build practical web apps using JavaScript, React, APIs, and modern UI design. Currently focused on frontend development, full-stack learning, SEO, and real-world project building.',
   location: 'JAMSHEDPUR, INDIA',
   status: 'BCA STUDENT @ AMITY UNIVERSITY',
   mission: 'Build. Learn. Ship.',
