@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FiMail, FiGithub, FiLinkedin, FiInstagram, FiX } from 'react-icons/fi';
+import { FaBehance, FaDev } from 'react-icons/fa';
 import { personalInfo } from '../data/personalData';
 import { audioSynth } from '../utils/audioSynth';
 
@@ -34,6 +35,18 @@ export default function ContactModal({ isOpen, onClose }) {
       href: 'https://www.instagram.com/iaadi0/',
       icon: <FiInstagram className="text-xl" />,
       color: 'bg-custom-pink',
+    },
+    {
+      label: 'Behance',
+      href: 'https://www.behance.net/iadi0',
+      icon: <FaBehance className="text-xl" />,
+      color: 'bg-custom-green',
+    },
+    {
+      label: 'Dev.to',
+      href: 'https://dev.to/iadi0',
+      icon: <FaDev className="text-xl" />,
+      color: 'bg-custom-red',
     },
   ];
 
