@@ -1,5 +1,7 @@
+import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FiX, FiCheck } from 'react-icons/fi';
+import { audioSynth } from '../utils/audioSynth';
 
 export default function SettingsPanel({
   isOpen,
@@ -9,6 +11,10 @@ export default function SettingsPanel({
   cursorEnabled,
   setCursorEnabled,
 }) {
+  const [soundEnabled, setSoundEnabled] = useState(() => {
+    return localStorage.getItem('aadi-sound') !== 'false';
+  });
+
   const themesList = [
     { id: 'classic', name: 'Classic Blue', color: 'bg-[#60a5fa]' },
     { id: 'cyber', name: 'Cyberpunk Neon', color: 'bg-[#39ff14]' },
@@ -59,7 +65,10 @@ export default function SettingsPanel({
                 {themesList.map((t) => (
                   <button
                     key={t.id}
-                    onClick={() => setActiveTheme(t.id)}
+                    onClick={() => {
+                      audioSynth.playClick();
+                      setActiveTheme(t.id);
+                    }}
                     className={`flex items-center justify-between w-full p-2.5 rounded-xl border-2 border-black font-bold active:translate-y-0.5 transition-all text-left cursor-pointer ${
                       activeTheme === t.id ? 'bg-black text-white' : 'bg-gray-50 text-black hover:bg-gray-100'
                     }`}
@@ -74,26 +83,50 @@ export default function SettingsPanel({
               </div>
             </div>
 
-            {/* Custom Cursor Toggle */}
+            {/* Custom Cursor & Sound Toggle */}
             <div className="border-t-2 border-black border-dashed pt-4">
               <h4 className="font-mono font-black text-xs uppercase tracking-wider text-gray-400 mb-3">
                 Desktop Enhancements
               </h4>
-              <button
-                onClick={() => {
-                  const val = !cursorEnabled;
-                  setCursorEnabled(val);
-                  localStorage.setItem('aadi-cursor', String(val));
-                }}
-                className={`flex items-center justify-between w-full p-3 rounded-xl border-2 border-black font-bold active:translate-y-0.5 transition-all text-left cursor-pointer ${
-                  cursorEnabled ? 'bg-custom-green text-black' : 'bg-gray-100 text-gray-500'
-                }`}
-              >
-                <span>Interactive Custom Cursor</span>
-                <span className="font-mono text-sm bg-white border-2 border-black px-2 py-0.5 rounded-md">
-                  {cursorEnabled ? 'ON' : 'OFF'}
-                </span>
-              </button>
+              <div className="flex flex-col gap-3">
+                {/* Cursor Toggle */}
+                <button
+                  onClick={() => {
+                    audioSynth.playClick();
+                    const val = !cursorEnabled;
+                    setCursorEnabled(val);
+                    localStorage.setItem('aadi-cursor', String(val));
+                  }}
+                  className={`flex items-center justify-between w-full p-3 rounded-xl border-2 border-black font-bold active:translate-y-0.5 transition-all text-left cursor-pointer ${
+                    cursorEnabled ? 'bg-custom-green text-black' : 'bg-gray-100 text-gray-500'
+                  }`}
+                >
+                  <span>Interactive Cursor</span>
+                  <span className="font-mono text-xs bg-white border-2 border-black px-2 py-0.5 rounded-md">
+                    {cursorEnabled ? 'ON' : 'OFF'}
+                  </span>
+                </button>
+
+                {/* Sound Toggle */}
+                <button
+                  onClick={() => {
+                    const val = !soundEnabled;
+                    setSoundEnabled(val);
+                    audioSynth.setSoundEnabled(val);
+                    if (val) {
+                      setTimeout(() => audioSynth.playChirp(), 50);
+                    }
+                  }}
+                  className={`flex items-center justify-between w-full p-3 rounded-xl border-2 border-black font-bold active:translate-y-0.5 transition-all text-left cursor-pointer ${
+                    soundEnabled ? 'bg-custom-yellow text-black' : 'bg-gray-100 text-gray-500'
+                  }`}
+                >
+                  <span>System Sounds</span>
+                  <span className="font-mono text-xs bg-white border-2 border-black px-2 py-0.5 rounded-md">
+                    {soundEnabled ? 'ON' : 'OFF'}
+                  </span>
+                </button>
+              </div>
             </div>
           </div>
         </motion.div>

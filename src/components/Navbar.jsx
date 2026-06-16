@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { FaBars, FaTimes } from 'react-icons/fa';
 import { navigateTo } from '../utils/router';
+import { audioSynth } from '../utils/audioSynth';
 
 export default function Navbar({ visible, onContactClick }) {
   const [time, setTime] = useState(new Date());
@@ -28,6 +29,7 @@ export default function Navbar({ visible, onContactClick }) {
   ];
 
   const handleNavClick = (id) => {
+    audioSynth.playClick();
     const el = document.getElementById(id);
     if (el) {
       el.scrollIntoView({ behavior: 'smooth' });
@@ -50,6 +52,7 @@ export default function Navbar({ visible, onContactClick }) {
             <button
               key={item.id}
               onClick={() => handleNavClick(item.id)}
+              onMouseEnter={() => audioSynth.playHover()}
               className="px-2 py-1 lg:px-4 lg:py-2 bg-white text-black rounded-full border-black border-2 border-b-2 md:border-b-4 border-r-2 md:border-r-4 hover:bg-white hover:text-black hover:border-black hover:border-b-2 hover:border-r-2 active:border-b-2 active:border-r-2 active:translate-y-1 transition-all cursor-pointer font-bold"
             >
               {item.name}
@@ -57,9 +60,11 @@ export default function Navbar({ visible, onContactClick }) {
           ))}
           <button
             onClick={() => {
+              audioSynth.playClick();
               handleNavClick('contact');
               onContactClick();
             }}
+            onMouseEnter={() => audioSynth.playHover()}
             className="px-3 py-1 lg:px-5 lg:py-2 bg-custom-pink text-black border-2 border-black border-b-4 lg:border-b-8 border-r-4 lg:border-r-8 rounded-full hover:border-b-4 hover:border-r-4 active:translate-y-1 transition-all cursor-pointer font-bold"
           >
             CONTACT
@@ -75,7 +80,11 @@ export default function Navbar({ visible, onContactClick }) {
         {/* Mobile menu toggle */}
         <button
           className="md:hidden text-white text-2xl bg-black p-2 rounded-full border-2 border-white cursor-pointer"
-          onClick={() => setMobileOpen(!mobileOpen)}
+          onClick={() => {
+            audioSynth.playClick();
+            setMobileOpen(!mobileOpen);
+          }}
+          onMouseEnter={() => audioSynth.playHover()}
           aria-label="Toggle navigation menu"
         >
           {mobileOpen ? <FaTimes /> : <FaBars />}
@@ -89,6 +98,7 @@ export default function Navbar({ visible, onContactClick }) {
             <button
               key={item.id}
               onClick={() => handleNavClick(item.id)}
+              onMouseEnter={() => audioSynth.playHover()}
               className="bg-white border-2 border-black border-b-4 border-r-4 p-3 rounded-xl font-bold active:border-b-2 active:border-r-2 active:translate-y-1 text-left hover:bg-gray-100 transition-all cursor-pointer"
             >
               {item.name}
@@ -96,10 +106,12 @@ export default function Navbar({ visible, onContactClick }) {
           ))}
           <button
             onClick={() => {
+              audioSynth.playClick();
               setMobileOpen(false);
               handleNavClick('contact');
               onContactClick();
             }}
+            onMouseEnter={() => audioSynth.playHover()}
             className="bg-custom-pink border-2 border-black border-b-4 border-r-4 p-3 rounded-xl font-bold active:border-b-2 active:border-r-2 active:translate-y-1 text-left transition-all cursor-pointer"
           >
             CONTACT

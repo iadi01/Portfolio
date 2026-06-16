@@ -19,6 +19,8 @@ import Footer from './components/Footer';
 import CookieConsent from './components/CookieConsent';
 import BlogPage from './components/BlogPage';
 import SettingsPanel from './components/SettingsPanel';
+import DesktopWidgets from './components/DesktopWidgets';
+import { audioSynth } from './utils/audioSynth';
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -35,6 +37,31 @@ function App() {
     return localStorage.getItem('aadi-cursor') !== 'false';
   });
   const [settingsOpen, setSettingsOpen] = useState(false);
+
+  // Auto-trigger Boot startup sound on first user gesture
+  useEffect(() => {
+    let soundPlayed = false;
+    const playBootSound = () => {
+      if (soundPlayed) return;
+      soundPlayed = true;
+      audioSynth.playStartup();
+      
+      // Cleanup listeners
+      window.removeEventListener('click', playBootSound);
+      window.removeEventListener('touchstart', playBootSound);
+      window.removeEventListener('keydown', playBootSound);
+    };
+
+    window.addEventListener('click', playBootSound);
+    window.addEventListener('touchstart', playBootSound);
+    window.addEventListener('keydown', playBootSound);
+
+    return () => {
+      window.removeEventListener('click', playBootSound);
+      window.removeEventListener('touchstart', playBootSound);
+      window.removeEventListener('keydown', playBootSound);
+    };
+  }, []);
 
   useEffect(() => {
     const root = document.documentElement;
@@ -186,6 +213,7 @@ function App() {
           </nav>
 
           <HeroSection onContactClick={() => setContactOpen(true)} />
+          <DesktopWidgets />
           <ExperienceSection />
           <SkillsSection />
           <ProjectsSection />
@@ -205,7 +233,10 @@ function App() {
       {showContent && (
         <div className="fixed bottom-6 left-6 z-[60]">
           <button
-            onClick={() => setSettingsOpen(true)}
+            onClick={() => {
+              audioSynth.playClick();
+              setSettingsOpen(true);
+            }}
             className="bg-custom-yellow text-black p-3 md:p-3.5 rounded-full border-4 border-black shadow-[4px_4px_0_rgba(0,0,0,1)] hover:translate-x-0.5 hover:translate-y-0.5 hover:shadow-[2px_2px_0_rgba(0,0,0,1)] active:translate-y-1 active:shadow-none transition-all cursor-pointer text-xl md:text-2xl flex items-center justify-center"
             aria-label="Open settings panel"
           >
