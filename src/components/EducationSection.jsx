@@ -46,14 +46,8 @@ function BugDodgerGame() {
     const pipeGap = 155; // Extremely forgiving gap for player clearance
 
     const getGameConfig = (score) => {
-      let speed = 1.5; // Starts at 1.5 (very slow, easy mode)
-      if (score >= 40) speed = 4.2;
-      else if (score >= 30) speed = 3.6;
-      else if (score >= 25) speed = 3.1;
-      else if (score >= 20) speed = 2.7;
-      else if (score >= 15) speed = 2.3;
-      else if (score >= 10) speed = 1.9;
-      
+      // Smooth continuous linear speed increase (1.5 base + 0.04 per point, capped at 4.2)
+      const speed = Math.min(4.2, 1.5 + score * 0.04);
       return { speed };
     };
 
