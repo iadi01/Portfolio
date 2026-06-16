@@ -28,7 +28,7 @@ function App() {
   const [contactFormOpen, setContactFormOpen] = useState(false);
   const [scrollProgress, setScrollProgress] = useState(0);
   const [currentPath, setCurrentPath] = useState(window.location.pathname);
-  const isBlogPage = currentPath.replace(/\/$/, '') === '/blog';
+  const isBlogPage = currentPath.startsWith('/blog');
 
   // Auto-trigger Boot startup sound on first user gesture
   useEffect(() => {
@@ -143,7 +143,7 @@ function App() {
       />
 
       {isBlogPage ? (
-        <BlogPage onContactClick={() => setContactOpen(true)} />
+        <BlogPage onContactClick={() => setContactOpen(true)} currentPath={currentPath} />
       ) : (
         <main className="w-full max-w-full overflow-x-hidden flex flex-col items-center gap-20 pt-32 pb-20">
           {/* SEO Accessibility Headings & Links (Invisible in UI) */}

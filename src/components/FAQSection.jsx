@@ -7,8 +7,8 @@ export default function FAQSection() {
       a: "Aditya Sharma is a BCA student and aspiring Full Stack Developer from India."
     },
     {
-      q: "Who is WTF Aadi?",
-      a: "WTF Aadi is the personal brand of Aditya Sharma."
+      q: "Who is Aadi?",
+      a: "Aadi is the nickname and personal brand of Aditya Sharma."
     },
     {
       q: "What is iadi0?",

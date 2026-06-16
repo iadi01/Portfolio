@@ -157,28 +157,27 @@ export default function HeroSection({ onContactClick }) {
         {/* Intro/Hero Text Card (Visually hidden for UI layout preservation, active for SEO crawlers) */}
         <div className="sr-only">
           <p>
-            Official portfolio of Aditya Sharma (Aadi), also known as Adi Sharma, WTF Aadi, iadi0, and iadi01. I am a BCA student, aspiring Software Engineer, Full Stack Developer, and creator of modern web applications, developer tools, and digital experiences from Jamshedpur, India.
+            Official portfolio of Aditya Sharma (Aadi), also known as Adi Sharma, iadi0, and iadi01. I am a BCA student, aspiring Full Stack Developer, and creator of modern web applications.
           </p>
           <p>
-            This portfolio is built to showcase my skills, projects, learning journey, and identity as a web developer. It includes GitAura, Weather App, TeamJams, Trip Budget Calculator, Furniture Website, Boutique Website, and Restaurant Website.
+            This portfolio website features my coding projects like GitAura, Weather App, TeamJams, and Trip Budget Calculator. It represents the developer profiles and learning journey of a student web developer in India.
           </p>
         </div>
 
         {/* About card */}
         <div className="bg-custom-yellow p-6 md:p-10 rounded-3xl border-2 border-b-4 border-r-4 border-black shadow-neo">
-          <h2 className="text-4xl font-shrikhand mb-6">About Aditya Sharma</h2>
-          <p className="text-lg font-medium leading-relaxed mb-4">
-            I am <span className="font-bold bg-white px-1 border border-black">Aditya Sharma</span>, also known as <span className="font-bold bg-white px-1 border border-black">Aadi</span>. I am a BCA student and <span className="font-bold bg-white px-1 border border-black">aspiring Full Stack Developer</span> focused on building clean, useful, and responsive web applications. This portfolio represents my official online presence and is optimized for anyone searching for <span className="font-bold bg-white px-1 border border-black">Aditya Sharma Portfolio</span>, <span className="font-bold bg-white px-1 border border-black">Adi Sharma Portfolio</span>, <span className="font-bold bg-white px-1 border border-black">Aadi Portfolio</span>, <span className="font-bold bg-white px-1 border border-black">iadi0 Portfolio</span>, and <span className="font-bold bg-white px-1 border border-black">iadi01 Developer</span>.
+          <h2 className="text-4xl font-shrikhand mb-4">About Aditya Sharma</h2>
+          
+          {/* Tagline / Subtitle */}
+          <p className="text-xl font-bold text-black mb-6 leading-relaxed border-b-2 border-black border-dashed pb-4">
+            {personalInfo.tagline}
           </p>
-          <p className="text-lg font-medium leading-relaxed mb-4">
-            I work with HTML, CSS, JavaScript, React, Next.js, Node.js, Express.js, MongoDB, REST APIs, UI/UX design, and Generative AI tools. My goal is to become a skilled Software Engineer and build digital products that solve real-world problems.
+
+          {/* New Wording */}
+          <p className="text-lg font-semibold leading-relaxed mb-6 text-gray-800">
+            {personalInfo.about}
           </p>
-          <p className="text-lg font-medium leading-relaxed mb-4">
-            I have strong technical and communication skills, and a logical approach to problem-solving. My journey in tech has made me adaptable and eager to create and collaborate.
-          </p>
-          {/* <p className="text-lg font-medium leading-relaxed mb-4">
-            This portfolio highlights the skills, projects, learning journey, and career goals of Aditya Sharma as an aspiring <span className="font-bold bg-white px-1 border border-black">Full Stack Software Engineer</span>. The goal of WTF Aadi is to build useful, clean, and creative web experiences that turn ideas into working digital products.
-          </p> */}
+
           <div className="bg-white p-4 border-2 border-black rounded-xl inline-block font-bold shadow-neo-sm">
             🚀 Open to Software and Full-Stack Internships
           </div>

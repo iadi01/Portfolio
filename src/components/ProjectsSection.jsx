@@ -1,92 +1,124 @@
-import { FaExternalLinkAlt } from 'react-icons/fa';
+import { FaExternalLinkAlt, FaGithub, FaReact, FaJs, FaNodeJs, FaChartPie, FaCodeBranch, FaHtml5, FaCss3Alt } from 'react-icons/fa';
+import { SiTailwindcss, SiMongodb } from 'react-icons/si';
 import { projects } from '../data/personalData';
-import { navigateTo } from '../utils/router';
 import { audioSynth } from '../utils/audioSynth';
 
-export default function ProjectsSection() {
+const techIcons = {
+  'React': <FaReact className="text-sky-500" />,
+  'JavaScript': <FaJs className="text-yellow-500" />,
+  'Tailwind CSS': <SiTailwindcss className="text-teal-400" />,
+  'GitHub API': <FaCodeBranch className="text-purple-500" />,
+  'Chart.js': <FaChartPie className="text-orange-500" />,
+  'Node.js': <FaNodeJs className="text-green-500" />,
+  'MongoDB': <SiMongodb className="text-green-600" />,
+  'GitHub': <FaGithub className="text-black" />,
+  'HTML5': <FaHtml5 className="text-orange-500" />,
+  'CSS3': <FaCss3Alt className="text-blue-600" />,
+};
+
+function ProjectCard({ project }) {
   return (
-    <section id="projects" className="w-full py-10 px-4 mx-auto max-w-7xl bg-custom-yellow border-2 border-b-4 border-r-4 border-black rounded-3xl shadow-neo selection:bg-custom-yellow selection:text-black">
+    <div className="bg-white border-4 border-black rounded-3xl p-6 shadow-neo neo-bounce-hover relative overflow-hidden flex flex-col justify-between h-full">
+      {/* Top color bar */}
+      <div className={`absolute top-0 left-0 right-0 h-4 ${project.color || 'bg-custom-purple'} border-b-4 border-black`} />
+      
+      <div className="mt-4 flex flex-col flex-1">
+        {/* Title */}
+        <h3 className="text-2xl font-shrikhand text-black mb-3">
+          {project.title}
+        </h3>
+
+        {/* Tech Stack Icons */}
+        <div className="flex flex-wrap gap-2 items-center mb-4">
+          {project.tech.map((name) => (
+            <div 
+              key={name} 
+              className="flex items-center gap-1.5 bg-gray-50 px-2.5 py-1 rounded-lg border-2 border-black font-mono font-bold text-xs" 
+              title={name}
+            >
+              {techIcons[name]}
+              <span>{name}</span>
+            </div>
+          ))}
+        </div>
+
+        {/* Description */}
+        <p className="text-sm font-medium text-gray-700 leading-relaxed mb-4">
+          {project.description}
+        </p>
+
+        {/* What it solves */}
+        <div className="bg-purple-50 p-3 rounded-xl border-2 border-black/15 mb-6 text-xs font-mono font-bold leading-normal">
+          <span className="text-purple-700 font-extrabold uppercase tracking-wide">💡 What it solves:</span>
+          <p className="text-gray-700 mt-1">{project.whatItSolves}</p>
+        </div>
+      </div>
+
+      {/* Action Buttons */}
+      <div className="flex gap-3 mt-auto">
+        <a
+          href={project.liveUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          onClick={() => audioSynth.playClick()}
+          onMouseEnter={() => audioSynth.playHover()}
+          className="flex-1 bg-custom-green text-black font-bold py-2.5 px-4 rounded-xl border-2 border-black shadow-[2px_2px_0_rgba(0,0,0,1)] hover:translate-y-0.5 hover:shadow-[1px_1px_0_rgba(0,0,0,1)] active:translate-y-1 active:shadow-none transition-all flex items-center justify-center gap-1.5 text-center text-sm cursor-pointer"
+        >
+          <FaExternalLinkAlt className="text-xs" /> Live Demo
+        </a>
+        {project.githubUrl && (
+          <a
+            href={project.githubUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={() => audioSynth.playClick()}
+            onMouseEnter={() => audioSynth.playHover()}
+            className="bg-white text-black font-bold py-2.5 px-4 rounded-xl border-2 border-black shadow-[2px_2px_0_rgba(0,0,0,1)] hover:translate-y-0.5 hover:shadow-[1px_1px_0_rgba(0,0,0,1)] active:translate-y-1 active:shadow-none transition-all flex items-center justify-center gap-1.5 text-sm cursor-pointer"
+          >
+            <FaGithub className="text-base" /> GitHub
+          </a>
+        )}
+      </div>
+    </div>
+  );
+}
+
+export default function ProjectsSection() {
+  const featured = projects.filter(p => p.category === 'featured');
+  const uiClient = projects.filter(p => p.category === 'ui_client');
+
+  return (
+    <section id="projects" className="w-full py-12 px-4 mx-auto max-w-7xl bg-custom-yellow border-2 border-b-4 border-r-4 border-black rounded-3xl shadow-neo flex flex-col gap-12 selection:bg-custom-yellow selection:text-black">
       {/* Header */}
-      <div className="flex items-center gap-4 mb-10">
-        <div className="bg-custom-green px-8 py-3 rounded-full border-4 border-black shadow-neo neo-sticker">
-          {/* SEO Keyword: Aditya Sharma Portfolio Projects */}
+      <div className="flex justify-center">
+        <div className="bg-white px-8 py-3 rounded-full border-4 border-black shadow-neo neo-sticker">
           <h2 className="text-3xl font-shrikhand text-black">PROJECTS</h2>
         </div>
       </div>
 
-      {/* Projects Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {projects.map((project, index) => (
-          <div
-            key={index}
-            className="bg-white border-4 border-black rounded-3xl p-6 shadow-neo neo-bounce-hover relative overflow-hidden"
-          >
-            {/* Top color bar */}
-            <div className={`absolute top-0 left-0 right-0 h-4 ${project.color || 'bg-custom-purple'} border-b-4 border-black`} />
-            
-            {/* Title & Live Link Button */}
-            <div className="mt-4 flex justify-between items-start mb-4">
-              <div>
-                <h3 
-                  onClick={() => {
-                    audioSynth.playClick();
-                    navigateTo('/blog', `#${project.title.toLowerCase().replace(/\s+/g, '-')}-spec`);
-                  }}
-                  onMouseEnter={() => audioSynth.playHover()}
-                  className="text-2xl font-shrikhand cursor-pointer hover:text-custom-purple transition-colors"
-                >
-                  {project.title}
-                </h3>
-                <span 
-                  onClick={() => {
-                    audioSynth.playClick();
-                    navigateTo('/blog', `#${project.title.toLowerCase().replace(/\s+/g, '-')}-spec`);
-                  }}
-                  onMouseEnter={() => audioSynth.playHover()}
-                  className="bg-red-700 text-white text-xs font-bold px-2 py-1 border border-black rounded-md ml-1 animate-pulse inline-block cursor-pointer"
-                >
-                  LIVE PROJECT
-                </span>
-              </div>
-              <a
-                href={`/blog#${project.title.toLowerCase().replace(/\s+/g, '-')}-spec`}
-                onClick={(e) => {
-                  e.preventDefault();
-                  audioSynth.playClick();
-                  navigateTo('/blog', `#${project.title.toLowerCase().replace(/\s+/g, '-')}-spec`);
-                }}
-                onMouseEnter={() => audioSynth.playHover()}
-                className="bg-black text-white p-2 rounded-lg hover:bg-gray-800 transition-colors cursor-pointer"
-                aria-label={`View detailed specs for ${project.title}`}
-              >
-                <FaExternalLinkAlt />
-              </a>
-            </div>
+      {/* Featured Projects Group */}
+      <div className="flex flex-col gap-6">
+        <div className="bg-black text-white py-1 px-4 rounded-lg font-mono font-bold text-sm w-fit rotate-[-1deg]">
+          📂 FEATURED_DEVELOPMENT_PROJECTS()
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
+          {featured.map((project, idx) => (
+            <ProjectCard key={idx} project={project} />
+          ))}
+        </div>
+      </div>
 
-            {/* Tech tag list */}
-            <div className="flex flex-wrap gap-2 mb-4">
-              {project.tech.map((tag) => (
-                <span
-                  key={tag}
-                  className="bg-gray-100 border border-black px-2 py-1 text-xs font-bold font-mono rounded-md"
-                >
-                  {tag}
-                </span>
-              ))}
-            </div>
-
-            {/* Description */}
-            <p className="text-sm font-medium text-gray-700 leading-relaxed">
-              {(() => {
-                const sentences = project.description.split('. ');
-                const short = sentences.slice(0, 2).join('. ');
-                return short.endsWith('.') ? short : short + '.';
-              })()}
-            </p>
-          </div>
-        ))}
+      {/* UI / Client Projects Group */}
+      <div className="flex flex-col gap-6 border-t-4 border-black border-dashed pt-8">
+        <div className="bg-black text-white py-1 px-4 rounded-lg font-mono font-bold text-sm w-fit rotate-[1deg]">
+          🎨 UI_&_CLIENT_STYLE_PROJECTS()
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {uiClient.map((project, idx) => (
+            <ProjectCard key={idx} project={project} />
+          ))}
+        </div>
       </div>
     </section>
   );
 }
-

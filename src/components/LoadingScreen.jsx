@@ -9,23 +9,23 @@ export default function LoadingScreen({ onComplete }) {
   useEffect(() => {
     document.body.style.overflow = 'hidden';
 
-    // Random incremental steps to simulate loading progress
+    // Random incremental steps to simulate loading progress (snappier, takes ~300-500ms)
     const progressInterval = setInterval(() => {
       setProgress((prev) => {
         if (prev >= 100) {
           clearInterval(progressInterval);
           return 100;
         }
-        const step = Math.random() * 10;
+        const step = Math.random() * 15 + 5;
         const next = prev + step;
         return next >= 100 ? 100 : next;
       });
-    }, 100);
+    }, 45);
 
-    // Fallback safety timeout
+    // Fallback safety timeout (capped at 3 seconds max)
     const safetyTimeout = setTimeout(() => {
       setProgress(100);
-    }, 2500);
+    }, 3000);
 
     return () => {
       clearInterval(progressInterval);
@@ -35,23 +35,26 @@ export default function LoadingScreen({ onComplete }) {
 
   useEffect(() => {
     if (progress === 100) {
-      // Execute the sequential exit animation of the loader:
-      // 1. Bounce down slightly
-      setTimeout(() => {
+      // Snappier sequential exit animation (total duration ~700ms)
+      const bounceTimeout = setTimeout(() => {
         setBounceDown(true);
-      }, 400);
+      }, 100);
 
-      // 2. Slide up completely and release body scroll
-      setTimeout(() => {
+      const slideTimeout = setTimeout(() => {
         setSlideUp(true);
         document.body.style.overflow = 'unset';
-      }, 800);
+      }, 250);
 
-      // 3. Remove loader element from DOM
-      setTimeout(() => {
+      const completeTimeout = setTimeout(() => {
         setIsVisible(false);
         onComplete();
-      }, 2000);
+      }, 750);
+
+      return () => {
+        clearTimeout(bounceTimeout);
+        clearTimeout(slideTimeout);
+        clearTimeout(completeTimeout);
+      };
     }
   }, [progress, onComplete]);
 

@@ -14,10 +14,10 @@ export default function Footer() {
           About This Portfolio
         </h2>
         <p className="text-sm text-gray-300 leading-relaxed mb-4">
-          This is the official portfolio website of Aditya Sharma, also known as Aadi, WTF Aadi, iadi0, and iadi01. The portfolio showcases projects, web applications, software engineering work, UI/UX designs, and the learning journey of an aspiring Full Stack Developer.
+          This is the official portfolio website of Aditya Sharma, also known as Aadi, iadi0, and iadi01. The portfolio showcases projects, web applications, UI/UX designs, and the learning journey of an aspiring Full Stack Developer.
         </p>
         <p className="text-xs text-gray-500 leading-relaxed font-mono">
-          <strong>Keywords:</strong> Aditya Sharma Portfolio, Adi Sharma Portfolio, Aadi Portfolio, WTF Aadi Portfolio, iadi0 Portfolio, Software Engineer Portfolio, Full Stack Developer Portfolio.
+          <strong>Keywords:</strong> Aditya Sharma Portfolio, Aadi Portfolio, BCA student developer, aspiring full-stack developer, React projects, JavaScript projects, GitHub API project, frontend developer portfolio, student web developer India.
         </p>
       </section>
 

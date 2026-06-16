@@ -15,19 +15,19 @@ export default function BrandIdentity() {
         >
           <div>
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-shrikhand text-black mb-4 uppercase tracking-wide">
-              WTF Aadi Personal Brand
+              Aadi Developer Handle
             </h2>
             <p className="text-base font-bold text-gray-800 leading-relaxed mb-4">
-              In the developer community, I am widely referred to as <span className="bg-white px-1 border border-black">WTF Aadi</span> or <span className="bg-white px-1 border border-black">WTFAadi</span>. This personal branding is highlighted in my WTF Aadi Portfolio and WTF Aadi Website. Known as WTF Aadi Developer, WTFAadi Developer, Aadi WTF Developer, and Aadi Sharma WTF, I build highly interactive and unconventional web experiences.
+              In the developer community and on my socials, I am often known as <span className="bg-white px-1 border border-black">Aadi</span>. I focus on building practical, interactive, and responsive web applications.
             </p>
             <p className="text-base font-bold text-gray-800 leading-relaxed">
-              Under my WTF Aadi Tech banner, I publish various WTF Aadi Projects, WTFAadi Projects, and contributions on my WTF Aadi GitHub. As a WTF Aadi Full Stack Developer and WTF Aadi Web Developer, I am actively building projects for the WTF Aadi India ecosystem, representing my creative software engineering endeavors.
+              Under this nickname, I publish my side projects and contribute to open-source code on GitHub. I represent my learning journey through these digital creations, showcasing my dedication to frontend and full-stack web development.
             </p>
           </div>
           <div className="mt-6 flex flex-wrap gap-2">
-            <span className="bg-black text-white px-3 py-1 font-mono text-xs rounded-full">#WTFAadi</span>
+            <span className="bg-black text-white px-3 py-1 font-mono text-xs rounded-full">#Aadi</span>
             <span className="bg-black text-white px-3 py-1 font-mono text-xs rounded-full">#PersonalBrand</span>
-            <span className="bg-black text-white px-3 py-1 font-mono text-xs rounded-full">#CreativeDev</span>
+            <span className="bg-black text-white px-3 py-1 font-mono text-xs rounded-full">#StudentDev</span>
           </div>
         </motion.div>
 
