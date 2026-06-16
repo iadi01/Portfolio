@@ -146,6 +146,36 @@ export const education = [
 
 export const blogs = [
   {
+    title: 'The Story Behind WTF Aadi: Building a Developer Brand',
+    excerpt: 'Why I chose the alias WTF Aadi and how building a personal developer brand helps standout on search engines.',
+    date: 'April 2025',
+    readTime: '5 min read',
+    tags: ['Personal', 'SEO', 'Branding'],
+    category: 'Branding',
+    color: 'bg-red-100',
+    slug: 'the-story-behind-wtf-aadi-developer-brand',
+    content: [
+      "When starting out in web development, standing out in search results can be challenging. For Aditya Sharma, creating a memorable online presence meant establishing a unique digital entity. That's how the developer alias 'WTF Aadi' (or simply wtf aadi) was born.",
+      "Choosing a distinct developer name like WTF Aadi helps aggregate all github repositories, social platforms, and portfolio links under a single easily searchable term. It makes technical SEO much more effective by building a strong knowledge graph entry for search crawlers.",
+      "By combining WTF Aadi with optimized page speed indexes, clean neobrutalist designs, and rich portfolio content, I ensure recruiters can find my developer profiles, live web apps, and coding experiments immediately."
+    ]
+  },
+  {
+    title: 'How I Optimized WTF Aadi for Search Engine Rankings',
+    excerpt: 'A student guide to technical SEO, entity mapping, and ranking a developer alias like wtf aadi on Google.',
+    date: 'April 2025',
+    readTime: '6 min read',
+    tags: ['SEO', 'Technical', 'Web Dev'],
+    category: 'SEO',
+    color: 'bg-purple-100',
+    slug: 'how-i-optimized-wtf-aadi-search-rankings',
+    content: [
+      "Search Engine Optimization isn't just for commercial sites; it's a key skill for modern web developers. When optimizing my portfolio website for WTF Aadi (wtf aadi), I applied technical SEO principles to map my name Aditya Sharma with this alias.",
+      "This included creating structured JSON-LD schemas in the index head, verifying keyword distributions, and writing semantic content. Because search bots search for unique keywords, using WTF Aadi helps my projects index rapidly compared to generic developer portfolios.",
+      "Whether you are a BCA student or an industry veteran, understanding search crawlers, Core Web Vitals (LCP/CLS), and metadata mapping gives your web apps a distinct advantage in search visibility."
+    ]
+  },
+  {
     title: 'My Journey into Web Development',
     excerpt: 'How I went from zero coding knowledge to building full-stack applications in under a year.',
     date: 'March 2025',

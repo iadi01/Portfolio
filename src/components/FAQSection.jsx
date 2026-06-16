@@ -11,8 +11,8 @@ export default function FAQSection() {
       a: "Aadi is the nickname and personal brand of Aditya Sharma."
     },
     {
-      q: "What is iadi0?",
-      a: "iadi0 is the online username used by Aditya Sharma."
+      q: "What is WTF Aadi?",
+      a: "WTF Aadi is the developer alias and SEO moniker used by Aditya Sharma across search engines and coding networks to showcase creative full-stack projects."
     }
   ];
 
