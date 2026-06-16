@@ -1,5 +1,5 @@
-import { useState } from 'react';
-import { motion } from 'framer-motion';
+import { useState, useEffect } from 'react';
+import { motion, AnimatePresence, useReducedMotion } from 'framer-motion';
 import { 
   FaEnvelope, 
   FaGithub, 
@@ -15,6 +15,16 @@ import Terminal from './Terminal';
 
 export default function HeroSection({ onContactClick }) {
   const [showPrivacyNotice, setShowPrivacyNotice] = useState(false);
+  const shouldReduceMotion = useReducedMotion();
+  const [langIndex, setLangIndex] = useState(0);
+
+  useEffect(() => {
+    if (shouldReduceMotion) return;
+    const interval = setInterval(() => {
+      setLangIndex((prev) => (prev === 0 ? 1 : 0));
+    }, 2000);
+    return () => clearInterval(interval);
+  }, [shouldReduceMotion]);
 
   return (
     <section id="home" className="w-full pt-4 pb-10 px-4 max-w-7xl mx-auto flex flex-col md:flex-row gap-8 items-start justify-center selection:bg-custom-yellow selection:text-black">
@@ -166,7 +176,28 @@ export default function HeroSection({ onContactClick }) {
 
         {/* About card */}
         <div className="bg-custom-yellow p-6 md:p-10 rounded-3xl border-2 border-b-4 border-r-4 border-black shadow-neo">
-          <h2 className="text-4xl font-shrikhand mb-4">About Aditya Sharma</h2>
+          <h2 className="text-4xl font-shrikhand mb-4 flex flex-wrap items-baseline gap-x-2" aria-label="About Aditya Sharma">
+            <span>About</span>
+            <span className="inline-block relative min-w-[260px] sm:min-w-[340px] h-[1.2em] overflow-visible">
+              <AnimatePresence mode="wait">
+                {shouldReduceMotion ? (
+                  <span>Aditya Sharma</span>
+                ) : (
+                  <motion.span
+                    key={langIndex}
+                    initial={{ opacity: 0, y: 8, filter: 'blur(3px)' }}
+                    animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+                    exit={{ opacity: 0, y: -8, filter: 'blur(3px)' }}
+                    transition={{ duration: 0.4, ease: 'easeInOut' }}
+                    className={`absolute left-0 ${langIndex === 0 ? 'font-shrikhand' : ''}`}
+                    style={langIndex === 1 ? { fontFamily: '"Noto Sans Devanagari", sans-serif', fontWeight: 900 } : undefined}
+                  >
+                    {langIndex === 0 ? 'Aditya Sharma' : 'आदित्य शर्मा'}
+                  </motion.span>
+                )}
+              </AnimatePresence>
+            </span>
+          </h2>
           
           {/* New Wording */}
           <p className="text-lg font-semibold leading-relaxed mb-6 text-gray-800">
