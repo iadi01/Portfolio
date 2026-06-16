@@ -38,12 +38,12 @@ function BugDodgerGame() {
     const ctx = canvas.getContext('2d');
     let animationFrameId;
 
-    const gravity = 0.35;
-    const jumpForce = -6.5;
+    const gravity = 0.22; // Gentler gravity for floatier, easier control
+    const jumpForce = -4.8; // Calibrated jump force
     const playerX = 60;
     const playerSize = 24;
     const pipeWidth = 50;
-    const pipeGap = 120;
+    const pipeGap = 150; // Increased pipe gap for better clearance
 
     const getGameConfig = (score) => {
       let speed = 2.0; // Starts slow (easy mode)
@@ -62,10 +62,12 @@ function BugDodgerGame() {
       const state = stateRef.current;
       state.playerY = canvas.height / 2;
       state.velocity = 0;
+      
+      // Randomize starting pipe position and height on every restart
       state.pipes = [
         {
-          x: canvas.width + 100,
-          topHeight: Math.random() * (canvas.height - pipeGap - 80) + 40,
+          x: canvas.width + Math.random() * 100 + 80,
+          topHeight: Math.random() * (canvas.height - pipeGap - 60) + 30,
           passed: false,
         }
       ];
@@ -184,7 +186,7 @@ function BugDodgerGame() {
           if (state.frameCount >= spawnInterval) {
             state.pipes.push({
               x: canvas.width,
-              topHeight: Math.random() * (canvas.height - pipeGap - 80) + 40,
+              topHeight: Math.random() * (canvas.height - pipeGap - 60) + 30,
               passed: false,
             });
             state.frameCount = 0;
