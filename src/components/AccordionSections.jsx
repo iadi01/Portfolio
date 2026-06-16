@@ -15,13 +15,92 @@ export default function AccordionSections() {
   return (
     <section className="py-10 px-4 max-w-7xl mx-auto flex flex-col gap-12 w-full overflow-hidden pb-10 selection:bg-custom-yellow selection:text-black">
       
-      {/* 1. HACKATHONS ACCORDION (bg-custom-red, border-l-0) */}
+      {/* 1. INSPIRATION ACCORDION (bg-custom-blue, border-l-0) */}
       <motion.div
         initial={{ opacity: 0, x: -100 }}
         whileInView={{ opacity: 1, x: 0 }}
         viewport={{ once: true, margin: '-50px' }}
         transition={{ duration: 0.3, ease: 'linear' }}
-        className="w-[95%] md:w-[85%] lg:w-[75%] mx-auto md:ml-0 relative bg-custom-red border-4 md:border-l-0 border-black shadow-neo"
+        className="w-[95%] md:w-[85%] lg:w-[75%] mx-auto md:ml-0 relative bg-custom-blue border-4 md:border-l-0 border-black shadow-neo"
+      >
+        <div className="flex items-center justify-between px-6 md:px-10 py-6">
+          <h3 className="text-3xl md:text-4xl font-shrikhand text-black uppercase tracking-wide">INSPIRATION</h3>
+          <button
+            onClick={() => toggle('inspiration')}
+            onMouseEnter={() => audioSynth.playHover()}
+            className="bg-black text-custom-blue px-6 py-2 font-bold border-4 border-white shadow-[4px_4px_0px_0px_rgba(255,255,255,1)] hover:shadow-none hover:translate-x-1 hover:translate-y-1 transition-all uppercase tracking-wider cursor-pointer"
+          >
+            {openSection === 'inspiration' ? 'Close' : 'Open'}
+          </button>
+        </div>
+
+        <AnimatePresence>
+          {openSection === 'inspiration' && (
+            <motion.div
+              initial={{ height: 0, opacity: 0 }}
+              animate={{ height: 'auto', opacity: 1 }}
+              exit={{ height: 0, opacity: 0 }}
+              transition={{ duration: 0.2, ease: 'linear' }}
+              className="overflow-hidden"
+            >
+              <div className="px-6 md:px-10 pb-10 pt-10">
+                <div className="max-w-2xl mx-auto">
+                  <div 
+                    onClick={() => audioSynth.playClick()}
+                    onMouseEnter={() => audioSynth.playHover()}
+                    className="bg-white border-4 border-black p-8 border-b-8 border-r-8 hover:-translate-y-1 transition-all relative shadow-neo rounded-3xl w-full cursor-pointer"
+                  >
+                    {/* Image Sticker Overlay */}
+                    <div className="absolute -top-10 -right-4 sm:-right-6 w-28 h-28 sm:w-32 sm:h-32 bg-custom-pink rounded-full border-4 border-black overflow-hidden shadow-neo z-20">
+                      <img 
+                        src="/aditi.png" 
+                        alt="Aditi Portfolio Inspiration Creator" 
+                        className="w-full h-full object-cover"
+                        loading="lazy"
+                        decoding="async"
+                      />
+                    </div>
+
+                    <div className="relative z-10 flex flex-col items-start w-full">
+                      <h3 className="text-3xl font-shrikhand text-custom-pink mb-2">Design Tribute</h3>
+                      <p className="font-bold text-xl mb-3">
+                        Inspired by Aditi's Portfolio
+                        <span className="bg-custom-yellow px-2 border-2 border-black ml-2 text-sm shadow-sm inline-block rotate-2">
+                          Credits
+                        </span>
+                      </p>
+                      <p className="text-base font-medium leading-relaxed bg-gray-100 p-4 rounded-2xl border-2 border-black w-[80%] mb-4">
+                        This website's interactive neobrutalist style and design system was inspired by the awesome portfolio of <a href="https://aditi-portfolio-six.vercel.app/" target="_blank" rel="noopener noreferrer" className="text-custom-pink hover:text-custom-purple transition-colors underline font-black" onClick={(e) => e.stopPropagation()}>Aditi</a>.
+                      </p>
+                      <a
+                        href="https://aditi-portfolio-six.vercel.app/"
+                        target="_blank"
+                        rel="noreferrer"
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          audioSynth.playClick();
+                        }}
+                        onMouseEnter={() => audioSynth.playHover()}
+                        className="font-mono text-sm font-bold bg-custom-pink text-black p-2 border-2 border-black w-fit shadow-[4px_4px_0_rgba(0,0,0,1)] hover:-translate-y-1 transition-transform cursor-pointer"
+                      >
+                        ✨ Visit Inspired Portfolio
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </motion.div>
+
+      {/* 2. HACKATHONS ACCORDION (bg-custom-red, border-r-0, ml-auto) */}
+      <motion.div
+        initial={{ opacity: 0, x: 100 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        viewport={{ once: true, margin: '-50px' }}
+        transition={{ duration: 0.3, ease: 'linear' }}
+        className="w-[95%] md:w-[85%] lg:w-[75%] mx-auto md:ml-auto md:mr-0 relative bg-custom-red border-4 md:border-r-0 border-black shadow-neo mt-4"
       >
         <div className="flex items-center justify-between px-6 md:px-10 py-6">
           <h3 className="text-3xl md:text-4xl font-shrikhand text-white uppercase tracking-wide">HACKATHONS</h3>
@@ -83,13 +162,13 @@ export default function AccordionSections() {
         </AnimatePresence>
       </motion.div>
 
-      {/* 2. CODING STATS ACCORDION (bg-custom-yellow, border-r-0, ml-auto) */}
+      {/* 3. CODING STATS ACCORDION (bg-custom-yellow, border-l-0) */}
       <motion.div
-        initial={{ opacity: 0, x: 100 }}
+        initial={{ opacity: 0, x: -100 }}
         whileInView={{ opacity: 1, x: 0 }}
         viewport={{ once: true, margin: '-50px' }}
         transition={{ duration: 0.3, ease: 'linear' }}
-        className="w-[95%] md:w-[85%] lg:w-[75%] mx-auto md:ml-auto md:mr-0 relative bg-custom-yellow border-4 md:border-r-0 border-black shadow-neo mt-4"
+        className="w-[95%] md:w-[85%] lg:w-[75%] mx-auto md:ml-0 relative bg-custom-yellow border-4 md:border-l-0 border-black shadow-neo mt-4"
       >
         <div className="flex items-center justify-between px-6 md:px-10 py-6">
           <h3 className="text-3xl md:text-4xl font-shrikhand text-black uppercase tracking-wide">CODING</h3>
@@ -156,13 +235,13 @@ export default function AccordionSections() {
         </AnimatePresence>
       </motion.div>
 
-      {/* 3. BEYOND CODE ACCORDION (bg-custom-purple, border-l-0) */}
+      {/* 4. BEYOND CODE ACCORDION (bg-custom-purple, border-r-0, ml-auto) */}
       <motion.div
-        initial={{ opacity: 0, x: -100 }}
+        initial={{ opacity: 0, x: 100 }}
         whileInView={{ opacity: 1, x: 0 }}
         viewport={{ once: true, margin: '-50px' }}
         transition={{ duration: 0.3, ease: 'linear' }}
-        className="w-[95%] md:w-[85%] lg:w-[75%] mx-auto md:ml-0 relative bg-custom-purple border-4 md:border-l-0 border-black shadow-neo mt-4"
+        className="w-[95%] md:w-[85%] lg:w-[75%] mx-auto md:ml-auto md:mr-0 relative bg-custom-purple border-4 md:border-r-0 border-black shadow-neo mt-4"
       >
         <div className="flex items-center justify-between px-6 md:px-10 py-6">
           <h3 className="text-3xl md:text-4xl font-shrikhand text-black uppercase tracking-wide">BEYOND CODE</h3>
@@ -253,78 +332,6 @@ export default function AccordionSections() {
           )}
         </AnimatePresence>
       </motion.div>
-
-      {/* 4. INSPIRATION ACCORDION (bg-custom-blue, border-r-0, ml-auto) */}
-      <motion.div
-        initial={{ opacity: 0, x: 100 }}
-        whileInView={{ opacity: 1, x: 0 }}
-        viewport={{ once: true, margin: '-50px' }}
-        transition={{ duration: 0.3, ease: 'linear' }}
-        className="w-[95%] md:w-[85%] lg:w-[75%] mx-auto md:ml-auto md:mr-0 relative bg-custom-blue border-4 md:border-r-0 border-black shadow-neo mt-4"
-      >
-        <div className="flex items-center justify-between px-6 md:px-10 py-6">
-          <h3 className="text-3xl md:text-4xl font-shrikhand text-black uppercase tracking-wide">INSPIRATION</h3>
-          <button
-            onClick={() => toggle('inspiration')}
-            onMouseEnter={() => audioSynth.playHover()}
-            className="bg-black text-custom-blue px-6 py-2 font-bold border-4 border-white shadow-[4px_4px_0px_0px_rgba(255,255,255,1)] hover:shadow-none hover:translate-x-1 hover:translate-y-1 transition-all uppercase tracking-wider cursor-pointer"
-          >
-            {openSection === 'inspiration' ? 'Close' : 'Open'}
-          </button>
-        </div>
-
-        <AnimatePresence>
-          {openSection === 'inspiration' && (
-            <motion.div
-              initial={{ height: 0, opacity: 0 }}
-              animate={{ height: 'auto', opacity: 1 }}
-              exit={{ height: 0, opacity: 0 }}
-              transition={{ duration: 0.2, ease: 'linear' }}
-              className="overflow-hidden"
-            >
-              <div className="px-6 md:px-10 pb-10">
-                <div className="max-w-2xl mx-auto pt-4">
-                  <div 
-                    onClick={() => audioSynth.playClick()}
-                    onMouseEnter={() => audioSynth.playHover()}
-                    className="bg-white border-4 border-black p-8 border-b-8 border-r-8 hover:-translate-y-1 transition-all flex flex-col sm:flex-row items-center gap-6 shadow-neo rounded-3xl w-full cursor-pointer"
-                  >
-                    <div className="bg-black p-6 rounded-full border-4 border-custom-pink flex-shrink-0">
-                      <span className="text-6xl">🎨</span>
-                    </div>
-                    <div className="flex flex-col items-start w-full">
-                      <h3 className="text-3xl font-shrikhand text-custom-pink mb-2">Design Tribute</h3>
-                      <p className="font-bold text-xl mb-3">
-                        Inspired by Aditi's Portfolio
-                        <span className="bg-custom-yellow px-2 border-2 border-black ml-2 text-sm shadow-sm inline-block rotate-2">
-                          Credits
-                        </span>
-                      </p>
-                      <p className="text-base font-medium leading-relaxed bg-gray-100 p-4 rounded-2xl border-2 border-black w-full mb-3">
-                        This website's interactive neobrutalist style and design system was inspired by the awesome portfolio of <a href="https://aditi-portfolio-six.vercel.app/" target="_blank" rel="noopener noreferrer" className="text-custom-pink hover:text-custom-purple transition-colors underline font-black" onClick={(e) => e.stopPropagation()}>Aditi</a>.
-                      </p>
-                      <a
-                        href="https://aditi-portfolio-six.vercel.app/"
-                        target="_blank"
-                        rel="noreferrer"
-                        onClick={(e) => {
-                          e.stopPropagation();
-                          audioSynth.playClick();
-                        }}
-                        onMouseEnter={() => audioSynth.playHover()}
-                        className="font-mono text-sm font-bold bg-custom-pink text-black p-2 border-2 border-black w-fit shadow-[4px_4px_0_rgba(0,0,0,1)] hover:-translate-y-1 transition-transform cursor-pointer"
-                      >
-                        ✨ Visit Inspired Portfolio
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </motion.div>
-          )}
-        </AnimatePresence>
-      </motion.div>
     </section>
   );
 }
-
