@@ -38,24 +38,23 @@ function BugDodgerGame() {
     const ctx = canvas.getContext('2d');
     let animationFrameId;
 
-    const gravity = 0.22; // Gentler gravity for floatier, easier control
-    const jumpForce = -4.8; // Calibrated jump force
+    const gravity = 0.15; // Extremely floaty gravity
+    const jumpForce = -3.8; // Calibrated jump force to match floaty gravity
     const playerX = 60;
     const playerSize = 24;
     const pipeWidth = 50;
-    const pipeGap = 150; // Increased pipe gap for better clearance
+    const pipeGap = 155; // Extremely forgiving gap for player clearance
 
     const getGameConfig = (score) => {
-      let speed = 2.0; // Starts slow (easy mode)
-      if (score >= 40) speed = 4.5;
-      else if (score >= 30) speed = 3.8;
-      else if (score >= 25) speed = 3.4;
-      else if (score >= 20) speed = 3.0;
-      else if (score >= 15) speed = 2.6;
-      else if (score >= 10) speed = 2.2;
+      let speed = 1.5; // Starts at 1.5 (very slow, easy mode)
+      if (score >= 40) speed = 4.2;
+      else if (score >= 30) speed = 3.6;
+      else if (score >= 25) speed = 3.1;
+      else if (score >= 20) speed = 2.7;
+      else if (score >= 15) speed = 2.3;
+      else if (score >= 10) speed = 1.9;
       
-      const spawnInterval = Math.round(200 / speed);
-      return { speed, spawnInterval };
+      return { speed };
     };
 
     const resetGame = () => {
@@ -63,15 +62,14 @@ function BugDodgerGame() {
       state.playerY = canvas.height / 2;
       state.velocity = 0;
       
-      // Randomize starting pipe position and height on every restart
+      // Initial pipe position starts far enough ahead on restart
       state.pipes = [
         {
-          x: canvas.width + Math.random() * 100 + 80,
+          x: canvas.width + 120, 
           topHeight: Math.random() * (canvas.height - pipeGap - 60) + 30,
           passed: false,
         }
       ];
-      state.frameCount = 0;
       setScore(0);
     };
 
@@ -179,17 +177,17 @@ function BugDodgerGame() {
           }
 
           // Get dynamic game difficulty settings
-          const { speed, spawnInterval } = getGameConfig(state.score);
+          const { speed } = getGameConfig(state.score);
 
-          // Spawn pipes
-          state.frameCount++;
-          if (state.frameCount >= spawnInterval) {
+          // Spawn pipes based on distance from the last pipe (prevents clipping/overlapping)
+          const pipeDistance = 250; // Dynamic spacing distance
+          const lastPipe = state.pipes[state.pipes.length - 1];
+          if (!lastPipe || lastPipe.x < canvas.width - pipeDistance) {
             state.pipes.push({
               x: canvas.width,
               topHeight: Math.random() * (canvas.height - pipeGap - 60) + 30,
               passed: false,
             });
-            state.frameCount = 0;
           }
 
           // Update pipes
@@ -290,9 +288,6 @@ function BugDodgerGame() {
         ctx.stroke();
         ctx.restore();
 
-        // Get speed for drawing
-        const { speed } = getGameConfig(state.score);
-
         // Draw Score Counter (Retro green digital display style)
         ctx.fillStyle = '#4ade80';
         ctx.font = 'bold 18px monospace';
@@ -300,7 +295,7 @@ function BugDodgerGame() {
         ctx.fillText(`SCORE: ${state.score}`, 15, 30);
         ctx.fillText(`HI: ${state.highScore}`, 15, 52);
 
-        // Draw Level & Speed on top right
+        // Draw Level on top right (Speed display removed per request)
         const levelName = 
           state.score >= 40 ? 'LVL: 7 (GODLIKE ⚡)' :
           state.score >= 30 ? 'LVL: 6 (NIGHTMARE)' :
@@ -312,7 +307,6 @@ function BugDodgerGame() {
         
         ctx.textAlign = 'right';
         ctx.fillText(levelName, canvas.width - 15, 30);
-        ctx.fillText(`SPEED: ${speed.toFixed(1)}x`, canvas.width - 15, 52);
 
         if (state.gameState === 'gameover') {
           // Game Over Screen Overlay
