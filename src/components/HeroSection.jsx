@@ -176,27 +176,30 @@ export default function HeroSection({ onContactClick }) {
 
         {/* About card */}
         <div className="bg-custom-yellow p-6 md:p-10 rounded-3xl border-2 border-b-4 border-r-4 border-black shadow-neo">
-          <h2 className="text-4xl font-shrikhand mb-4 flex flex-wrap items-baseline gap-x-2" aria-label="About Aditya Sharma">
-            <span>About</span>
-            <span className="inline-block relative min-w-[260px] sm:min-w-[340px] h-[1.2em] overflow-visible">
+          <h2 className="text-4xl font-shrikhand mb-4 align-baseline" aria-label="About Aditya Sharma">
+            About{' '}
+            <span className="inline-grid grid-cols-1 grid-rows-1 justify-items-start align-baseline">
+              {/* Invisible placeholder of the same font to lock layout width and baseline */}
+              <span className="col-start-1 row-start-1 invisible font-shrikhand">Aditya</span>
               <AnimatePresence mode="wait">
                 {shouldReduceMotion ? (
-                  <span>Aditya Sharma</span>
+                  <span className="col-start-1 row-start-1 font-shrikhand">Aditya</span>
                 ) : (
                   <motion.span
                     key={langIndex}
-                    initial={{ opacity: 0, y: 8, filter: 'blur(3px)' }}
+                    initial={{ opacity: 0, y: 6, filter: 'blur(3px)' }}
                     animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
-                    exit={{ opacity: 0, y: -8, filter: 'blur(3px)' }}
+                    exit={{ opacity: 0, y: -6, filter: 'blur(3px)' }}
                     transition={{ duration: 0.4, ease: 'easeInOut' }}
-                    className={`absolute left-0 ${langIndex === 0 ? 'font-shrikhand' : ''}`}
+                    className={`col-start-1 row-start-1 ${langIndex === 0 ? 'font-shrikhand' : ''}`}
                     style={langIndex === 1 ? { fontFamily: '"Noto Sans Devanagari", sans-serif', fontWeight: 900 } : undefined}
                   >
-                    {langIndex === 0 ? 'Aditya Sharma' : 'आदित्य शर्मा'}
+                    {langIndex === 0 ? 'Aditya' : 'आदित्य'}
                   </motion.span>
                 )}
               </AnimatePresence>
-            </span>
+            </span>{' '}
+            Sharma
           </h2>
           
           {/* New Wording */}
