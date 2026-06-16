@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { FiMail, FiGithub, FiLinkedin, FiInstagram, FiX, FiSend } from 'react-icons/fi';
+import { FiMail, FiGithub, FiLinkedin, FiInstagram, FiX } from 'react-icons/fi';
 import { personalInfo } from '../data/personalData';
 import { audioSynth } from '../utils/audioSynth';
 
@@ -150,7 +150,7 @@ export default function ContactModal({ isOpen, onClose }) {
                 onMouseEnter={() => audioSynth.playHover()}
                 className="bg-custom-green text-black font-bold py-3 px-6 rounded-xl border-2 border-black shadow-[4px_4px_0_rgba(0,0,0,1)] hover:translate-x-0.5 hover:translate-y-0.5 hover:shadow-[2px_2px_0_rgba(0,0,0,1)] active:translate-y-1 active:shadow-none transition-all flex items-center justify-center gap-2 cursor-pointer w-full text-center"
               >
-                <FiSend /> SEND MESSAGE
+                Send your pigeon my way 🕊️
               </button>
             </form>
 
