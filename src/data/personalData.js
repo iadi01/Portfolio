@@ -146,6 +146,66 @@ export const education = [
 
 export const blogs = [
   {
+    title: 'Best Website Designer in Jamshedpur: Building Professional Websites for Local Businesses',
+    excerpt: 'Why choosing a local website designer in Jamshedpur can help shops, clinics, and startups build mobile-friendly sites that attract local customers.',
+    date: 'June 2026',
+    readTime: '5 min read',
+    tags: ['Jamshedpur', 'Web Design', 'Local Business'],
+    category: 'Web Design',
+    color: 'bg-yellow-100',
+    slug: 'best-website-designer-in-jamshedpur-local-businesses',
+    content: [
+      "For local shops, cafes, salons, clinics, coaching centres, and small businesses in Jamshedpur, having an online presence is no longer optional. But building a site that actually converts visitors into customers requires a dedicated website designer. At Aadi Website Design, we specialize in crafting high-quality, mobile-friendly websites specifically tailored for Jamshedpur's local ecosystem.",
+      "A great local website designer does not just write code; they understand the local Jamshedpur market. By searching for a website designer in Jamshedpur, business owners can find personalized, face-to-face assistance for setting up domains, hosting, custom landing pages, and business portfolios. If you want to check out our work or location, visit our [Google Business Profile](https://maps.app.goo.gl/MxvNstHpTCitDFem8).",
+      "Whether you need a basic landing page, an e-commerce storefront, or a complete digital catalog, working with a local professional ensures your business shines online. Having a fast, responsive website helps local customers find you immediately when they search on Google Maps or search engines."
+    ]
+  },
+  {
+    title: 'Professional Web Development in Jamshedpur: Empowering Small Businesses',
+    excerpt: 'How professional web development services in Jamshedpur can transform local startups, shops, and clinics into online brands.',
+    date: 'June 2026',
+    readTime: '6 min read',
+    tags: ['Jamshedpur', 'Web Development', 'SEO'],
+    category: 'Web Development',
+    color: 'bg-red-100',
+    slug: 'professional-web-development-jamshedpur-small-businesses',
+    content: [
+      "Looking for top-notch web development in Jamshedpur? Startups, educational institutes, and service businesses in Jharkhand are rapidly digitizing. Building custom web applications using modern stacks like React, JavaScript, and Node.js allows local businesses to automate bookings, showcase services, and reach customers far beyond Steel City.",
+      "Working with a specialist in web development in Jamshedpur ensures that your code is optimized for speed, reliability, and local SEO. Local developers can configure essential integrations like Google Maps, WhatsApp chat buttons, and automated contact forms to drive direct inquiries. To see our verified developer services, projects, and client feedback, check out our official [Google Maps Listing](https://maps.app.goo.gl/MxvNstHpTCitDFem8).",
+      "Decoupled frontend architecture, secure databases, and clean UI/UX design are no longer reserved for large tech hubs. Aadi Website Design offers affordable, enterprise-level web development right here in Jamshedpur, making high-performance sites accessible to every startup and small business."
+    ]
+  },
+  {
+    title: 'How to Grow Your Local Business in Jamshedpur with Website Design & Local SEO',
+    excerpt: 'A complete guide for Jamshedpur business owners on combining responsive web design with local SEO to rank higher on Google Maps.',
+    date: 'June 2026',
+    readTime: '5 min read',
+    tags: ['Local SEO', 'Jamshedpur', 'Web Design'],
+    category: 'SEO',
+    color: 'bg-green-100',
+    slug: 'grow-local-business-jamshedpur-web-design-seo',
+    content: [
+      "When Jamshedpur residents look for services, their first step is searching on Google Maps or searching for 'web dev in Jamshedpur' or 'website designer near me'. To get your business listed at the top, you need to combine a responsive website design with a fully optimized Google Business Profile.",
+      "Key strategies include adding location keywords in your website content, getting authentic customer reviews, and listing correct contact details (Name, Address, Phone) across directories. As a website designer in Jamshedpur, we help businesses implement schema markup and map integrations. Feel free to connect or view our location on [Google Maps](https://maps.app.goo.gl/MxvNstHpTCitDFem8) to learn more about our local services.",
+      "By matching a clean, fast-loading landing page with active local citation optimization, Jamshedpur startups and shops can dominate local searches, bringing in consistent organic leads without expensive paid advertisements."
+    ]
+  },
+  {
+    title: 'Affordable Landing Page Design in Jamshedpur: Start Selling Online',
+    excerpt: 'Why small businesses, coaching classes, and salons in Jamshedpur should start with a high-converting, single-page landing page.',
+    date: 'May 2026',
+    readTime: '4 min read',
+    tags: ['Jamshedpur', 'Landing Page', 'Web Design'],
+    category: 'Web Design',
+    color: 'bg-purple-100',
+    slug: 'affordable-landing-page-design-jamshedpur',
+    content: [
+      "If you run a local business in Jamshedpur, you don't necessarily need a massive, complex multi-page website to start getting online inquiries. A single-page, high-converting landing page is often the most cost-effective and powerful tool to showcase your service, salon, cafe, clinic, or coaching centre.",
+      "A professional landing page focuses on a single action—like calling you, sending a WhatsApp message, or filling out a contact form. At Aadi Website Design, we specialize in building lightning-fast landing pages in Jamshedpur that load in less than a second and display perfectly on all mobile devices. Learn more and read our customer reviews on our [Google Business Profile](https://maps.app.goo.gl/MxvNstHpTCitDFem8).",
+      "Starting with an affordable landing page design allows Jamshedpur businesses to validate their online market, run social media ads effectively, and establish digital credibility without a massive upfront budget. As your business grows, your landing page can easily expand into a full-scale business website."
+    ]
+  },
+  {
     title: 'The Story Behind WTF Aadi: Building a Developer Brand',
     excerpt: 'Why I chose the alias WTF Aadi and how building a personal developer brand helps standout on search engines.',
     date: 'April 2025',

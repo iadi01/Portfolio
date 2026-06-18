@@ -3,6 +3,42 @@ import { FaArrowLeft, FaEnvelope, FaGithub, FaLinkedin, FaCode, FaInstagram } fr
 import { blogs, personalInfo } from '../data/personalData';
 import { navigateTo } from '../utils/router';
 
+const renderParagraphContent = (text) => {
+  const regex = /\[([^\]]+)\]\(([^)]+)\)/g;
+  const parts = [];
+  let lastIndex = 0;
+  let match;
+
+  while ((match = regex.exec(text)) !== null) {
+    const [fullMatch, linkText, url] = match;
+    const startIndex = match.index;
+
+    if (startIndex > lastIndex) {
+      parts.push(text.substring(lastIndex, startIndex));
+    }
+
+    parts.push(
+      <a 
+        key={startIndex} 
+        href={url} 
+        target="_blank" 
+        rel="noopener noreferrer" 
+        className="text-[#3b82f6] hover:underline font-bold"
+      >
+        {linkText}
+      </a>
+    );
+
+    lastIndex = regex.lastIndex;
+  }
+
+  if (lastIndex < text.length) {
+    parts.push(text.substring(lastIndex));
+  }
+
+  return parts.length > 0 ? parts : text;
+};
+
 export default function BlogPage({ onContactClick, currentPath }) {
   const [time, setTime] = useState(new Date());
   const [selectedCategory, setSelectedCategory] = useState('All');
@@ -148,7 +184,7 @@ export default function BlogPage({ onContactClick, currentPath }) {
 
                   <div className="space-y-6 text-base md:text-lg font-medium text-gray-800 leading-relaxed font-sans">
                     {activeBlog.content.map((p, idx) => (
-                      <p key={idx}>{p}</p>
+                      <p key={idx}>{renderParagraphContent(p)}</p>
                     ))}
                   </div>
                 </div>
