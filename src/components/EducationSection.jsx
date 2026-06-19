@@ -373,7 +373,7 @@ function BugDodgerGame() {
   return (
     <div className="bg-[#1a1a1a] border-8 border-black rounded-3xl p-4 md:p-6 shadow-neo flex flex-col gap-4 relative select-none w-full">
       {/* Header */}
-      <div className="bg-custom-red text-white px-4 py-2 rounded-xl border-2 border-black font-mono font-bold flex justify-between items-center text-xs md:text-sm shadow-[2px_2px_0_rgba(0,0,0,1)]">
+      <div className="bg-custom-red text-black px-4 py-2 rounded-xl border-2 border-black font-mono font-bold flex justify-between items-center text-xs md:text-sm shadow-[2px_2px_0_rgba(0,0,0,1)]">
         <span className="flex items-center gap-1.5">
           <span className="w-2.5 h-2.5 rounded-full bg-[#22c55e] inline-block animate-pulse"></span>
           BUG_DODGER_SYS.EXE

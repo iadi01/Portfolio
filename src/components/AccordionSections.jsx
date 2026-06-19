@@ -283,7 +283,7 @@ export default function AccordionSections() {
                     </div>
                     <div className="relative z-10">
                       <div className="flex items-center gap-3 mb-4">
-                        <FaVideo className="text-4xl text-custom-red" />
+                        <FaVideo className="text-4xl text-custom-red" aria-hidden="true" />
                         <h3 className="text-3xl font-shrikhand">Video Editing</h3>
                       </div>
                       <p className="font-bold text-xl mb-4">@ Creative Projects</p>
@@ -313,7 +313,7 @@ export default function AccordionSections() {
                     </div>
                     <div className="relative z-10">
                       <div className="flex items-center gap-3 mb-4">
-                        <FaCompass className="text-4xl text-custom-blue" />
+                        <FaCompass className="text-4xl text-custom-blue" aria-hidden="true" />
                         <h3 className="text-3xl font-shrikhand">Travel</h3>
                       </div>
                       <p className="font-bold text-xl mb-4">@ Exploration</p>

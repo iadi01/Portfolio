@@ -84,7 +84,7 @@ export default function HeroSection({ onContactClick }) {
             onMouseEnter={() => audioSynth.playHover()}
             className="bg-custom-green w-full py-3 rounded-xl border-2 border-black font-bold shadow-neo-sm hover:translate-y-1 hover:shadow-none transition-all flex items-center justify-center gap-2 cursor-pointer block text-center text-black no-underline"
           >
-            <FaDownload /> DOWNLOAD_RESUME
+            <FaDownload aria-hidden="true" /> DOWNLOAD_RESUME
           </a>
           <button
             onClick={() => {
@@ -94,7 +94,7 @@ export default function HeroSection({ onContactClick }) {
             onMouseEnter={() => audioSynth.playHover()}
             className="bg-custom-red text-black w-full py-3 rounded-xl border-2 border-black font-bold shadow-neo-sm hover:translate-y-1 hover:shadow-none transition-all flex items-center justify-center gap-2 cursor-pointer font-bold"
           >
-            <FaEnvelope /> CONTACT ME
+            <FaEnvelope aria-hidden="true" /> CONTACT ME
           </button>
         </div>
 
@@ -107,7 +107,7 @@ export default function HeroSection({ onContactClick }) {
             className="hover:scale-110 transition-transform text-red-500 cursor-pointer"
             aria-label="Email"
           >
-            <FaEnvelope />
+            <FaEnvelope aria-hidden="true" />
           </a>
           <a
             href={personalInfo.github}
@@ -118,7 +118,7 @@ export default function HeroSection({ onContactClick }) {
             className="hover:scale-110 transition-transform text-black cursor-pointer"
             aria-label="GitHub"
           >
-            <FaGithub />
+            <FaGithub aria-hidden="true" />
           </a>
           <a
             href={personalInfo.linkedin}
@@ -129,7 +129,7 @@ export default function HeroSection({ onContactClick }) {
             className="hover:scale-110 transition-transform text-blue-700 cursor-pointer"
             aria-label="LinkedIn"
           >
-            <FaLinkedin />
+            <FaLinkedin aria-hidden="true" />
           </a>
           <a
             href="https://leetcode.com/"
@@ -140,7 +140,7 @@ export default function HeroSection({ onContactClick }) {
             className="hover:scale-110 transition-transform text-orange-600 cursor-pointer"
             aria-label="LeetCode"
           >
-            <FaCode />
+            <FaCode aria-hidden="true" />
           </a>
           <a
             href="https://www.instagram.com/iaadi0/"
@@ -151,7 +151,7 @@ export default function HeroSection({ onContactClick }) {
             className="hover:scale-110 transition-transform text-pink-600 cursor-pointer"
             aria-label="Instagram"
           >
-            <FaInstagram />
+            <FaInstagram aria-hidden="true" />
           </a>
         </div>
       </motion.div>

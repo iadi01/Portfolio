@@ -151,7 +151,7 @@ export default function BlogPage({ onContactClick, currentPath }) {
                 onClick={() => navigateTo('/blog')}
                 className="self-start flex items-center gap-2 bg-white text-black font-bold px-4 py-2 rounded-xl border-2 border-black shadow-[3px_3px_0_rgba(0,0,0,1)] hover:translate-x-0.5 hover:translate-y-0.5 hover:shadow-[1px_1px_0_rgba(0,0,0,1)] active:translate-y-1 active:shadow-none transition-all cursor-pointer text-sm"
               >
-                <FaArrowLeft /> Back to Blogs
+                <FaArrowLeft aria-hidden="true" /> Back to Blogs
               </button>
 
               {/* Full Article Card */}
@@ -299,7 +299,7 @@ export default function BlogPage({ onContactClick, currentPath }) {
             className="hover:scale-110 transition-transform text-red-500 bg-white p-2 rounded-full border border-black"
             aria-label="Email"
           >
-            <FaEnvelope />
+            <FaEnvelope aria-hidden="true" />
           </a>
           <a
             href={personalInfo.github}
@@ -308,7 +308,7 @@ export default function BlogPage({ onContactClick, currentPath }) {
             className="hover:scale-110 transition-transform text-black bg-white p-2 rounded-full border border-black"
             aria-label="GitHub"
           >
-            <FaGithub />
+            <FaGithub aria-hidden="true" />
           </a>
           <a
             href={personalInfo.linkedin}
@@ -317,7 +317,7 @@ export default function BlogPage({ onContactClick, currentPath }) {
             className="hover:scale-110 transition-transform text-blue-700 bg-white p-2 rounded-full border border-black"
             aria-label="LinkedIn"
           >
-            <FaLinkedin />
+            <FaLinkedin aria-hidden="true" />
           </a>
           <a
             href="https://leetcode.com/"
@@ -326,7 +326,7 @@ export default function BlogPage({ onContactClick, currentPath }) {
             className="hover:scale-110 transition-transform text-orange-600 bg-white p-2 rounded-full border border-black"
             aria-label="LeetCode"
           >
-            <FaCode />
+            <FaCode aria-hidden="true" />
           </a>
           <a
             href="https://www.instagram.com/iaadi0/"
@@ -335,7 +335,7 @@ export default function BlogPage({ onContactClick, currentPath }) {
             className="hover:scale-110 transition-transform text-pink-600 bg-white p-2 rounded-full border border-black"
             aria-label="Instagram"
           >
-            <FaInstagram />
+            <FaInstagram aria-hidden="true" />
           </a>
         </div>
 
@@ -343,7 +343,7 @@ export default function BlogPage({ onContactClick, currentPath }) {
           © {new Date().getFullYear()} Aditya Sharma. Built for recruiters.
         </p>
         <div className="mt-6 inline-flex items-center gap-2 bg-white text-black px-4 py-2 border-2 border-black rounded-xl font-mono text-xs font-bold shadow-[4px_4px_0_rgba(236,72,153,1)] hover:-translate-y-0.5 hover:shadow-[6px_6px_0_rgba(236,72,153,1)] transition-all">
-          🎨 Design inspired by the beautiful portfolio of <a href="https://aditi-portfolio-six.vercel.app/" target="_blank" rel="noopener noreferrer" className="text-custom-pink hover:text-custom-purple transition-colors underline font-black">Aditi</a> ✨
+          🎨 Design inspired by the beautiful portfolio of <a href="https://aditi-portfolio-six.vercel.app/" target="_blank" rel="noopener noreferrer" className="text-pink-600 hover:text-custom-purple transition-colors underline font-black">Aditi</a> ✨
         </div>
       </footer>
 

@@ -4,16 +4,16 @@ import { projects } from '../data/personalData';
 import { audioSynth } from '../utils/audioSynth';
 
 const techIcons = {
-  'React': <FaReact className="text-sky-500" />,
-  'JavaScript': <FaJs className="text-yellow-500" />,
-  'Tailwind CSS': <SiTailwindcss className="text-teal-400" />,
-  'GitHub API': <FaCodeBranch className="text-purple-500" />,
-  'Chart.js': <FaChartPie className="text-orange-500" />,
-  'Node.js': <FaNodeJs className="text-green-500" />,
-  'MongoDB': <SiMongodb className="text-green-600" />,
-  'GitHub': <FaGithub className="text-black" />,
-  'HTML5': <FaHtml5 className="text-orange-500" />,
-  'CSS3': <FaCss3Alt className="text-blue-600" />,
+  'React': <FaReact className="text-sky-500" aria-hidden="true" />,
+  'JavaScript': <FaJs className="text-yellow-500" aria-hidden="true" />,
+  'Tailwind CSS': <SiTailwindcss className="text-teal-400" aria-hidden="true" />,
+  'GitHub API': <FaCodeBranch className="text-purple-500" aria-hidden="true" />,
+  'Chart.js': <FaChartPie className="text-orange-500" aria-hidden="true" />,
+  'Node.js': <FaNodeJs className="text-green-500" aria-hidden="true" />,
+  'MongoDB': <SiMongodb className="text-green-600" aria-hidden="true" />,
+  'GitHub': <FaGithub className="text-black" aria-hidden="true" />,
+  'HTML5': <FaHtml5 className="text-orange-500" aria-hidden="true" />,
+  'CSS3': <FaCss3Alt className="text-blue-600" aria-hidden="true" />,
 };
 
 function ProjectCard({ project }) {
@@ -64,7 +64,7 @@ function ProjectCard({ project }) {
           onMouseEnter={() => audioSynth.playHover()}
           className="flex-1 bg-custom-green text-black font-bold py-2.5 px-4 rounded-xl border-2 border-black shadow-[2px_2px_0_rgba(0,0,0,1)] hover:translate-y-0.5 hover:shadow-[1px_1px_0_rgba(0,0,0,1)] active:translate-y-1 active:shadow-none transition-all flex items-center justify-center gap-1.5 text-center text-sm cursor-pointer"
         >
-          <FaExternalLinkAlt className="text-xs" /> Live Demo
+          <FaExternalLinkAlt className="text-xs" aria-hidden="true" /> Live Demo
         </a>
         {project.githubUrl && (
           <a
@@ -75,7 +75,7 @@ function ProjectCard({ project }) {
             onMouseEnter={() => audioSynth.playHover()}
             className="bg-white text-black font-bold py-2.5 px-4 rounded-xl border-2 border-black shadow-[2px_2px_0_rgba(0,0,0,1)] hover:translate-y-0.5 hover:shadow-[1px_1px_0_rgba(0,0,0,1)] active:translate-y-1 active:shadow-none transition-all flex items-center justify-center gap-1.5 text-sm cursor-pointer"
           >
-            <FaGithub className="text-base" /> GitHub
+            <FaGithub className="text-base" aria-hidden="true" /> GitHub
           </a>
         )}
       </div>

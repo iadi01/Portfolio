@@ -1,10 +1,7 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <!-- Google AdSense -->
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9657690036702429"
-         crossorigin="anonymous"></script>
-    <!-- Optimized Analytics & GTM: Defer loading until first user interaction -->
+    <!-- Optimized Analytics, GTM & AdSense: Defer loading until first user interaction -->
     <script>
       (function() {
         var initialized = false;
@@ -35,6 +32,13 @@
           window.gtag = function(){dataLayer.push(arguments);}
           window.gtag('js', new Date());
           window.gtag('config', 'G-8LLYBL0EYF');
+
+          // 3. Load Google AdSense Auto Ads
+          var adSenseScript = document.createElement('script');
+          adSenseScript.async = true;
+          adSenseScript.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9657690036702429';
+          adSenseScript.crossOrigin = 'anonymous';
+          document.head.appendChild(adSenseScript);
         }
 
         // Listen for interaction events
@@ -67,8 +71,6 @@
     <meta name="theme-color" content="#93C5FD" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin />
-    <link rel="preconnect" href="https://www.google-analytics.com" crossorigin />
     <link rel="preload" as="image" href="/profile.webp" fetchpriority="high" />
     <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Noto+Sans+Devanagari:wght@400;700;900&family=Shrikhand&display=swap" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Noto+Sans+Devanagari:wght@400;700;900&family=Shrikhand&display=swap" media="print" onload="this.media='all'" />

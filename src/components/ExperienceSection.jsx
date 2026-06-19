@@ -15,7 +15,7 @@ export default function ExperienceSection() {
         >
           <div className="w-[80vw] h-6 bg-white opacity-60 blur-xl rounded-full mr-[-20px]" />
           <div className="w-[60vw] h-3 bg-white opacity-80 blur-md rounded-full mr-[-40px] absolute right-[60px]" />
-          <FaPlane className="text-gray-800 text-6xl drop-shadow-neo z-10" />
+          <FaPlane className="text-gray-800 text-6xl drop-shadow-neo z-10" aria-hidden="true" />
         </motion.div>
       </div>
 
@@ -39,10 +39,10 @@ export default function ExperienceSection() {
               {/* Date/Location Badge */}
               <div className="absolute -top-8 md:-top-6 left-4 right-4 md:left-auto md:right-8 flex flex-col gap-2 font-mono font-bold text-xs md:text-sm bg-custom-yellow px-4 py-3 rounded-xl border-4 border-black shadow-[4px_4px_0_rgba(0,0,0,1)] z-20 transform hover:rotate-0 transition-transform">
                 <div className="flex items-center gap-2">
-                  <FaCalendarAlt className="text-black" /> {exp.duration}
+                  <FaCalendarAlt className="text-black" aria-hidden="true" /> {exp.duration}
                 </div>
                 <div className="flex items-center gap-2">
-                  <FaMapMarkerAlt className="text-black" /> {exp.location}
+                  <FaMapMarkerAlt className="text-black" aria-hidden="true" /> {exp.location}
                 </div>
               </div>
 
